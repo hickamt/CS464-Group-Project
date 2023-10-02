@@ -3,6 +3,7 @@
 Before making changes (which would put you behind main) you will want to do the following to update your local files.
 
 ```bash
+# Make sure you are on the 'main' branch first
 $ git pull origin main
 ```
 
