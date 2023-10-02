@@ -1,0 +1,21 @@
+{
+  "name": "cs464_crypto_dashboard",
+  "version": "1.0.0",
+  "description": "Course project at PSU building a cryptocurrency dashboard",
+  "main": "index.js",
+  "scripts": {
+    "teardown": "npm run uninstall_package_lock && npm run uninstall_node_modules",
+    "uninstall_package_lock": "rm package-lock.json && cd express_server && rm package-lock.json && cd ../react_client && rm package-lock.json",
+    "uninstall_node_modules": "rm -rf node_modules && cd express_server && rm -rf node_modules && cd ../react_client && rm -rf node_modules",
+    "setup": "npm i -y && cd express_server && npm i -y && cd ../react_client && npm i -y",
+    "save": "git add . && git commit -m 'quick save'",
+    "devcode": "code . && npm run dev",
+    "dev": "concurrently \"npm run express\" \"npm run react\" ",
+    "express": "cd express_server && npm run dev",
+    "react": "cd react_client && npm run dev"
+  },
+  "dependencies": {
+    "concurrently": "8.2.0"
+  },
+  "author": "Todd Hickam, Nathan Moes, William Newby"
+}

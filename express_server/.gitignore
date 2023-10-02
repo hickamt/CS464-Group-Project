@@ -1,0 +1,5 @@
+node_modules
+.env
+./bin/pool/pool_test.js
+./db_pool/db.js
+.package-lock.json
