@@ -27,6 +27,8 @@ git rebase --interactive OTHER-BRANCH-NAME
 $ git checkout -b create-card-component
 ```
 
+(note, git stash, git checkout, git stash apply)
+
 2. Before creating your pull request (git push):
 
 ```bash

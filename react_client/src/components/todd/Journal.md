@@ -3,7 +3,7 @@
 This component will build a Card to display the users asset details for each cryptocurrency coin/token. Each card will require a call to the express backend to retrieve purchase and sales data for each cryptocurrency and an API call to LiveCoinWatch for the current spot price of that asset.
 
 ## Card Key:Value Properties
-
+.
 ```js
 cardConfig = {
   logo: "Card Logo", // LiveCoinWatch png32 icon/logo
