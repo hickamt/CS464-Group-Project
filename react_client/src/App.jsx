@@ -8,7 +8,6 @@ import Main from "./pages/Main";
 /* Additional Routes for Custom Pages */
 import Nathan from "./components/nathan/Nathan"
 import Todd from "./components/todd/Todd"
-import William from "./components/william/William"
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route index element={<Main />} />
           <Route path="nathan" element={<Nathan />} />
           <Route path="todd" element={<Todd />} />
-          <Route path="william" element={<William />} />
         </Route>
       </Routes>
     </>
