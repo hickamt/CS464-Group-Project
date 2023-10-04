@@ -1,32 +1,27 @@
-import { useState } from "react";
-import { expressQueryAPI } from "../api/expressQueryAPI";
-import { FetchAnimation } from "../components/animation/FetchAnimation";
-import { MainPageButton } from "../components/main/MainPageButton";
-import { DisplayData } from "../components/main/DisplayData";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
+import MainView from "../components/MainView";
+import Header from "../components/Header";
 
 function Main() {
-  const [expressData, setExpressData] = useState([]);
-  const [isData, setIsData] = useState(false);
-  const [animation, setAnimation] = useState(false);
+  // const [animation, setAnimation] = useState(false);
 
-  const postQuery = (e, value) => {
-    e.preventDefault();
-    setAnimation(true); // animation while fetching data
+  // const postQuery = (e, value) => {
+  //   e.preventDefault();
+  //   setAnimation(true); // animation while fetching data
 
-    // Makes the API Call: "../api/expressQueryAPI.jsx"
-    expressQueryAPI(value, setExpressData, setIsData, setAnimation);
-  };
+  //   // Makes the API Call: "../api/expressQueryAPI.jsx"
+  //   expressQueryAPI(value, setExpressData, setIsData, setAnimation);
+  // };
 
   return (
     <>
-      <div className="main-container text-center mt-3">
-        <h1>Main Page</h1>
-        <MainPageButton postQuery={postQuery} />
-        <div className="express-data-div">
-          {isData && <DisplayData data={expressData} />}
-        </div>
-
-        {animation && <FetchAnimation />}
+      <div className="dashboard-container text-center mt-3">
+        {/* {animation && <FetchAnimation />} */}
+        <Header />
+        <MainView />
+        <Sidebar />
+        <Footer />
       </div>
     </>
   );
