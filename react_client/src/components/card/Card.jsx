@@ -7,11 +7,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import crypto_image from "../../assets/crypto.svg"
 
+// Try to use a max of 6 cards for view
+// and add <- to -> arrow scroll for view
+
 export default function ComponentOne() {
   return (
     <>
       <h1 className="card-title d-none">Crypto Assets</h1>
-      <Row xs={1} md={6} className="g-6 mt-2">
+      <Row xs={1} md={4} lg={6} className="g-6 mt-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <Col key={index}>
             <Card bg="dark">
