@@ -200,10 +200,14 @@ $ git checkout existing-branch-name
 ```
 
 Delete a branch (AFTER MERGE)
+- (Also, delete on GitHub)
 
 ```bash
 # remote-branch is 'origin'
 $ git push -d remote-name branch-name
+
+# force delete with flag -D
+$ git push -D remote-name branch-name
 ```
 
 See the differences between last change(s)
