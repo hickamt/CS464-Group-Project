@@ -1,0 +1,14 @@
+.value-type {
+  grid-area: left;
+}
+
+.value {
+  grid-area: right;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "left right";
+}
