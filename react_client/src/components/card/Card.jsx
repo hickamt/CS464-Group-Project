@@ -1,4 +1,4 @@
-function ComponentOne() {
+export default function ComponentOne() {
   return (
     <>
       <div className="card-container text-center mt-3">
@@ -7,5 +7,3 @@ function ComponentOne() {
     </>
   );
 }
-
-export default ComponentOne;

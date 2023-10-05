@@ -1,4 +1,4 @@
-function ComponentTwo() {
+export default function ComponentTwo() {
   return (
     <>
       <div className="component-two text-center mt-3">
@@ -7,5 +7,3 @@ function ComponentTwo() {
     </>
   );
 }
-
-export default ComponentTwo;
