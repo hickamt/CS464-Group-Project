@@ -22,7 +22,9 @@
 
 .card-img {
   max-width: 150px;
+  min-width: 50px;
   max-height: 150px;
+  min-width: 50px;
 }
 
 /* Horizontal Scroll */

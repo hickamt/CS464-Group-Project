@@ -17,7 +17,7 @@ export default function ComponentOne() {
   return (
     <>
       <h1 className="card-title d-none">Crypto Assets</h1>
-      <Row xs={1} md={3} lg={6} className="g-6 mt-2">
+      <Row s={1} md={3} lg={4} xl={6} className="g-6 mt-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <Col key={index}>
             <Card bg="dark">

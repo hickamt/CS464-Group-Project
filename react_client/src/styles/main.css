@@ -23,7 +23,7 @@
   grid-template-columns: 10% auto;
   grid-template-rows: auto;
   grid-template-areas:
-    "sidebar header header header"
+    "header header header header"
     "sidebar main main main"
     "sidebar footer footer footer";
 }
@@ -43,7 +43,7 @@
 /* FOOTER: Table Styles */
 
 /* MEDIA QUERY */
-
+/* 
 @media only screen and (max-width: 1900px) {
   .main {
     grid-template-columns: 1fr 1fr 1fr;
@@ -60,4 +60,4 @@
   .main {
     grid-template-columns: 1fr;
   }
-}
+} */
