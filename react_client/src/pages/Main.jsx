@@ -11,20 +11,19 @@ function Main() {
   const [mainView, setMainView] = useState("Main View");
 
   // Using 'Sidebar' button event.target.values
+  // this could be abstracted as a module file
+  // getComponent(value, setMainView) {}
   const getComponent = (e, value) => {
     e.preventDefault();
     switch (value) {
       case "card":
         setMainView(<Card />);
-        console.log("setMainView with Card");
         break;
       case "chart":
         setMainView(<ComponentB />);
-        console.log("setMainView with Chart");
         break;
       case "table":
         setMainView(<ComponentC />);
-        console.log("setMainView with table");
         break;
       default:
         setMainView("Main View");
