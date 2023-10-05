@@ -1,26 +1,42 @@
+import { useState } from "react";
+// import FetchAnimation from "../components/animation/FetchAnimation";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import MainView from "../components/MainView";
 import Header from "../components/Header";
+import Card from "../components/card/Card";
+import ComponentB from "../components/compt_b/ComponentB";
+import ComponentC from "../components/compt_c/ComponentC";
 
 function Main() {
-  // const [animation, setAnimation] = useState(false);
+  const [mainView, setMainView] = useState("Main View");
 
-  // const postQuery = (e, value) => {
-  //   e.preventDefault();
-  //   setAnimation(true); // animation while fetching data
-
-  //   // Makes the API Call: "../api/expressQueryAPI.jsx"
-  //   expressQueryAPI(value, setExpressData, setIsData, setAnimation);
-  // };
-
+  // Using 'Sidebar' button event.target.values
+  const getComponent = (e, value) => {
+    e.preventDefault();
+    switch (value) {
+      case "card":
+        setMainView(<Card />);
+        console.log("setMainView with Card");
+        break;
+      case "chart":
+        setMainView(<ComponentB />);
+        console.log("setMainView with Chart");
+        break;
+      case "table":
+        setMainView(<ComponentC />);
+        console.log("setMainView with table");
+        break;
+      default:
+        setMainView("Main View");
+        break;
+    }
+  };
   return (
     <>
       <div className="dashboard-container text-center mt-3">
-        {/* {animation && <FetchAnimation />} */}
         <Header />
-        <MainView />
-        <Sidebar />
+        <div className="main-view bg-dark rounded">{mainView}</div>
+        <Sidebar getComponent={getComponent} />
         <Footer />
       </div>
     </>

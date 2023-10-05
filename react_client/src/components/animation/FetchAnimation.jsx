@@ -5,7 +5,7 @@ import animation from "../../assets/postgresql_giphy.gif"
  * for the switch between true/false
  * @returns the animation while an api call is being made
  */
-export const FetchAnimation = () => {
+export default function FetchAnimation() {
   // document.getElementById("root").style.background = "URL(https://giphy.com/gifs/cat-kitten-computer-3oKIPnAiaMCws8nOsE)";
   return (
     <div className="giphy-container text-center my-5">
