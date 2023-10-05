@@ -218,3 +218,10 @@ See a log of changes (and hash values to choose from for differences)
 # use 'q' to exit and 'page down' to view more
 $ git log
 ```
+## Git Pull
+
+When you are working on another branch many changes may have occured. You should request a pull of the master/main to update your working branch.
+```bash
+# From your working branch: git update from main
+$ git pull origin main
+```
