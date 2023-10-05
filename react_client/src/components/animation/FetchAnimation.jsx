@@ -1,4 +1,4 @@
-import animation from "../../assets/postgresql_giphy.gif"
+import animation from "../../assets/postgresql_giphy.gif";
 /**
  * Function to produce animation during API request.
  * Requires: const [fetchAnimation, setFetchAnimation] = useState(false)
@@ -17,7 +17,7 @@ export default function FetchAnimation() {
         allowFullScreen></iframe>
     </div>
   );
-};
+}
 
 /**
  * GIF Created by: Todd Hickam

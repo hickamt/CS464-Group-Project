@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // Sidbar setup for testing
 export default function Sidebar({ getComponent }) {
   return (
