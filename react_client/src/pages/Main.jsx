@@ -32,7 +32,7 @@ function Main() {
   };
   return (
     <>
-      <div className="dashboard-container text-center mt-3">
+      <div className="dashboard-container mt-3">
         <div className="main-header bg-dark rounded">
           <Header />
         </div>
