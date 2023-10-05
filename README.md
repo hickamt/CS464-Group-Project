@@ -156,28 +156,65 @@ The "/express_server/controllers/queriesController.js" endpoint is a POST reques
 The 'queries' endpoint uses your 'query' object to distinguish between the type of data requested. Your 'query' object must be a string with one of the following values:
 
 ```js
-query = 'assets' | 'exchanges' | 'purchases' | 'sales' | 'remaining'
+query = "assets" | "exchanges" | "purchases" | "sales" | "remaining";
 ```
+
 You can use your console to view the requested 'query' object and its format, and is helpful when debugging your api call, data response, and use of that data object on the client side.
 
 ```jsx
 function yourClientQueryFunction(query) {
-  return axios
-    // The server endpoint is: 'queries' statically coded here
-    .post("http://localhost:5500/queries", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // The data.query object is a 'string' such as 'assets' or 'purchases'
-      data: {
-        query: query,
-      },
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      throw new Error(`Unable to retrieve the ${query} data from server`)
-    });
+  return (
+    axios
+      // The server endpoint is: 'queries' statically coded here
+      .post("http://localhost:5500/queries", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // The data.query object is a 'string' such as 'assets' or 'purchases'
+        data: {
+          query: query,
+        },
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(`Unable to retrieve the ${query} data from server`);
+      })
+  );
 }
+```
+
+## Git
+
+Create a new branch and switch to the branch
+
+```bash
+$ git checkout -b new-component-change
+```
+
+Switch to another branch
+
+```bash
+$ git checkout existing-branch-name
+```
+
+Delete a branch (AFTER MERGE)
+
+```bash
+# remote-branch is 'origin'
+$ git push -d remote-name branch-name
+```
+
+See the differences between last change(s)
+
+```bash
+$ git diff
+```
+
+See a log of changes (and hash values to choose from for differences)
+
+```bash
+# use 'q' to exit and 'page down' to view more
+$ git log
 ```
