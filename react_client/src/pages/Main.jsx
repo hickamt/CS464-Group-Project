@@ -12,8 +12,8 @@ function Main() {
 
   // Using 'Sidebar' button event.target.values
   // this could be abstracted as a module file
-  // getComponent(value, setMainView) {}
-  const getComponent = (e, value) => {
+  // switchComponentView(value, setMainView) {}
+  const switchComponentView = (e, value) => {
     e.preventDefault();
     switch (value) {
       case "card":
@@ -35,7 +35,7 @@ function Main() {
       <div className="dashboard-container text-center mt-3">
         <Header />
         <div className="main-view bg-dark rounded">{mainView}</div>
-        <Sidebar getComponent={getComponent} />
+        <Sidebar switchComponentView={switchComponentView} />
         <Footer />
       </div>
     </>
