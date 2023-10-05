@@ -6,6 +6,8 @@
 
 .main-view {
   grid-area: main;
+  /* inline-size: min(100% - 4rem, 70rem);
+  margin-inline-start: auto; */
 }
 
 .sidebar {
