@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import crypto_image from "../../assets/crypto.svg";
 
-// CSS Styles
+// CSS Styles (using grid for Card.Text > children)
 import "./styles/card.css"
 
 // Try to use a max of 6 cards for view
@@ -17,32 +17,32 @@ export default function ComponentOne() {
   return (
     <>
       <h1 className="card-title d-none">Crypto Assets</h1>
-      <Row xs={1} md={4} lg={6} className="g-6 mt-2">
+      <Row xs={1} md={3} lg={6} className="g-6 mt-2">
         {Array.from({ length: 6 }).map((_, index) => (
           <Col key={index}>
             <Card bg="dark">
               <Card.Img
-                className="card-img"
+                className="card-img my-auto"
                 alt="cryptocurrency"
                 variant="top"
                 src={crypto_image}
               />
               <Card.Body>
-                <Card.Title>Asset Name</Card.Title>
+                {/* <Card.Title className="text-center">Asset Name</Card.Title> */}
                 <Card.Text>
                   <div className="card-grid">
                     <div className="value-type">
                       <div>Asset</div>
-                      <div>Remaining</div>
-                      <div>Spot Price</div>
+                      <div>Qty</div>
+                      <div>Spot</div>
                       <div>Value</div>
-                      <div>24HR</div>
-                      <div>WK</div>
-                      <div>MTH</div>
+                      <div>Day</div>
+                      <div>Week</div>
+                      <div>Month</div>
                     </div>
                     <div className="value">
                       <div>BTC</div>
-                      <div>1.00</div>
+                      <div>1.0000</div>
                       <div>$ 1.12</div>
                       <div>$ 2.24</div>
                       <div>1.32%</div>

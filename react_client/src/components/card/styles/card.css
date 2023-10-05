@@ -12,3 +12,17 @@
   grid-template-rows: auto;
   grid-template-areas: "left right";
 }
+
+/* React Bootstrap Class Components */
+
+.card {
+  flex-direction: row;
+  border-radius: 16px;
+}
+
+.card-img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+/* Horizontal Scroll */
