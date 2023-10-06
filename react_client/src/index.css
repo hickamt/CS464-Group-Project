@@ -16,7 +16,7 @@
 }
 
 #root {
-  background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg");
+  /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
   background-size: cover;
   padding-bottom: 7em;
   min-height: 35rem;
