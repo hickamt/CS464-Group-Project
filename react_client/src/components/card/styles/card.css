@@ -11,20 +11,17 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   grid-auto-flow: column;
   /* grid-auto-columns to adjust size of each Card */
   grid-auto-columns: 17%;
-
   padding: 0 var(--_spacer) var(--_spacer);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  box-shadow: 10px 5px 5px var(--off_black);
 }
 
 .card.media-element {
   display: grid;
-  /* flex-direction: row; */
-
   grid-template-rows: min-content;
   gap: var(--_spacer);
   padding: var(--_spacer);
+  box-shadow: 10px 5px 5px var(--off_black);
 }
 
 .card.media-element > .card-img {
@@ -61,19 +58,3 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   grid-template-rows: auto;
   grid-template-areas: "... left ... right ...";
 }
-
-/* React Bootstrap Class Components */
-
-/* .card {
-  flex-direction: row;
-  border-radius: 16px;
-} */
-
-/* .card-img {
-  max-width: 150px;
-  min-width: 50px;
-  max-height: 150px;
-  min-width: 50px;
-} */
-
-/* Horizontal Scroll */

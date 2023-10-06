@@ -29,29 +29,26 @@ export default function ComponentOne() {
                 src={crypto_image}
               />
               <Card.Body>
-                {/* <Card.Title className="text-center">Asset Name</Card.Title> */}
-                <Card.Text>
-                  <div className="card-grid">
-                    <div className="value-type">
-                      <div>Asset</div>
-                      <div>Qty</div>
-                      <div>Spot</div>
-                      <div>Value</div>
-                      <div>Day</div>
-                      <div>Week</div>
-                      <div>Month</div>
-                    </div>
-                    <div className="value">
-                      <div>BTC</div>
-                      <div>1.0000</div>
-                      <div>$ 1.12</div>
-                      <div>$ 2.24</div>
-                      <div>1.32%</div>
-                      <div>0.32%</div>
-                      <div>0.01%</div>
-                    </div>
+                <div className="card-grid">
+                  <div className="value-type">
+                    <p>Asset</p>
+                    <p>Qty</p>
+                    <p>Spot</p>
+                    <p>Value</p>
+                    <p>Day</p>
+                    <p>Week</p>
+                    <p>Month</p>
                   </div>
-                </Card.Text>
+                  <div className="value">
+                    <p>BTC</p>
+                    <p>1.0000</p>
+                    <p>$ 1.12</p>
+                    <p>$ 2.24</p>
+                    <p>1.32%</p>
+                    <p>0.32%</p>
+                    <p>0.01%</p>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           </Col>
