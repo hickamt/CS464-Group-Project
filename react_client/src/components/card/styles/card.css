@@ -25,7 +25,7 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 }
 
 .card.media-element > .card-img {
-  inline-size: 30%;
+  inline-size: 70%;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -55,9 +55,9 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 .card-grid {
   
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 15% 40% 5% 40%;
   grid-template-rows: auto;
-  grid-template-areas: "left right";
+  grid-template-areas: "... left ... right";
 }
 
 .card-text {
