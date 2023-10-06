@@ -10,9 +10,6 @@ import crypto_image from "../../assets/crypto.svg";
 // CSS Styles (using grid for Card.Text > children)
 import "./styles/card.css";
 
-// Try to use a max of 6 cards for view
-// and add <- to -> arrow scroll for view
-
 export default function ComponentOne() {
   return (
     <>
@@ -31,22 +28,22 @@ export default function ComponentOne() {
               <Card.Body>
                 <div className="card-grid">
                   <div className="value-type">
-                    <p>Asset</p>
-                    <p>Qty</p>
-                    <p>Spot</p>
-                    <p>Value</p>
-                    <p>Day</p>
-                    <p>Week</p>
-                    <p>Month</p>
+                    <p className="card-text">Asset</p>
+                    <p className="card-text">Qty</p>
+                    <p className="card-text">Spot</p>
+                    <p className="card-text">Value</p>
+                    <p className="card-text">Day</p>
+                    <p className="card-text">Week</p>
+                    <p className="card-text">Month</p>
                   </div>
                   <div className="value">
-                    <p>BTC</p>
-                    <p>1.0000</p>
-                    <p>$ 1.12</p>
-                    <p>$ 2.24</p>
-                    <p>1.32%</p>
-                    <p>0.32%</p>
-                    <p>0.01%</p>
+                    <p className="card-text">BTC</p>
+                    <p className="card-text">1.0000</p>
+                    <p className="card-text">$ 1.12</p>
+                    <p className="card-text">$ 2.24</p>
+                    <p className="card-text">1.32%</p>
+                    <p className="card-text">0.32%</p>
+                    <p className="card-text">0.01%</p>
                   </div>
                 </div>
               </Card.Body>

@@ -10,7 +10,7 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   gap: var(--_spacer);
   grid-auto-flow: column;
   /* grid-auto-columns to adjust size of each Card */
-  grid-auto-columns: 17%;
+  grid-auto-columns: 13%;
   padding: 0 var(--_spacer) var(--_spacer);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
@@ -25,7 +25,7 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 }
 
 .card.media-element > .card-img {
-  inline-size: 70%;
+  inline-size: 30%;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -53,8 +53,13 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 }
 
 .card-grid {
+  
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "... left ... right ...";
+  grid-template-areas: "left right";
+}
+
+.card-text {
+  margin: 0;
 }
