@@ -21,7 +21,8 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   grid-template-rows: min-content;
   gap: var(--_spacer);
   padding: var(--_spacer);
-  box-shadow: 10px 5px 5px var(--off_black);
+  background-color: var(--off_black) !important;
+  box-shadow: 10px 5px 5px var(--nav_grey);
 }
 
 .card.media-element > .card-img {
@@ -32,16 +33,16 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 }
 
 /* Describe type of Snap */
-.snaps-inline {
+/* .snaps-inline {
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: var(--_spacer);
-}
+} */
 
 /* Snap behavior on all children
    Aligns card to SNAP position */
-.snaps-inline > * {
+/* .snaps-inline > * {
   scroll-snap-align: start;
-}
+} */
 
 /* INNER Card.Text Grid Styles */
 .value-type {
@@ -62,4 +63,16 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 
 .card-text {
   margin: 0;
+}
+
+.card-container {
+}
+
+.card-container .left-arrow,
+.card-container .right-arrow {
+  justify-content: flex-start;
+}
+
+.left-arrow,
+.right-arrow {
 }
