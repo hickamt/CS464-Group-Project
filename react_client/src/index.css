@@ -4,6 +4,16 @@
 
 /* CUSTOM GLOBAL COLORS */
 :root {
+  --primay: ; /* blue */
+  --secondary: ; /* grey */
+  --success: ; /* green */
+  --danger: ; /* red */
+  --warning: ; /* yellow */
+  --info: ; /* neon-blue */
+  --light: ; /* #f0f0f0 */
+  --body: ; /* #212529 */
+  --black: ; /* #090909 */
+
   --off_black: #090909;
   --nav_grey: #212529;
   --white: #f0f0f0;
