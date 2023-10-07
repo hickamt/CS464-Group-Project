@@ -2,7 +2,7 @@
 .sidebar,
 .main-header,
 .main-footer {
-  background-color: var(--nav_grey);
+  background-color: var(--body);
 }
 
 .main-header {
@@ -20,12 +20,12 @@
 .sidebar .card-btn {
   width: 100%;
   background-color: transparent;
-  color: var(--white);
+  color: var(--light);
   border: none;
 }
 
 .sidebar:hover .card-btn:hover {
-  background-color: var(--hover_grey);
+  background-color: var(--info);
 }
 
 .main-footer {

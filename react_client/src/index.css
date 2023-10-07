@@ -4,16 +4,16 @@
 
 /* GLOBAL COLOR SCHEME */
 :root {
-  /* --primary: ;  blue */
-  /* --secondary: ;  grey */
-  /* --success: ;  green */
-  /* --danger: ;  red */
-  /* --warning: ;  yellow */
-  /* --info: ;  neon-blue */
-  --light: #0f0f0f;
-  --dark: #010409;
-  --body: #212529; /* #212529 */
-  --black:  #090909 ;/* #090909 */
+  --primary: blue;      /* blue */
+  --secondary: #272b33; /* grey */
+  --success: green;     /* green */
+  --danger: red;        /* red */
+  --warning: yellow;    /* yellow */
+  --info: #4d4dff;      /* neon-blue */
+  --light: white;       /* white */
+  --dark: #010409;      /* off black */
+  --body: #212529;      /* dark grey */
+  --black:  #090909 ;   /* root background black */
 }
 
 #root {
@@ -24,11 +24,11 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  background-color: var(--off_black);
+  background-color: var(--black);
   background-repeat: no-repeat;
-  color: var(--white);
+  color: var(--light);
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
