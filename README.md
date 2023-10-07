@@ -185,22 +185,30 @@ function yourClientQueryFunction(query) {
 }
 ```
 
-## Git
+## Git General Commands
 
-Create a new branch and switch to the branch
+- git add and git commit
+```bash
+$ git add <fileName> && git commit -m "message"
+
+# (-a) auto adds changes from all known files listed in the index
+$ git commit -am "message"
+```
+
+- Create a new branch and switch to the branch
 
 ```bash
 $ git checkout -b new-component-change
 ```
 
-Switch to another branch
+- Switch to another branch
 
 ```bash
 $ git checkout existing-branch-name
 ```
 
-Delete a branch (AFTER MERGE)
-- (Also, delete on GitHub)
+- Delete a branch (AFTER MERGE)
+  - (Also, delete on GitHub)
 
 ```bash
 # remote-branch is 'origin'
@@ -210,13 +218,13 @@ $ git push -d remote-name branch-name
 $ git push -D remote-name branch-name
 ```
 
-See the differences between last change(s)
+- See the differences between last change(s)
 
 ```bash
 $ git diff
 ```
 
-See a log of changes (and hash values to choose from for differences)
+- See a log of changes (and hash values to choose from for differences)
 
 ```bash
 # use 'q' to exit and 'page down' to view more
@@ -229,6 +237,16 @@ When you are working on another branch many changes may have occured. You should
 # From your working branch: git update from main
 $ git pull origin main
 ```
+
+## Git Merge
+
+Merge two branches (i.e. main and component-branch)
+```bash
+# in 'main' branch merging with 'component-branch'
+$ git merge component-branch
+```
+
+Delete the branch you have merged with, if you are done with the branch, in GitHub and from bash
 
 ## Git Errors
 
