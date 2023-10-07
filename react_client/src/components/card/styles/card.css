@@ -1,9 +1,6 @@
-/* Horizontal Scroll */
+/* NetFlix Style Slider */
+/* npm library: https://www.npmjs.com/package/netslider */
 
-/* 
-Kevin Powell: Create HZ Media Scroller
-Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
-*/
 .row.media-scroll {
   --_spacer: 0.5rem;
   display: grid;
@@ -32,18 +29,6 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   object-fit: cover;
 }
 
-/* Describe type of Snap */
-/* .snaps-inline {
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: var(--_spacer);
-} */
-
-/* Snap behavior on all children
-   Aligns card to SNAP position */
-/* .snaps-inline > * {
-  scroll-snap-align: start;
-} */
-
 /* INNER Card.Text Grid Styles */
 .value-type {
   grid-area: left;
@@ -54,7 +39,6 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
 }
 
 .card-grid {
-  
   display: grid;
   grid-template-columns: 15% 40% 5% 40%;
   grid-template-rows: auto;
@@ -65,14 +49,7 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   margin: 0;
 }
 
-.card-container {
-}
-
 .card-container .left-arrow,
 .card-container .right-arrow {
   justify-content: flex-start;
-}
-
-.left-arrow,
-.right-arrow {
 }
