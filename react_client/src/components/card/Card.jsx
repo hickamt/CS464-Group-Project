@@ -20,7 +20,7 @@ export default function ComponentOne() {
         <Row className="media-scroll snaps-inline mt-2">
           {Array.from({ length: 12 }).map((_, index) => (
             <Col key={index}>
-              <Card className="media-element" bg="dark">
+              <Card className="media-element">
                 <Card.Img
                   className="card-img"
                   alt="cryptocurrency"

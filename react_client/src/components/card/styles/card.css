@@ -21,8 +21,8 @@ Source: https://youtu.be/3yfswsnD2sw?si=87-ghor_l8szw36q
   grid-template-rows: min-content;
   gap: var(--_spacer);
   padding: var(--_spacer);
-  background-color: var(--off_black) !important;
-  box-shadow: 10px 5px 5px var(--nav_grey);
+  background-color: var(--nav_grey);
+  /* box-shadow: 10px 5px 5px var(--hover_grey); */
 }
 
 .card.media-element > .card-img {
