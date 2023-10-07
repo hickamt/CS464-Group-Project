@@ -1,4 +1,9 @@
-/* Common Grid Item Styles */
+.navbar,
+.sidebar,
+.main-header,
+.main-footer {
+  background-color: var(--nav_grey);
+}
 
 .main-header {
   grid-area: header;
@@ -6,11 +11,21 @@
 
 .main-view {
   grid-area: main;
-  /* max-width: 70%; */
 }
 
 .sidebar {
   grid-area: sidebar;
+}
+
+.sidebar .card-btn {
+  width: 100%;
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+}
+
+.sidebar:hover .card-btn:hover {
+  background-color: var(--hover_grey);
 }
 
 .main-footer {

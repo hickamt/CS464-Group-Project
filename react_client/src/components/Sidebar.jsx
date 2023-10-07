@@ -3,24 +3,24 @@
 // Sidbar setup for testing
 export default function Sidebar({ switchComponentView }) {
   return (
-    <div className="sidebar bg-dark rounded text-center">
+    <div className="sidebar rounded text-center">
       {/* <p className="fs-4">Sidebar</p> */}
       <section className="sidebar-main-view">
         <p className="fs-6 mt-1">Main View</p>
         <button
-          className="card-btn rounded bg-primary text-light m-1"
+          className="card-btn rounded m-1"
           value="card"
           onClick={(e) => switchComponentView(e, e.target.value)}>
           Card
         </button>
         <button
-          className="card-btn rounded bg-primary text-light m-1"
+          className="card-btn rounded m-1"
           value="chart"
           onClick={(e) => switchComponentView(e, e.target.value)}>
           Chart
         </button>
         <button
-          className="card-btn rounded bg-primary text-light m-1"
+          className="card-btn rounded m-1"
           value="table"
           onClick={(e) => switchComponentView(e, e.target.value)}>
           Table

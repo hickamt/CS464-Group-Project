@@ -2,27 +2,18 @@
   box-sizing: border-box;
 }
 
-/* CUSTOM GLOBAL COLORS */
+/* GLOBAL COLOR SCHEME */
 :root {
-  --primay: ; /* blue */
-  --secondary: ; /* grey */
-  --success: ; /* green */
-  --danger: ; /* red */
-  --warning: ; /* yellow */
-  --info: ; /* neon-blue */
-  --light: ; /* #f0f0f0 */
-  --body: ; /* #212529 */
-  --black: ; /* #090909 */
-
-  --off_black: #090909;
-  --nav_grey: #212529;
-  --white: #f0f0f0;
-  --light_blue: #bcf4f7;
-  --blue: #50889d;
-  --slate_grey: #778899;
-
-  --lcw_bg: #00050f;
-  --lcw-blue-bg: #58c7c5;
+  /* --primary: ;  blue */
+  /* --secondary: ;  grey */
+  /* --success: ;  green */
+  /* --danger: ;  red */
+  /* --warning: ;  yellow */
+  /* --info: ;  neon-blue */
+  --light: #0f0f0f;
+  --dark: #010409;
+  --body: #212529; /* #212529 */
+  --black:  #090909 ;/* #090909 */
 }
 
 #root {
@@ -35,7 +26,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--lcw_bg);
+  background-color: var(--off_black);
   background-repeat: no-repeat;
   color: var(--white);
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
