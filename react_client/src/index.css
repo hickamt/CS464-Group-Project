@@ -2,21 +2,20 @@
   box-sizing: border-box;
 }
 
-/* CUSTOM GLOBAL COLORS */
+/* GLOBAL COLOR SCHEME */
 :root {
-  --off_black: #090909;
-  --nav_grey: #212529;
+  --off_black: #010409;
+  --nav_grey: #0a0c10;
+  --hover_grey: #778899;
   --white: #f0f0f0;
-  --light_blue: #bcf4f7;
-  --blue: #50889d;
-  --slate_grey: #778899;
 
+  --blue: #50889d;
   --lcw_bg: #00050f;
   --lcw-blue-bg: #58c7c5;
 }
 
 #root {
-  background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg");
+  /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
   background-size: cover;
   padding-bottom: 7em;
   min-height: 35rem;

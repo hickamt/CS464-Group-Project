@@ -33,12 +33,12 @@ function Main() {
   return (
     <>
       <div className="dashboard-container mt-3">
-        <div className="main-header bg-dark rounded justify-content-center">
+        <div className="main-header rounded justify-content-center">
           <Header />
         </div>
         <div className="main-view">{mainView}</div>
         <Sidebar switchComponentView={switchComponentView} />
-        <div className="main-footer bg-dark rounded">
+        <div className="main-footer rounded">
           <Footer />
         </div>
       </div>

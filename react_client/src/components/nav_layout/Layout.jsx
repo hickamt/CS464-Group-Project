@@ -25,7 +25,7 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar sticky-top navbar-expand-md navbar-dark">
         <div className="container-fluid">
           <Link className="nav-link" to="/">
             <img
