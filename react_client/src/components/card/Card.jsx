@@ -15,7 +15,7 @@ export default function ComponentOne() {
     <>
       <h1 className="card-title d-none">Crypto Assets</h1>
       <div className="card-container">
-        <Row className="media-scroll snaps-inline mt-2">
+        <Row className="media-cards">
           {Array.from({ length: 12 }).map((_, index) => (
             <Col key={index}>
               <Card className="media-element">

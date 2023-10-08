@@ -34,12 +34,13 @@
 }
 
 .dashboard-container {
-  max-width: 100%;
-  overflow-x: hidden;
   display: grid;
-  gap: 10px;
-  grid-template-columns: 7% auto;
-  grid-template-rows: auto;
+  max-width: 100%;
+  /* overflow: scroll; */
+  /* overflow-x: hidden; */
+  gap: 1rem;
+  grid-template-columns: 10fr 90fr;
+  /* grid-template-rows: auto; */
   grid-template-areas:
     "sidebar header"
     "sidebar main"

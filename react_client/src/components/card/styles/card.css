@@ -1,33 +1,37 @@
 /* NetFlix Style Slider */
 /* npm library: https://www.npmjs.com/package/netslider */
 
-.row.media-scroll {
-  --_spacer: 0.5rem;
-  display: grid;
-  gap: var(--_spacer);
-  grid-auto-flow: column;
-  /* grid-auto-columns to adjust size of each Card */
-  grid-auto-columns: 13%;
-  padding: 0 var(--_spacer) var(--_spacer);
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
+.card-container {
+}
+
+.row.media-cards {
+  grid-auto-columns: 1fr ;
+  max-width: 100%; 
+  min-width: 10%;
+  gap: 1rem;
+}
+
+.row > .col {
+  background-color: var(--primary);
+  border: 1px solid var(--light);
 }
 
 .card.media-element {
-  display: grid;
-  grid-template-rows: min-content;
-  gap: var(--_spacer);
-  padding: var(--_spacer);
-  background-color: var(--nav_grey);
-  /* box-shadow: 10px 5px 5px var(--hover_grey); */
+  border: 1px solid var(--light);
+  background-color: var(--black);
 }
 
-.card.media-element > .card-img {
-  inline-size: 70%;
-  margin: 0 auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+.card-img {
+  border: 1px solid var(--light);
 }
+
+
+
+
+
+
+
+
 
 /* INNER Card.Text Grid Styles */
 .value-type {
@@ -39,17 +43,15 @@
 }
 
 .card-grid {
+  border: 1px solid var(--light);
   display: grid;
-  grid-template-columns: 15% 40% 5% 40%;
+  max-width: 100%;
+  min-width: 1px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "... left ... right";
+  grid-template-areas: "left right";
 }
 
 .card-text {
   margin: 0;
-}
-
-.card-container .left-arrow,
-.card-container .right-arrow {
-  justify-content: flex-start;
 }
