@@ -21,10 +21,10 @@ export default function ComponentOne() {
         {Array.from({ length: 12 }).map((_, index) => (
           <Card key={index} className="media-card ">
             <Card.Img
-              className="card-imgi w-50 mx-auto pt-2"
+              className="card-img mx-auto"
               alt="cryptocurrency"
               variant="top"
-              src={getCryptoIcon("btc")}
+              src={getCryptoIcon("eth")}
             />
             <Card.Body className="">
               <div className="card-grid justify-content-center">
