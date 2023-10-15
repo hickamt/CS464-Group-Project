@@ -4,6 +4,8 @@
  */
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
+import { useEffect, useState } from "react";
+import expressQueryAPI from "../../api/expressQueryAPI";
 
 // CSS Styles
 import "./styles/card.css";
@@ -14,43 +16,57 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
 };
 
 export default function ComponentOne() {
+  const [assetData, setAssetData] = useState([]);
+  const [isData, setIsData] = useState(false); // [false, true]
+  const [animation, setAnimation] = useState(false);
+
+  // call expressQueryAPI() to fetch data from server once
+  useEffect(() => {
+    setAnimation(true);
+    expressQueryAPI("remaining", setAssetData, setIsData, setAnimation);
+  }, []);
+
   return (
     <>
-      <h1 className="card-title d-none">Crypto Assets</h1>
-      <Row className="media-row d-flex flex-nowrap overflow-scroll">
-        {Array.from({ length: 12 }).map((_, index) => (
-          <Card key={index} className="media-card ">
-            <Card.Img
-              className="card-img mx-auto"
-              alt="cryptocurrency"
-              variant="top"
-              src={getCryptoIcon("eth")}
-            />
-            <Card.Body className="">
-              <div className="card-grid">
-                <div className="value-type mx-auto">
-                  <p className="card-text">Asset</p>
-                  <p className="card-text">Qty</p>
-                  <p className="card-text">Spot</p>
-                  <p className="card-text">Value</p>
-                  <p className="card-text">Day</p>
-                  <p className="card-text">Week</p>
-                  <p className="card-text">Month</p>
-                </div>
-                <div className="value mx-auto">
-                  <p className="card-text">BTC</p>
-                  <p className="card-text">1.0000</p>
-                  <p className="card-text">$ 1.12</p>
-                  <p className="card-text">$ 2.24</p>
-                  <p className="card-text">1.32%</p>
-                  <p className="card-text">0.32%</p>
-                  <p className="card-text">0.01%</p>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        ))}
-      </Row>
+      {isData && (
+        <>
+          <h1 className="card-title d-none">Crypto Assets</h1>
+          <Row className="media-row d-flex flex-nowrap overflow-scroll">
+            {assetData.map((data, index) => (
+              <Card key={index} className="media-card ">
+                <Card.Img
+                  className="card-img mx-auto"
+                  alt="cryptocurrency"
+                  variant="top"
+                  src={getCryptoIcon(data.asset)}
+                />
+                <Card.Body className="">
+                  <div className="card-grid">
+                    <div className="value-type mx-auto">
+                      <p className="card-text">Asset</p>
+                      <p className="card-text">Qty</p>
+                      <p className="card-text">Spot</p>
+                      <p className="card-text">Value</p>
+                      <p className="card-text">Day</p>
+                      <p className="card-text">Week</p>
+                      <p className="card-text">Month</p>
+                    </div>
+                    <div className="value mx-auto">
+                      <p className="card-text">{data.asset.toUpperCase()}</p>
+                      <p className="card-text">{Number.parseFloat(data.remaining).toFixed(3)}</p>
+                      <p className="card-text">$ 1.12</p>
+                      <p className="card-text">$ 2.24</p>
+                      <p className="card-text">1.32%</p>
+                      <p className="card-text">0.32%</p>
+                      <p className="card-text">0.01%</p>
+                    </div>
+                  </div>
+                </Card.Body>
+              </Card>
+            ))}
+          </Row>
+        </>
+      )}
     </>
   );
 }

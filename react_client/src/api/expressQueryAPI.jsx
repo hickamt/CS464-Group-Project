@@ -36,9 +36,12 @@ export default async function expressQueryAPI(
         },
       })
       .then((response) => {
-        setData(response.data);
+        setData(
+          response.data.sort((a, b) => b.remaining - a.remaining)
+        );
         setIsData(true);
         setAnimation(false);
+        console.log("Response: ", response.data);
       })
       .catch((error) => {
         console.error(`Error: unable to fetch ${query} from server`, error);
