@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
+// import react animation bars
 
 // CSS Styles
 import "./styles/card.css";
