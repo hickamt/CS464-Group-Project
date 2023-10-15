@@ -21,6 +21,7 @@
 
 .sidebar .card-btn {
   width: 100%;
+  min-width: 5em;
   background-color: transparent;
   color: var(--light);
   border: none;
@@ -37,9 +38,9 @@
 .dashboard-container {
   display: grid;
   padding: 0 1em;
-  /* overflow: scroll; */
+  overflow: scroll;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   gap: 1rem;
   grid-template-columns: 10fr 90fr;
   grid-template-areas:

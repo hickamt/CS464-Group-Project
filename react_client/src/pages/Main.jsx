@@ -36,7 +36,7 @@ function Main() {
         <div className="main-header rounded justify-content-center">
           <Header />
         </div>
-        <div className="main-view">{mainView}</div>
+        <div className="main-view rounded">{mainView}</div>
         <Sidebar switchComponentView={switchComponentView} />
         <div className="main-footer rounded">
           <Footer />
