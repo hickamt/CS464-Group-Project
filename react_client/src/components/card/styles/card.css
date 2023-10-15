@@ -10,7 +10,10 @@
 }
 
 .media-row {
+  /* max-width ensures that in main view all cards are seen */
+  /* max-width: 90%; */
   gap: 1rem;
+
 }
 
 .card.media-card {

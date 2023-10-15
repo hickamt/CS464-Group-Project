@@ -15,7 +15,7 @@ export default function Header() {
           src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
     </Helmet>
     <div
-      className="livecoinwatch-widget-5"
+      className="livecoinwatch-widget-5 mx-auto"
       lcw-base="USD"
       lcw-color-tx="#ffffff"
       lcw-marquee-1="coins"

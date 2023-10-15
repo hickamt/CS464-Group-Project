@@ -27,7 +27,7 @@ export default function ComponentOne() {
               src={getCryptoIcon("eth")}
             />
             <Card.Body className="">
-              <div className="card-grid justify-content-center">
+              <div className="card-grid">
                 <div className="value-type mx-auto">
                   <p className="card-text">Asset</p>
                   <p className="card-text">Qty</p>

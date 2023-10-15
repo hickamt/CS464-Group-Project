@@ -33,7 +33,7 @@ function Main() {
   return (
     <>
       <div className="dashboard-container mt-3">
-        <div className="main-header rounded justify-content-center">
+        <div className="main-header rounded">
           <Header />
         </div>
         <div className="main-view rounded">{mainView}</div>
