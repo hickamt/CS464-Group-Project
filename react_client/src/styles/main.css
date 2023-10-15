@@ -12,6 +12,7 @@
 
 .main-view {
   grid-area: main;
+  padding: 1em;
 }
 
 .sidebar {
@@ -35,12 +36,12 @@
 
 .dashboard-container {
   display: grid;
-  max-width: 100%;
+  padding: 0 1em;
   /* overflow: scroll; */
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
+  overflow-y: hidden;
   gap: 1rem;
   grid-template-columns: 10fr 90fr;
-  /* grid-template-rows: auto; */
   grid-template-areas:
     "sidebar header"
     "sidebar main"

@@ -1,39 +1,18 @@
 /* NetFlix Style Slider */
 /* npm library: https://www.npmjs.com/package/netslider */
 
-.card-container {
-}
-
-.row.media-cards {
-  grid-auto-columns: 1fr ;
-  max-width: 100%; 
-  min-width: 10%;
+.media-row {
   gap: 1rem;
 }
 
-.row > .col {
-  background-color: var(--primary);
-  border: 1px solid var(--light);
-}
-
-.card.media-element {
-  border: 1px solid var(--light);
+.card.media-card {
+  max-width: 15em;
   background-color: var(--black);
+  border-radius: 1rem;
 }
-
-.card-img {
-  border: 1px solid var(--light);
-}
-
-
-
-
-
-
-
-
 
 /* INNER Card.Text Grid Styles */
+
 .value-type {
   grid-area: left;
 }
@@ -43,7 +22,6 @@
 }
 
 .card-grid {
-  border: 1px solid var(--light);
   display: grid;
   max-width: 100%;
   min-width: 1px;
