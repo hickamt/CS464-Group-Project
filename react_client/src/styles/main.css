@@ -17,11 +17,11 @@
 
 .sidebar {
   grid-area: sidebar;
+  width: 7rem;
 }
 
 .sidebar .card-btn {
-  width: 100%;
-  min-width: 5em;
+  width: 5rem;
   background-color: transparent;
   color: var(--light);
   border: none;

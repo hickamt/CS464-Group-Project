@@ -41,6 +41,12 @@ function p_className(value) {
   }
 }
 
+const sortArray = (array) => {
+  return array.sort((a, b) => {
+    return b.value - a.value;
+  })
+}
+
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
@@ -64,7 +70,7 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setData(temp);
+  setData(sortArray(temp));
 };
 
 export default function ComponentOne() {
@@ -126,9 +132,9 @@ export default function ComponentOne() {
                           <p className="card-text">
                             $ {Number.parseFloat(data.value).toFixed(3)}
                           </p>
-                          <p className={p_className(data.day)}>{Number.parseFloat(data.day).toFixed(3)}</p>
-                          <p className={p_className(data.week)}>{Number.parseFloat(data.week).toFixed(3)}</p>
-                          <p className={p_className(data.month)}>{Number.parseFloat(data.month).toFixed(3)}</p>
+                          <p className={p_className(data.day)}>{Number.parseFloat(data.day).toFixed(3)}%</p>
+                          <p className={p_className(data.week)}>{Number.parseFloat(data.week).toFixed(3)}%</p>
+                          <p className={p_className(data.month)}>{Number.parseFloat(data.month).toFixed(3)}%</p>
                         </div>
                       </div>
                     </Card.Body>

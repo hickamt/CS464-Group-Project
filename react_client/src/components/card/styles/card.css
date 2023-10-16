@@ -16,8 +16,8 @@
 
 }
 
-.card.media-card {
-  max-width: 13em;
+.media-card {
+  max-width: 15em;
   background-color: var(--dark);
   border-radius: 1rem;
   border: 1px solid var(--body);
