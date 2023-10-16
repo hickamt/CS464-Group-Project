@@ -4,12 +4,12 @@
  */
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
+import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import ReactLoading from "react-loading";
 // CSS Styles
 import "./styles/card.css";
-import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 
 // Remember to abstract spin animation to module file
 const spinAnimation = function reactSpinLoadingAnimation() {
@@ -29,31 +29,31 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
   return `https://lcw.nyc3.cdn.digitaloceanspaces.com/production/currencies/64/${asset}.png`;
 };
 
-// const combineData = function combineDataWithCryptoData(cryptoData, assetData) {
-//   return assetData.map((data, index) => {
-//     const crypto = cryptoData.find(data.asset);
-//     data.spot = crypto.price;
-//     data.value = data.remaining * crypto.price;
-//     // then, include the daily change % from cryptoData of day, week, month
-//     return { ...data, ...cryptoData[index] };
-//   });
-// };
+const combineData = function combineDataWithCryptoData(
+  cryptoData,
+  assetData,
+  setCombinedData
+) {
+  let temp = [];
+  assetData.map((data) => {
+    console.log("data: ", data);
+    // const crypto = cryptoData.find(data.asset);
+    // data.spot = crypto.rate;
+    // data.value = data.remaining * crypto.rate;
+    // temp.push(data);
+    // then, include the daily change % from cryptoData of day, week, month
+  });
+  // console.log("temp: ", temp);
+  // setCombinedData(temp);
+};
+
 
 export default function ComponentOne() {
   const [assetData, setAssetData] = useState([]);
   const [isData, setIsData] = useState(false); // [false, true]
   const [animation, setAnimation] = useState(true); // [false, true
-
   const [cryptoData, setCryptoData] = useState([]); // [false, true]
-
-  // call expressQueryAPI() to fetch data from server once
-  useEffect(() => {
-    setAnimation(true);
-    expressQueryAPI("remaining", setAssetData, setIsData, setAnimation);
-    lcwCryptoAPI(setCryptoData);
-  }, []);
-
-  {isData && console.log("CryptoData: ", cryptoData)}
+  const [combinedData, setCombinedData] = useState([]); // [false, true]
 
   return (
     <>

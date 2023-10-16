@@ -29,7 +29,7 @@ const postQuery = (req, res) => {
       console.log("Post Query Purchases: ", purchases);
       return res.status(200).json([...purchases]);
     case "remaining":
-      console.log("Post Query Remaining: ", remaining);
+      // console.log("Post Query Remaining: ", remaining);
       return res.status(200).json([...remaining]);
     case "sales":
       console.log("Post Query Sales: ", sales);

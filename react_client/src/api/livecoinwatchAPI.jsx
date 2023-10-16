@@ -8,41 +8,6 @@ import axios from "axios";
   See pages 25 and 26 of Learning REACT textbook (O'Reilly 2nd Edition)
 */
 
-// export default function lcwCryptoAPI(setLCWData) {
-//   console.log("Inside lcwCryptoAPI() function")
-//   return fetch(new Request("https://api.livecoinwatch.com/coins/map"), {
-//     method: "POST",
-//     headers: new Headers({
-//       "content-type": "application/json",
-//       "x-api-key": import.meta.env.VITE_COINWATCH_API_KEY,
-//     }),
-//     body: JSON.stringify({
-//       codes: ["BNB", "BTC", "DOGE", "DOT", "ETH", "LUNC", "USDC", "USDT"],
-//       // codes: assets,
-//       currency: "USD",
-//       sort: "rank",
-//       order: "ascending",
-//       offset: 0,
-//       limit: 0,
-//       meta: false,
-//     }),
-//   }).then(async (response) => {
-//     const isJson = response.headers
-//       .get("content-type")
-//       ?.includes("application/json");
-//     const data = isJson && (await response.json());
-//     setLCWData(data);
-//     console.table("LCW Crypto Data: ", data);
-
-//     if (!response.ok) {
-//       const error = (data && data.message) || response.status;
-//       return Promise.reject(error);
-//     }
-//     setLCWData(data);
-//     return data;
-//   });
-// }
-
 export default async function lcwCryptoAPI(setLCWData) {
   try {
     await axios
@@ -50,7 +15,8 @@ export default async function lcwCryptoAPI(setLCWData) {
         method: "POST",
         headers: new Headers({
           "content-type": "application/json",
-          "x-api-key": import.meta.env.VITE_COINWATCH_API_KEY,
+          // "x-api-key": import.meta.env.VITE_COINWATCH_API_KEY
+          "x-api-key": "31621381-6652-4c92-a1c1-248823f4557f",
         }),
         body: JSON.stringify({
           codes: ["BNB", "BTC", "DOGE", "DOT", "ETH", "LUNC", "USDC", "USDT"],

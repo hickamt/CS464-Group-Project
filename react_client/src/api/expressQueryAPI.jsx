@@ -41,7 +41,7 @@ export default async function expressQueryAPI(
         );
         setIsData(true);
         setAnimation(false);
-        // console.log("Response: ", response.data);
+        console.log("Response: ", response.data);
       })
       .catch((error) => {
         console.error(`Error: unable to fetch ${query} from server`, error);
