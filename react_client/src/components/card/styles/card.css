@@ -17,7 +17,7 @@
 }
 
 .card.media-card {
-  max-width: 15em;
+  max-width: 13em;
   background-color: var(--dark);
   border-radius: 1rem;
   border: 1px solid var(--body);
@@ -47,7 +47,12 @@
   margin: 0;
 }
 
-.card-img:hover {
-  transform: scale(1.1);
+.media-card:hover {
+  transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
 }
+
+/* .card-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+} */
