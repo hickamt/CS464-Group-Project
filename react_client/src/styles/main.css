@@ -42,7 +42,7 @@
   overflow-x: hidden;
   /* overflow-y: hidden; */
   gap: 1rem;
-  grid-template-columns: 10fr 90fr;
+  grid-template-columns: 5fr 95fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main"

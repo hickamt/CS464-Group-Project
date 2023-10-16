@@ -29,21 +29,27 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
   return `https://lcw.nyc3.cdn.digitaloceanspaces.com/production/currencies/64/${asset}.png`;
 };
 
-function p_className(value) {
+const textColor = function bootstrapTextColor(value) {
   console.log("Percentage: ", value);
 
   if (value > 0) {
-    return "card-text text-success";
+    return "text-success";
   } else if (value < 0) {
-    return "card-text text-danger";
+    return "text-danger";
   } else {
-    return "card-text text-light";
+    return "text-light";
   }
 }
 
-const sortArray = (array) => {
+const sortHighLow = function sortArrayGreatestToLeast(array){
   return array.sort((a, b) => {
     return b.value - a.value;
+  })
+}
+
+const sortLowHigh = function sortArrayLeastToGreatest(array){
+  return array.sort((a, b) => {
+    return a.value - b.value;
   })
 }
 
@@ -70,7 +76,7 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setData(sortArray(temp));
+  setData(sortHighLow(temp));
 };
 
 export default function ComponentOne() {
@@ -132,9 +138,9 @@ export default function ComponentOne() {
                           <p className="card-text">
                             $ {Number.parseFloat(data.value).toFixed(3)}
                           </p>
-                          <p className={p_className(data.day)}>{Number.parseFloat(data.day).toFixed(3)}%</p>
-                          <p className={p_className(data.week)}>{Number.parseFloat(data.week).toFixed(3)}%</p>
-                          <p className={p_className(data.month)}>{Number.parseFloat(data.month).toFixed(3)}%</p>
+                          <p className={`card-text ${textColor(data.day)}`}>{Number.parseFloat(data.day).toFixed(3)}%</p>
+                          <p className={`card-text ${textColor(data.week)}`}>{Number.parseFloat(data.week).toFixed(3)}%</p>
+                          <p className={`card-text ${textColor(data.month)}`}>{Number.parseFloat(data.month).toFixed(3)}%</p>
                         </div>
                       </div>
                     </Card.Body>
