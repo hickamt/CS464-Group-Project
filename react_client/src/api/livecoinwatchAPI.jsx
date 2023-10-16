@@ -45,7 +45,6 @@ const lcwCryptoAPI = async () => {
         const error = (data && data.message) || response.status;
         return Promise.reject(error);
       }
-      console.log("LiveCoinWatch Data: ", data);
       return [...data];
     });
   } catch (err) {

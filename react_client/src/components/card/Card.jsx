@@ -10,6 +10,7 @@ import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import ReactLoading from "react-loading";
 // CSS Styles
 import "./styles/card.css";
+import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 // Remember to abstract spin animation to module file
 const spinAnimation = function reactSpinLoadingAnimation() {
@@ -30,7 +31,6 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
 };
 
 const textColor = function bootstrapTextColor(value) {
-  console.log("Percentage: ", value);
 
   if (value > 0) {
     return "text-success";
@@ -39,19 +39,19 @@ const textColor = function bootstrapTextColor(value) {
   } else {
     return "text-light";
   }
-}
+};
 
-const sortHighLow = function sortArrayGreatestToLeast(array){
+const sortHighLow = function sortArrayGreatestToLeast(array) {
   return array.sort((a, b) => {
     return b.value - a.value;
-  })
-}
+  });
+};
 
-const sortLowHigh = function sortArrayLeastToGreatest(array){
-  return array.sort((a, b) => {
-    return a.value - b.value;
-  })
-}
+// const sortLowHigh = function sortArrayLeastToGreatest(array) {
+//   return array.sort((a, b) => {
+//     return a.value - b.value;
+//   });
+// };
 
 const combineData = function combineDataWithCryptoData(
   userData,
@@ -81,6 +81,7 @@ const combineData = function combineDataWithCryptoData(
 
 export default function ComponentOne() {
   const [data, setData] = useState([]);
+  const [expressData, setExpressData] = useState([]); // [false, true]
   const [isData, setIsData] = useState(false); // [false, true]
   const [animation, setAnimation] = useState(true); // [false, true
 
@@ -88,6 +89,7 @@ export default function ComponentOne() {
     async function fetchData() {
       // You can await here
       const userData = await expressQueryAPI("remaining");
+      setExpressData(userData); 
       const cryptoData = await lcwCryptoAPI();
       if (userData && cryptoData) {
         combineData(userData, cryptoData, setData);
@@ -95,8 +97,19 @@ export default function ComponentOne() {
         setAnimation(false);
       }
     }
+
     fetchData();
   }, []);
+
+  setTimeout( async () => {
+    // console.log("Remaining Credits @ LCS: ", lcwRemainingCredits())
+    const cryptoData = await lcwCryptoAPI();
+    if (expressData && cryptoData) {
+      combineData(expressData, cryptoData, setData);
+      setIsData(true);
+      setAnimation(false);
+    }
+  }, 60000);
 
   return (
     <>
@@ -121,6 +134,7 @@ export default function ComponentOne() {
                           <p className="card-text">Qty</p>
                           <p className="card-text">Spot</p>
                           <p className="card-text">Value</p>
+                          <p className="card-text">Hour</p>
                           <p className="card-text">Day</p>
                           <p className="card-text">Week</p>
                           <p className="card-text">Month</p>
@@ -138,9 +152,18 @@ export default function ComponentOne() {
                           <p className="card-text">
                             $ {Number.parseFloat(data.value).toFixed(3)}
                           </p>
-                          <p className={`card-text ${textColor(data.day)}`}>{Number.parseFloat(data.day).toFixed(3)}%</p>
-                          <p className={`card-text ${textColor(data.week)}`}>{Number.parseFloat(data.week).toFixed(3)}%</p>
-                          <p className={`card-text ${textColor(data.month)}`}>{Number.parseFloat(data.month).toFixed(3)}%</p>
+                          <p className={`card-text ${textColor(data.hour)}`}>
+                            {Number.parseFloat(data.hour).toFixed(3)}%
+                          </p>
+                          <p className={`card-text ${textColor(data.day)}`}>
+                            {Number.parseFloat(data.day).toFixed(3)}%
+                          </p>
+                          <p className={`card-text ${textColor(data.week)}`}>
+                            {Number.parseFloat(data.week).toFixed(3)}%
+                          </p>
+                          <p className={`card-text ${textColor(data.month)}`}>
+                            {Number.parseFloat(data.month).toFixed(3)}%
+                          </p>
                         </div>
                       </div>
                     </Card.Body>

@@ -19,9 +19,7 @@ import axios from "axios";
 //   }
 // )
 
-export default async function expressQueryAPI(
-  query,
-) {
+export default async function expressQueryAPI(query) {
   try {
     return await axios
       .post("http://localhost:5500/queries", {
@@ -33,7 +31,6 @@ export default async function expressQueryAPI(
         },
       })
       .then((response) => {
-        console.log("Express Response Data: ", response.data);
         return [...response.data];
       })
       .catch((error) => {
