@@ -21,12 +21,9 @@ import axios from "axios";
 
 export default async function expressQueryAPI(
   query,
-  setData,
-  setIsData,
-  setAnimation
 ) {
   try {
-    await axios
+    return await axios
       .post("http://localhost:5500/queries", {
         headers: {
           "Content-Type": "application/json",
@@ -36,12 +33,8 @@ export default async function expressQueryAPI(
         },
       })
       .then((response) => {
-        setData(
-          response.data.sort((a, b) => b.remaining - a.remaining)
-        );
-        setIsData(true);
-        setAnimation(false);
-        console.log("Response: ", response.data);
+        console.log("Express Response Data: ", response.data);
+        return [...response.data];
       })
       .catch((error) => {
         console.error(`Error: unable to fetch ${query} from server`, error);

@@ -4,7 +4,7 @@
  */
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import ReactLoading from "react-loading";
@@ -29,31 +29,62 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
   return `https://lcw.nyc3.cdn.digitaloceanspaces.com/production/currencies/64/${asset}.png`;
 };
 
+function p_className(value) {
+  console.log("Percentage: ", value);
+
+  if (value > 0) {
+    return "card-text text-success";
+  } else if (value < 0) {
+    return "card-text text-danger";
+  } else {
+    return "card-text text-light";
+  }
+}
+
 const combineData = function combineDataWithCryptoData(
+  userData,
   cryptoData,
-  assetData,
-  setCombinedData
+  setData
 ) {
-  let temp = [];
-  assetData.map((data) => {
-    console.log("data: ", data);
-    // const crypto = cryptoData.find(data.asset);
-    // data.spot = crypto.rate;
-    // data.value = data.remaining * crypto.rate;
-    // temp.push(data);
-    // then, include the daily change % from cryptoData of day, week, month
+  const temp = [];
+  userData.map((data) => {
+    const { asset, remaining } = data;
+    const { rate, volume, delta } = cryptoData.find(
+      (data) => data.code.toUpperCase() === asset.toUpperCase()
+    );
+    temp.push({
+      asset: asset,
+      remaining: remaining,
+      spot: rate,
+      value: rate * remaining,
+      volume: volume,
+      day: (delta.day - 1) * 100,
+      hour: (delta.hour - 1) * 100,
+      week: (delta.week - 1) * 100,
+      month: (delta.month - 1) * 100,
+    });
   });
-  // console.log("temp: ", temp);
-  // setCombinedData(temp);
+  setData(temp);
 };
 
-
 export default function ComponentOne() {
-  const [assetData, setAssetData] = useState([]);
+  const [data, setData] = useState([]);
   const [isData, setIsData] = useState(false); // [false, true]
   const [animation, setAnimation] = useState(true); // [false, true
-  const [cryptoData, setCryptoData] = useState([]); // [false, true]
-  const [combinedData, setCombinedData] = useState([]); // [false, true]
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const userData = await expressQueryAPI("remaining");
+      const cryptoData = await lcwCryptoAPI();
+      if (userData && cryptoData) {
+        combineData(userData, cryptoData, setData);
+        setIsData(true);
+        setAnimation(false);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -63,7 +94,7 @@ export default function ComponentOne() {
             <>
               <h1 className="card-title d-none">Crypto Assets</h1>
               <Row className="media-row d-flex flex-nowrap overflow-scroll">
-                {assetData.map((data, index) => (
+                {data.map((data, index) => (
                   <Card key={index} className="media-card ">
                     <Card.Img
                       className="card-img mx-auto"
@@ -89,11 +120,15 @@ export default function ComponentOne() {
                           <p className="card-text">
                             {Number.parseFloat(data.remaining).toFixed(3)}
                           </p>
-                          <p className="card-text">$ 1.12</p>
-                          <p className="card-text">$ 2.24</p>
-                          <p className="card-text">1.32%</p>
-                          <p className="card-text">0.32%</p>
-                          <p className="card-text">0.01%</p>
+                          <p className="card-text">
+                            $ {Number.parseFloat(data.spot).toFixed(3)}
+                          </p>
+                          <p className="card-text">
+                            $ {Number.parseFloat(data.value).toFixed(3)}
+                          </p>
+                          <p className={p_className(data.day)}>{Number.parseFloat(data.day).toFixed(3)}</p>
+                          <p className={p_className(data.week)}>{Number.parseFloat(data.week).toFixed(3)}</p>
+                          <p className={p_className(data.month)}>{Number.parseFloat(data.month).toFixed(3)}</p>
                         </div>
                       </div>
                     </Card.Body>
