@@ -19,9 +19,8 @@
 
 #root {
   /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
+  /* background-image: url("https://www.3dwallpaperarts.com/wp-content/uploads/2021/06/wallpaper-website-001.jpg"); */
   background-size: cover;
-  padding-bottom: 7em;
-  min-height: 35rem;
 }
 
 body {
@@ -41,14 +40,23 @@ body {
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
 @media screen and (min-width: 1024px){
 /*Style*/
+#root {
+  min-height: 60rem;
+}
 }
 
 /*###Tablet(medium)###*/
 @media screen and (min-width : 768px) and (max-width : 1023px){
 /*Style*/
+#root {
+  min-height: 40rem;
+}
 }
 
 /*### Smartphones (portrait and landscape)(small)### */
 @media screen and (min-width : 0px) and (max-width : 767px){
 /*Style*/
+#root {
+  min-height: 25rem;
+}
 }

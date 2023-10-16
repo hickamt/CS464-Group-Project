@@ -19,7 +19,23 @@ const coinListRequestOptions = {
     // "x-api-key": import.meta.env.VITE_LCW_API_KEY,
   }),
   body: JSON.stringify({
-    codes: ["AMP", "BAL", "BNB", "BOND", "BTC", "CLV", "COMP", "DOGE", "DOT", "ETH", "FET", "FORTH", "LUNC", "USDC", "USDT"],
+    codes: [
+      "AMP",
+      "BAL",
+      "BNB",
+      "BOND",
+      "BTC",
+      "CLV",
+      "COMP",
+      "DOGE",
+      "DOT",
+      "ETH",
+      "FET",
+      "FORTH",
+      "LUNC",
+      "USDC",
+      "USDT",
+    ],
     // codes: assets,
     currency: "USD",
     sort: "rank",
@@ -45,6 +61,7 @@ const lcwCryptoAPI = async () => {
         const error = (data && data.message) || response.status;
         return Promise.reject(error);
       }
+      // console.table(data[0].delta)
       return [...data];
     });
   } catch (err) {
@@ -52,37 +69,5 @@ const lcwCryptoAPI = async () => {
     return err;
   }
 };
-
-// export default async function lcwCryptoAPI() {
-//   try {
-//     await axios
-//       .post("https://api.livecoinwatch.com/coins/map", {
-//         method: "POST",
-//         headers: {
-//           "content-type": "application/json",
-//           "x-api-key": import.meta.env.VITE_LCW_API_KEY,
-//         },
-//         body: JSON.stringify({
-//           codes: ["BNB", "BTC", "DOGE", "DOT", "ETH", "LUNC", "USDC", "USDT"],
-//           // codes: assets,
-//           currency: "USD",
-//           sort: "rank",
-//           order: "ascending",
-//           offset: 0,
-//           limit: 0,
-//           meta: false,
-//         }),
-//       })
-//       .then((response) => {
-//         console.table("LCW Crypto Data: ", response.data);
-//         return [...response.data];
-//       })
-//       .catch((error) => {
-//         console.error(`Error: unable to fetch Crypto Data from server`, error);
-//       });
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// }
 
 export default lcwCryptoAPI;

@@ -87,7 +87,6 @@ export default function ComponentOne() {
   const [expressData, setExpressData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [animation, setAnimation] = useState(true);
-  const [queryTime, setQueryTime] = useState(60000); // 60000 = 1 minute
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -109,10 +108,8 @@ export default function ComponentOne() {
     const cryptoData = await lcwCryptoAPI();
     if (expressData && cryptoData) {
       combineData(expressData, cryptoData, setData);
-      // setIsData(true);
-      // setAnimation(false);
     }
-  }, queryTime);
+  }, 60000);
 
   return (
     <>

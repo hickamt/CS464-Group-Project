@@ -185,9 +185,36 @@ function yourClientQueryFunction(query) {
 }
 ```
 
+## LiveCoinWatch API Data
+
+- LiveCoinWatch /coins/map object
+
+```js
+[
+  {
+    code: 'BTC',
+    rate: 28524.08136212158,
+    volume: 20388974594,
+    cap: 556665275333,
+    delta: {
+     hour: 1.0011,
+     day: 1.0472,
+     week: 1.0308,
+     quarter: 0.9533,
+     year: 1.474
+    }
+  },
+  {
+    . . .
+  },
+. . .
+]
+```
+
 ## Git General Commands
 
 - git add and git commit
+
 ```bash
 $ git add <fileName> && git commit -m "message"
 
@@ -230,9 +257,11 @@ $ git diff
 # use 'q' to exit and 'page down' to view more
 $ git log
 ```
+
 ## Git Pull
 
 When you are working on another branch many changes may have occured. You should request a pull of the master/main to update your working branch.
+
 ```bash
 # From your working branch: git update from main
 $ git pull origin main
@@ -241,6 +270,7 @@ $ git pull origin main
 ## Git Merge
 
 Merge two branches (i.e. main and component-branch)
+
 ```bash
 # in 'main' branch merging with 'component-branch'
 $ git merge component-branch
@@ -251,6 +281,7 @@ Delete the branch you have merged with, if you are done with the branch, in GitH
 ## Git Errors
 
 When switching between branch and origin main an error like the following may occur:
+
 ```bash
 Switched to branch 'main'
 Your branch and 'origin/main' have diverged,
@@ -259,6 +290,7 @@ and have 2 and 1 different commits each, respectively.
 ```
 
 Resolved the issue using
+
 ```bash
 # stash any changes made first
 $ git stash
@@ -266,4 +298,5 @@ $ git stash
 # fetch origin
 $ git fetch origin
 ```
-I did not have to use ```git reset -hard origin main``` and successfully completed git add . && git commit -m "message" and git push.
+
+I did not have to use `git reset -hard origin main` and successfully completed git add . && git commit -m "message" and git push.
