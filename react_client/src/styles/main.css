@@ -33,6 +33,7 @@
 
 .main-footer {
   grid-area: footer;
+  padding: 1em;
 }
 
 .dashboard-container {

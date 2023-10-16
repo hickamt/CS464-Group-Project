@@ -10,9 +10,9 @@ import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import ReactLoading from "react-loading";
 // CSS Styles
 import "./styles/card.css";
-import lcwRemainingCredits from "../../api/lcwRemainingCredits";
+// import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
-// Remember to abstract spin animation to module file
+// Loading animation (GH)
 const spinAnimation = function reactSpinLoadingAnimation() {
   return (
     <ReactLoading
@@ -30,8 +30,8 @@ const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
   return `https://lcw.nyc3.cdn.digitaloceanspaces.com/production/currencies/64/${asset}.png`;
 };
 
+// Change text color based on value (GH)
 const textColor = function bootstrapTextColor(value) {
-
   if (value > 0) {
     return "text-success";
   } else if (value < 0) {
@@ -41,18 +41,21 @@ const textColor = function bootstrapTextColor(value) {
   }
 };
 
+// Sort array from greatest to least (GH)
 const sortHighLow = function sortArrayGreatestToLeast(array) {
   return array.sort((a, b) => {
     return b.value - a.value;
   });
 };
 
+// Sort array from least to greatest (GH)
 // const sortLowHigh = function sortArrayLeastToGreatest(array) {
 //   return array.sort((a, b) => {
 //     return a.value - b.value;
 //   });
 // };
 
+// Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
@@ -81,15 +84,15 @@ const combineData = function combineDataWithCryptoData(
 
 export default function ComponentOne() {
   const [data, setData] = useState([]);
-  const [expressData, setExpressData] = useState([]); // [false, true]
-  const [isData, setIsData] = useState(false); // [false, true]
-  const [animation, setAnimation] = useState(true); // [false, true
+  const [expressData, setExpressData] = useState([]);
+  const [isData, setIsData] = useState(false);
+  const [animation, setAnimation] = useState(true);
 
+  // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
     async function fetchData() {
-      // You can await here
       const userData = await expressQueryAPI("remaining");
-      setExpressData(userData); 
+      setExpressData(userData);
       const cryptoData = await lcwCryptoAPI();
       if (userData && cryptoData) {
         combineData(userData, cryptoData, setData);
@@ -97,12 +100,11 @@ export default function ComponentOne() {
         setAnimation(false);
       }
     }
-
     fetchData();
   }, []);
 
-  setTimeout( async () => {
-    // console.log("Remaining Credits @ LCS: ", lcwRemainingCredits())
+  // fetch updated lcwCryptoAPI data every 60 seconds
+  setTimeout(async () => {
     const cryptoData = await lcwCryptoAPI();
     if (expressData && cryptoData) {
       combineData(expressData, cryptoData, setData);
