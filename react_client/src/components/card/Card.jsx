@@ -87,6 +87,7 @@ export default function ComponentOne() {
   const [expressData, setExpressData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [animation, setAnimation] = useState(true);
+  const [queryTime, setQueryTime] = useState(60000); // 60000 = 1 minute
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -108,10 +109,10 @@ export default function ComponentOne() {
     const cryptoData = await lcwCryptoAPI();
     if (expressData && cryptoData) {
       combineData(expressData, cryptoData, setData);
-      setIsData(true);
-      setAnimation(false);
+      // setIsData(true);
+      // setAnimation(false);
     }
-  }, 60000);
+  }, queryTime);
 
   return (
     <>
@@ -130,9 +131,11 @@ export default function ComponentOne() {
                       src={getCryptoIcon(data.asset)}
                     />
                     <Card.Body className="">
+                      <p className="card-text text-center fs-4">
+                        {data.asset.toUpperCase()}
+                      </p>
                       <div className="card-grid">
                         <div className="value-type mx-auto">
-                          <p className="card-text">Asset</p>
                           <p className="card-text">Qty</p>
                           <p className="card-text">Spot</p>
                           <p className="card-text">Value</p>
@@ -142,9 +145,6 @@ export default function ComponentOne() {
                           <p className="card-text">Month</p>
                         </div>
                         <div className="value mx-auto">
-                          <p className="card-text">
-                            {data.asset.toUpperCase()}
-                          </p>
                           <p className="card-text">
                             {Number.parseFloat(data.remaining).toFixed(3)}
                           </p>
