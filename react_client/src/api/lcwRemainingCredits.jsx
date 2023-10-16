@@ -17,7 +17,7 @@ export default async function lcwRemainingCredits() {
       const error = (data && data.message) || response.status;
       return Promise.reject(error);
     }
-    console.table("LiveCoinWatch Remaining Credits: ", data);
+    // console.table("LiveCoinWatch Remaining Credits: ", data);
     return data;
   });
 }
