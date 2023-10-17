@@ -1,8 +1,6 @@
 // LiveCoinWatch Documenation for API Calls and Options:
 // https://livecoinwatch.github.io/lcw-api-docs/?javascript#coinslist
 
-// import axios from "axios";
-
 /*
   NOTE: this should be changed to an Async/Await function
   See pages 25 and 26 of Learning REACT textbook (O'Reilly 2nd Edition)
@@ -14,9 +12,8 @@
 const coinListRequestOptions = {
   method: "POST",
   headers: new Headers({
+    "x-api-key": import.meta.env.VITE_COINWATCH_API_KEY,
     "Content-Type": "application/json",
-    "x-api-key": "31621381-6652-4c92-a1c1-248823f4557f",
-    // "x-api-key": import.meta.env.VITE_LCW_API_KEY,
   }),
   body: JSON.stringify({
     codes: [
