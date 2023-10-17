@@ -8,7 +8,7 @@
 
 .main-header {
   grid-area: header;
-  background-image: url("../assets/grey_abstract.png");
+  background-image: url("../assets/grey_abstract_top.png");
   background-size: cover;
 }
 
@@ -40,7 +40,7 @@
 .main-footer {
   grid-area: footer;
   padding: 1em;
-  background-image: url("../assets/grey_abstract.png");
+  background-image: url("../assets/grey_abstract_bottom.png");
 }
 
 .dashboard-container {
