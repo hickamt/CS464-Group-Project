@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Card from "../components/card/Card";
 import ComponentB from "../components/compt_b/ComponentB";
 import ComponentC from "../components/compt_c/ComponentC";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 function Main() {
   const [mainView, setMainView] = useState("Main View");
@@ -37,7 +38,11 @@ function Main() {
           <Header />
         </div>
 
-        <div className="main-view rounded">{mainView}</div>
+        <div className="main-view rounded">
+          {mainView}
+          <BiLeftArrow className="arrow-left " />
+          <BiRightArrow className="arrow-right " />
+        </div>
 
         <Sidebar switchComponentView={switchComponentView} />
         <div className="main-footer rounded">

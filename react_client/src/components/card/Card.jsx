@@ -131,7 +131,7 @@ export default function ComponentOne() {
         : isData && (
             <>
               <h1 className="card-title d-none">Crypto Assets</h1>
-              <Row className="media-row d-flex flex-nowrap overflow-scroll">
+              <Row className="media-row d-flex flex-nowrap">
                 {data.map((data, index) => (
                   <Card key={index} className="media-card ">
                     <Card.Img
@@ -144,8 +144,7 @@ export default function ComponentOne() {
                       <p className="card-text text-center fs-5">
                         {data.asset.toUpperCase()}
                       </p>
-                      {/* how do I center the content within card-grid */}
-                      <div className="card-grid">
+                      <div className="card-text-body">
                         <div className="value-type">
                           <p className="card-text">Qty</p>
                           <p className="card-text">Spot</p>

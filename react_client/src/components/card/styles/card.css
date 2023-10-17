@@ -15,6 +15,12 @@
 
 .media-row {
   padding: 1rem;
+  overflow: scroll;
+  /* scrollbar-width: none; */
+}
+
+.media-row::-webkit-scrollbar {
+  display: none;
 }
 
 .media-card {
@@ -37,6 +43,7 @@
   display: inline-grid;
   font-size: 13px;
   text-align: end;
+  width: 7em;
 }
 
 .card-text {

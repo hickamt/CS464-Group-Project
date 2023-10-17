@@ -36,6 +36,10 @@ body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .navLogo {
   height: 4em;
   width: 4em;
