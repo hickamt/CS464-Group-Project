@@ -11,9 +11,8 @@
 
 .media-row {
   /* max-width ensures that in main view all cards are seen */
-  /* max-width: 90%; */
-  gap: 1rem;
-
+  /* height: 30rem; */
+  /* gap: 1rem; */
 }
 
 .media-card {
@@ -21,26 +20,29 @@
   background-color: var(--dark);
   border-radius: 1rem;
   border: 1px solid var(--body-light);
-  margin-bottom: 1em;
+  margin: 0.5rem;
 }
 
 /* INNER Card.Text Grid Styles */
 
 .value-type {
-  grid-area: left;
+  /* grid-area: left; */
+  display: inline-grid;
 }
 
 .value {
-  grid-area: right;
+  /* grid-area: right; */
+  display: inline-grid;
 }
 
 .card-grid {
-  display: grid;
-  max-width: 100%;
-  min-width: 1px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "left right";
+  /* display: grid; */
+  /* display: flex; */
+  /* max-width: 100%; */
+  /* min-width: 1px; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: auto; */
+  /* grid-template-areas: "left right"; */
 }
 
 .card-text {

@@ -13,6 +13,7 @@
 }
 
 .main-view {
+  height: 30rem;
   grid-area: main;
   padding: 1em;
   /* background-image: url("../assets/grey_abstract.png"); */
@@ -47,11 +48,9 @@
 
   /* background-image: url("../assets/grey_abstract.png"); */
   display: grid;
-  padding: 0 1em;
-  overflow: scroll;
   overflow-x: hidden;
-  /* overflow-y: hidden; */
-  gap: 1rem;
+  /* overflow: scroll; */
+  gap: 1.5rem;
   grid-template-columns: 5fr 95fr;
   grid-template-areas:
     "sidebar header"
