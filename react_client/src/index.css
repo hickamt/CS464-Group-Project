@@ -5,22 +5,24 @@
 
 /* GLOBAL COLOR SCHEME */
 :root {
-  --primary: blue;            /* blue */
-  --secondary: #272b33;       /* grey */
-  --success: green;           /* green */
-  --danger: red;              /* red */
-  --warning: yellow;          /* yellow */
-  --info: #4d4dff;            /* neon-blue */
-  --light: white;             /* white */
-  --dark: #010409;            /* off black */
-  --body-golden: #150d07;
-  --body-dark: #101010;       /* dark grey */
-  --body-light: #484848;      /* light grey */
+  --primary: blue;      /* blue */
+  --secondary: #272b33; /* grey */
+  --success: green;     /* green */
+  --danger: red;        /* red */
+  --warning: yellow;    /* yellow */
+  --info: #4d4dff;      /* neon-blue */
+  --light: white;       /* white */
+  --dark: #010409;      /* off black */
+  --body-golden: #150d07 ;
+  --body-dark: #101010; /* dark grey */
+  --body-light: #484848;    /* light grey */
   --body-light-gold: #4a4537;
-  --black: #090909;           /* root background black */
+  --black:  #090909 ;   /* root background black */
 }
 
 #root {
+  /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
+  /* background-image: url("https://www.3dwallpaperarts.com/wp-content/uploads/2021/06/wallpaper-website-001.jpg"); */
   background-color: var(--dark);
   background-size: cover;
 }
@@ -44,13 +46,25 @@ body::-webkit-scrollbar {
 }
 
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px){
+/*Style*/
+#root {
+  /* min-height: 60rem; */
+}
 }
 
 /*###Tablet(medium)###*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width : 768px) and (max-width : 1023px){
+/*Style*/
+#root {
+  /* min-height: 40rem; */
+}
 }
 
 /*### Smartphones (portrait and landscape)(small)### */
-@media screen and (min-width: 0px) and (max-width: 767px) {
+@media screen and (min-width : 0px) and (max-width : 767px){
+/*Style*/
+#root {
+  /* min-height: 25rem; */
+}
 }

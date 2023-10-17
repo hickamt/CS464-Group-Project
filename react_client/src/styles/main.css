@@ -51,6 +51,7 @@
 .dashboard-container {
   display: grid;
   overflow-x: hidden;
+  /* overflow: scroll; */
   gap: 1.5rem;
   grid-template-columns: 5fr 95fr;
   grid-template-areas:

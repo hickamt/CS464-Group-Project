@@ -127,19 +127,20 @@ export default function ComponentOne() {
   }, 60000);
 
   const scrollCardLeft = () => {
-    const scrollLeft = (cardRef.current.scrollLeft -= 175); // adjust the scroll value as needed
-    cardRef.current.scrollTo({
-      left: scrollLeft,
+    const sLeft = cardRef.current.scrollLeft -= 175; // adjust the scroll value as needed
+    scrollTo({
+      left: sLeft,
       behavior: "smooth",
-    });
+    })
+
   };
 
   const scrollCardRight = () => {
-    const scrollRight = cardRef.current.scrollLeft + 175;
-    cardRef.current.scrollTo({
-      left: scrollRight,
+    const sRight = cardRef.current.scrollLeft += 175; // adjust the scroll value as needed
+    scrollTo({
+      left: sRight,
       behavior: "smooth",
-    });
+    })
   };
 
   return (
@@ -200,8 +201,11 @@ export default function ComponentOne() {
                   </Card>
                 ))}
               </Row>
-              <BiLeftArrow className="arrow-left" onClick={scrollCardLeft} />
-              <BiRightArrow className="arrow-right" onClick={scrollCardRight} />
+              <BiLeftArrow className="arrow-left " onClick={scrollCardLeft} />
+              <BiRightArrow
+                className="arrow-right "
+                onClick={scrollCardRight}
+              />
             </>
           )}
     </>
