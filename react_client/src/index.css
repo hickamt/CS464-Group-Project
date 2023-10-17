@@ -13,31 +13,32 @@
   --info: #4d4dff;      /* neon-blue */
   --light: white;       /* white */
   --dark: #010409;      /* off black */
-  /* --body-dark: #212529; */
+  --body-golden: #150d07 ;
   --body-dark: #101010; /* dark grey */
   --body-light: #484848;    /* light grey */
+  --body-light-gold: #4a4537;
   --black:  #090909 ;   /* root background black */
 }
 
 #root {
   /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
   /* background-image: url("https://www.3dwallpaperarts.com/wp-content/uploads/2021/06/wallpaper-website-001.jpg"); */
-  background-color: var(--black);
+  background-color: var(--dark);
   background-size: cover;
 }
 
 body {
   margin: 0 auto;
   padding: 0;
-  background-color: var(--black);
+  background-color: var(--dark);
   background-repeat: no-repeat;
   color: var(--light);
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .navLogo {
-  height: 3em;
-  width: 3em;
+  height: 4em;
+  width: 4em;
 }
 
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/

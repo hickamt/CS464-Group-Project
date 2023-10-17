@@ -3,7 +3,7 @@
 
 .card-img {
   max-width: 70%;
-  background-color: var(--body-light);
+  background-color: var(--body-light-gold);
   padding: 1em;
   margin-top: 1em;
   border-radius: 1em;
@@ -19,7 +19,7 @@
   max-width: 15em;
   background-color: var(--dark);
   border-radius: 1rem;
-  border: 1px solid var(--body-light);
+  border: 1px solid var(--body-light-gold);
   margin: 0.5rem;
 }
 

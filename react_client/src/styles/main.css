@@ -3,17 +3,18 @@
 .sidebar,
 .main-header,
 .main-footer {
-  background-color: var(--body-dark);
+  background-color: var(--body-golden);
 }
 
 .main-header {
   grid-area: header;
-  background-image: url("../assets/grey_abstract_top.png");
+  /* background-image: url("../assets/grey_abstract_top.png"); */
+  background-image: url("../assets/golden_abstract_top.png");
   background-size: cover;
 }
 
 .main-view {
-  height: 30rem;
+  min-height: 30rem;
   grid-area: main;
   padding: 1em;
   /* background-image: url("../assets/grey_abstract.png"); */
@@ -23,7 +24,8 @@
 .sidebar {
   grid-area: sidebar;
   width: 7rem;
-  background-image: url("../assets/grey_abstract.png");
+  /* background-image: url("../assets/grey_abstract.png"); */
+  background-image: url("../assets/golden_abstract.png");
 }
 
 .sidebar .card-btn {
@@ -41,7 +43,8 @@
 .main-footer {
   grid-area: footer;
   padding: 1em;
-  background-image: url("../assets/grey_abstract_bottom.png");
+  /* background-image: url("../assets/grey_abstract_bottom.png"); */
+  background-image: url("../assets/golden_abstract_bottom.png");
 }
 
 .dashboard-container {

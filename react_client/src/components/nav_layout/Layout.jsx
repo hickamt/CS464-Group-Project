@@ -29,8 +29,7 @@ const Layout = () => {
         <div className="container-fluid">
           <Link className="nav-link" to="/">
             <img
-              // src="sql_greyblue_icon.png"
-              src="crypto_home.png"
+              src="crypto_abstract_logo.png"
               alt="cryptocurrency logo"
               className="d-inline-block align-top navLogo"
             />
