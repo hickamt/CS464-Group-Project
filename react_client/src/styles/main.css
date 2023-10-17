@@ -15,8 +15,6 @@
 .main-view {
   min-height: 20rem;
   grid-area: main;
-  padding: 1em;
-  background-size: cover;
 }
 
 .sidebar {
@@ -38,6 +36,11 @@
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
   border-radius: 20px;
+}
+
+.sidebar-main-view {
+  margin-top: 1rem;
+  font-size: large;
 }
 
 .main-footer {
