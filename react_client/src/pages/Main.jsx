@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 // import FetchAnimation from "../components/animation/FetchAnimation";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
@@ -6,7 +6,6 @@ import Header from "../components/Header";
 import Card from "../components/card/Card";
 import ComponentB from "../components/compt_b/ComponentB";
 import ComponentC from "../components/compt_c/ComponentC";
-import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 function Main() {
   const [mainView, setMainView] = useState("Main View");
@@ -31,6 +30,7 @@ function Main() {
         break;
     }
   };
+
   return (
     <>
       <div className="dashboard-container mt-3">
@@ -40,8 +40,6 @@ function Main() {
 
         <div className="main-view rounded">
           {mainView}
-          <BiLeftArrow className="arrow-left " />
-          <BiRightArrow className="arrow-right " />
         </div>
 
         <Sidebar switchComponentView={switchComponentView} />

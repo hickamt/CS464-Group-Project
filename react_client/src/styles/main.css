@@ -1,23 +1,4 @@
 
-.arrow-left {
-  font-size: xx-large;
-  position: absolute;
-  top: 50%;
-  bottom: 0;
-  left: 0.5%;
-  right: 0;
-}
-
-.arrow-right {
-  font-size: xx-large;
-  position: absolute;
-  top: 50%;
-  bottom: 0;
-  left: 87%;
-  right: 0;
-}
-
-
 .main-view,
 .sidebar,
 .main-header,
@@ -33,9 +14,6 @@
 
 .main-view {
   grid-area: main;
-  /* added for arrow left/right */
-  position: relative;
-  width: 100%;
 }
 
 .sidebar {

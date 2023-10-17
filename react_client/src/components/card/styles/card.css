@@ -1,6 +1,32 @@
 /* NetFlix Style Slider */
 /* npm library: https://www.npmjs.com/package/netslider */
 
+.arrow-left {
+  font-size: xx-large;
+  position: absolute;
+  top: 37%;
+  bottom: 0;
+  left: 5em;
+  right: 0;
+  color: var(--body-light-gold);
+}
+
+.arrow-right {
+  font-size: xx-large;
+  position: absolute;
+  top: 37%;
+  bottom: 0;
+  left: 98%;
+  right: 0;
+  color: var(--body-light-gold);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  color: var(--light);
+  font-size: 32px;
+}
+
 .card-img {
   max-width: 75%;
   background-color: var(--body-light-gold);
@@ -16,6 +42,7 @@
 .media-row {
   padding: 1rem;
   overflow: scroll;
+  position: relative;
   /* scrollbar-width: none; */
 }
 

@@ -4,10 +4,11 @@
  */
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import ReactLoading from "react-loading";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 // CSS Styles
 import "./styles/card.css";
 // import lcwRemainingCredits from "../../api/lcwRemainingCredits";
@@ -100,6 +101,7 @@ export default function ComponentOne() {
   const [expressData, setExpressData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [animation, setAnimation] = useState(true);
+  const cardRef = useRef(null);
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -124,6 +126,14 @@ export default function ComponentOne() {
     }
   }, 60000);
 
+  const scrollCardLeft = () => {
+    cardRef.current.scrollLeft -= 200; // adjust the scroll value as needed
+  };
+
+  const scrollCardRight = () => {
+    cardRef.current.scrollLeft += 200; // adjust the scroll value as needed
+  };
+
   return (
     <>
       {animation
@@ -131,7 +141,7 @@ export default function ComponentOne() {
         : isData && (
             <>
               <h1 className="card-title d-none">Crypto Assets</h1>
-              <Row className="media-row d-flex flex-nowrap">
+              <Row className="media-row d-flex flex-nowrap" ref={cardRef}>
                 {data.map((data, index) => (
                   <Card key={index} className="media-card ">
                     <Card.Img
@@ -182,6 +192,11 @@ export default function ComponentOne() {
                   </Card>
                 ))}
               </Row>
+              <BiLeftArrow className="arrow-left " onClick={scrollCardLeft} />
+              <BiRightArrow
+                className="arrow-right "
+                onClick={scrollCardRight}
+              />
             </>
           )}
     </>
