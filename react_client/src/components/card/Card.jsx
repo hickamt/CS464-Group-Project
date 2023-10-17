@@ -41,6 +41,19 @@ const textColor = function bootstrapTextColor(value) {
   }
 };
 
+// fix digits to (5) decimal places if value is less than (1)
+// otherwise, fix digits to (2) decimal places
+const setValueToFixed = function setValueToFixedPrecision(value) {
+  return value <= 1
+    ? Number.parseFloat(value).toFixed(5)
+    : Number.parseFloat(value).toFixed(2);
+};
+
+// Set percentage to (2) decimal places
+const setPercentageToFixed = function setPercentageValueFixedTwo(value) {
+  return Number.parseFloat(value).toFixed(2);
+};
+
 // Sort array from greatest to least (GH)
 const sortHighLow = function sortArrayGreatestToLeast(array) {
   return array.sort((a, b) => {
@@ -127,7 +140,7 @@ export default function ComponentOne() {
                       variant="top"
                       src={getCryptoIcon(data.asset)}
                     />
-                    <Card.Body className="mx-auto">
+                    <Card.Body className="card-body">
                       <p className="card-text text-center fs-5">
                         {data.asset.toUpperCase()}
                       </p>
@@ -143,26 +156,26 @@ export default function ComponentOne() {
                           <p className="card-text">Month</p>
                         </div>
                         <div className="value">
-                          <p className="card-text">
-                            {Number.parseFloat(data.remaining).toFixed(3)}
+                          <p className="card-text p">
+                            {setValueToFixed(data.remaining)}
                           </p>
-                          <p className="card-text">
-                            $ {Number.parseFloat(data.spot).toFixed(3)}
+                          <p className="card-text p">
+                            ${setValueToFixed(data.spot)}
                           </p>
-                          <p className="card-text">
-                            $ {Number.parseFloat(data.value).toFixed(3)}
+                          <p className="card-text p">
+                            ${setValueToFixed(data.value)}
                           </p>
-                          <p className={`card-text ${textColor(data.hour)}`}>
-                            {Number.parseFloat(data.hour).toFixed(3)}%
+                          <p className={`card-text p ${textColor(data.hour)}`}>
+                            {setPercentageToFixed(data.hour)}%
                           </p>
-                          <p className={`card-text ${textColor(data.day)}`}>
-                            {Number.parseFloat(data.day).toFixed(3)}%
+                          <p className={`card-text p ${textColor(data.day)}`}>
+                            {setPercentageToFixed(data.day)}%
                           </p>
-                          <p className={`card-text ${textColor(data.week)}`}>
-                            {Number.parseFloat(data.week).toFixed(3)}%
+                          <p className={`card-text p ${textColor(data.week)}`}>
+                            {setPercentageToFixed(data.week)}%
                           </p>
-                          <p className={`card-text ${textColor(data.month)}`}>
-                            {Number.parseFloat(data.month).toFixed(3)}%
+                          <p className={`card-text p ${textColor(data.month)}`}>
+                            {setPercentageToFixed(data.month)}%
                           </p>
                         </div>
                       </div>

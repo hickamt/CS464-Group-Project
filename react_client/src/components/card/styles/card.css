@@ -9,11 +9,13 @@
   border-radius: 1em;
 }
 
+.card-body {
+  margin: 0 auto;
+}
+
 .media-row {
   padding: 1rem;
-  /* max-width ensures that in main view all cards are seen */
-  /* height: 30rem; */
-  /* gap: 1rem; */
+  /* justify-content: space-around; */
 }
 
 .media-card {
@@ -27,27 +29,15 @@
 /* INNER Card.Text Grid Styles */
 
 .value-type {
-  /* grid-area: left; */
   display: inline-grid;
   font-size: 13px;
   text-align: start;
 }
 
 .value {
-  /* grid-area: right; */
   display: inline-grid;
   font-size: 13px;
   text-align: end;
-}
-
-.card-grid {
-  /* display: grid; */
-  /* display: flex; */
-  /* max-width: 100%; */
-  /* min-width: 1px; */
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: auto; */
-  /* grid-template-areas: "left right"; */
 }
 
 .card-text {
@@ -58,8 +48,3 @@
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
 }
-
-/* .card-img:hover {
-  transform: scale(1.1);
-  transition: transform 0.5s ease-in-out;
-} */
