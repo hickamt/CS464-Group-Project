@@ -18,7 +18,7 @@ const spinAnimation = function reactSpinLoadingAnimation() {
     <ReactLoading
       className="mx-auto"
       type="spin"
-      color="#1E762E"
+      color="#4a4537"
       height={100}
       width={100}
     />
@@ -127,12 +127,13 @@ export default function ComponentOne() {
                       variant="top"
                       src={getCryptoIcon(data.asset)}
                     />
-                    <Card.Body className="">
-                      <p className="card-text text-center fs-4">
+                    <Card.Body className="mx-auto">
+                      <p className="card-text text-center fs-5">
                         {data.asset.toUpperCase()}
                       </p>
+                      {/* how do I center the content within card-grid */}
                       <div className="card-grid">
-                        <div className="value-type mx-auto">
+                        <div className="value-type">
                           <p className="card-text">Qty</p>
                           <p className="card-text">Spot</p>
                           <p className="card-text">Value</p>
@@ -141,7 +142,7 @@ export default function ComponentOne() {
                           <p className="card-text">Week</p>
                           <p className="card-text">Month</p>
                         </div>
-                        <div className="value mx-auto">
+                        <div className="value">
                           <p className="card-text">
                             {Number.parseFloat(data.remaining).toFixed(3)}
                           </p>

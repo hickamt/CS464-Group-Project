@@ -14,7 +14,7 @@
 }
 
 .main-view {
-  min-height: 30rem;
+  min-height: 20rem;
   grid-area: main;
   padding: 1em;
   /* background-image: url("../assets/grey_abstract.png"); */
@@ -29,7 +29,7 @@
 }
 
 .sidebar .card-btn {
-  width: 5rem;
+  width: 6.5rem;
   background-color: transparent;
   color: var(--light);
   border: none;
@@ -37,7 +37,7 @@
 }
 
 .sidebar:hover .card-btn:hover {
-  background-color: var(--info);
+  background-color: var(--body-light-gold);
 }
 
 .main-footer {

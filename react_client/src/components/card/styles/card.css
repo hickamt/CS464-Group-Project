@@ -2,21 +2,22 @@
 /* npm library: https://www.npmjs.com/package/netslider */
 
 .card-img {
-  max-width: 70%;
+  max-width: 75%;
   background-color: var(--body-light-gold);
-  padding: 1em;
+  padding: 1.5em;
   margin-top: 1em;
   border-radius: 1em;
 }
 
 .media-row {
+  padding: 1rem;
   /* max-width ensures that in main view all cards are seen */
   /* height: 30rem; */
   /* gap: 1rem; */
 }
 
 .media-card {
-  max-width: 15em;
+  max-width: 12%;
   background-color: var(--dark);
   border-radius: 1rem;
   border: 1px solid var(--body-light-gold);
@@ -28,11 +29,15 @@
 .value-type {
   /* grid-area: left; */
   display: inline-grid;
+  font-size: 13px;
+  text-align: start;
 }
 
 .value {
   /* grid-area: right; */
   display: inline-grid;
+  font-size: 13px;
+  text-align: end;
 }
 
 .card-grid {
