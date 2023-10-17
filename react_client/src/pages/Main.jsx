@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-// import FetchAnimation from "../components/animation/FetchAnimation";
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -38,9 +37,7 @@ function Main() {
           <Header />
         </div>
 
-        <div className="main-view rounded">
-          {mainView}
-        </div>
+        <div className="main-view rounded">{mainView}</div>
 
         <Sidebar switchComponentView={switchComponentView} />
         <div className="main-footer rounded">
