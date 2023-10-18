@@ -12,25 +12,36 @@
   --warning: yellow;    /* yellow */
   --info: #4d4dff;      /* neon-blue */
   --light: white;       /* white */
-  --dark: #010409;      /* off black */
-  --body-golden: #150d07 ;
-  --body-dark: #101010; /* dark grey */
-  --body-light: #484848;    /* light grey */
-  --body-light-gold: #4a4537;
+  --off-black: #010409;      /* off black */
   --black:  #090909 ;   /* root background black */
+
+  /* Gold Theme */
+  --gold-bg: #150d07 ;
+  --gold-bg-dark: #101010; /* dark grey */
+  --gold-light: #4a4537;
+
+  /* Blue Theme */
+  /* --blue-bg: #0d0d1a;
+  --blue-bg-dark: #101010;
+  --blue-light: #4a4537; */
+
+  /* Grey Theme */
+  /* --grey-bg: #0d0d1a;
+  --grey-bg-dark: #101010;
+  --grey-light: #4a4537; */
 }
 
 #root {
   /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
   /* background-image: url("https://www.3dwallpaperarts.com/wp-content/uploads/2021/06/wallpaper-website-001.jpg"); */
-  background-color: var(--dark);
+  background-color: var(--off-black);
   background-size: cover;
 }
 
 body {
   margin: 0 auto;
   padding: 0;
-  background-color: var(--dark);
+  background-color: var(--off-black);
   background-repeat: no-repeat;
   color: var(--light);
   font-family: "Open Sans", "Helvetica Neue", sans-serif;

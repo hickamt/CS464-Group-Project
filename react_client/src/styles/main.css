@@ -3,12 +3,12 @@
 .sidebar,
 .main-header,
 .main-footer {
-  background-color: var(--body-golden);
+  background-color: var(--gold-bg-dark);
 }
 
 .main-header {
   grid-area: header;
-  background-image: url("../assets/golden_abstract_top.png");
+  background-image: url("../assets/grey_abstract_top.png");
   background-size: cover;
 }
 
@@ -19,7 +19,7 @@
 .sidebar {
   grid-area: sidebar;
   width: 7rem;
-  background-image: url("../assets/golden_abstract.png");
+  background-image: url("../assets/grey_abstract.png");
 }
 
 .sidebar .card-btn {
@@ -31,7 +31,7 @@
 }
 
 .sidebar:hover .card-btn:hover {
-  background-color: var(--body-light-gold);
+  background-color: var(--gold-bg-dark);
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
   border-radius: 20px;
@@ -45,7 +45,7 @@
 .main-footer {
   grid-area: footer;
   padding: 1em;
-  background-image: url("../assets/golden_abstract_bottom.png");
+  background-image: url("../assets/grey_abstract_bottom.png");
 }
 
 .dashboard-container {

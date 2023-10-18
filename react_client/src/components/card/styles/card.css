@@ -4,21 +4,21 @@
 .arrow-left {
   font-size: xx-large;
   position: absolute;
-  top: 37%;
+  top: 43%;
   bottom: 0;
   left: 5em;
   right: 0;
-  color: var(--body-light-gold);
+  color: var(--primary);
 }
 
 .arrow-right {
   font-size: xx-large;
   position: absolute;
-  top: 37%;
+  top: 43%;
   bottom: 0;
-  left: 98%;
+  left: 97%;
   right: 0;
-  color: var(--body-light-gold);
+  color: var(--primary);
 }
 
 .arrow-left:hover,
@@ -29,7 +29,7 @@
 
 .card-img {
   max-width: 75%;
-  background-color: var(--body-light-gold);
+  background-color: var(--gold-light);
   padding: 1.5em;
   margin-top: 1em;
   border-radius: 1em;
@@ -43,7 +43,7 @@
   padding: 1rem;
   overflow: scroll;
   position: relative;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 }
 
 .media-row::-webkit-scrollbar {
@@ -52,9 +52,9 @@
 
 .media-card {
   max-width: 12%;
-  background-color: var(--dark);
+  background-color: var(--off-black);
   border-radius: 1rem;
-  border: 1px solid var(--body-light-gold);
+  border: 1px solid var(--gold-light);
   margin: 0.5rem;
 }
 

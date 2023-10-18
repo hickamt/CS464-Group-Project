@@ -4,7 +4,6 @@ export default async function lcwRemainingCredits() {
     method: "POST",
     header: new Headers({
       "content-type": "application/json",
-      // "x-api-key": "31621381-6652-4c92-a1c1-248823f4557f",
       "x-api-key": import.meta.env.VITE_LCW_API_KEY,
     }),
   }).then(async (response) => {
@@ -12,6 +11,7 @@ export default async function lcwRemainingCredits() {
       .get("content-type")
       ?.includes("application/json");
     const data = isJson && (await response.json());
+    console.log("Remaining Credits: ", data)
 
     if (!response.ok) {
       const error = (data && data.message) || response.status;
