@@ -1,9 +1,9 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 // import FetchAnimation from "../components/animation/FetchAnimation";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Card from "../components/card/Card";
+import Cards from "../components/card/Card";
 import ComponentB from "../components/compt_b/ComponentB";
 import ComponentC from "../components/compt_c/ComponentC";
 
@@ -17,7 +17,7 @@ function Main() {
     e.preventDefault();
     switch (value) {
       case "card":
-        setMainView(<Card />);
+        setMainView(<Cards />);
         break;
       case "chart":
         setMainView(<ComponentB />);

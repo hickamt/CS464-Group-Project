@@ -7,74 +7,30 @@ import Row from "react-bootstrap/Row";
 import { useEffect, useState, useRef } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
-import ReactLoading from "react-loading";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-// CSS Styles
-import "./styles/card.css";
 // import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
-// Loading animation (GH)
-const spinAnimation = function reactSpinLoadingAnimation() {
-  return (
-    <ReactLoading
-      className="mx-auto"
-      type="spin"
-      color="#4a4537"
-      height={100}
-      width={100}
-    />
-  );
-};
+// Utilities
+import {
+  spinAnimation,
+  getCryptoIcon,
+  textColor,
+  setValueToFixed,
+  setPercentageToFixed,
+  sortHighLow,
+} from "./styles/utility";
 
-// Fetch crypto icon using 'asset' as the asset name (abstract this function)
-const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
-  return `https://lcw.nyc3.cdn.digitaloceanspaces.com/production/currencies/64/${asset}.png`;
-};
-
-// Change text color based on value (GH)
-const textColor = function bootstrapTextColor(value) {
-  if (value > 0) {
-    return "text-success";
-  } else if (value < 0) {
-    return "text-danger";
-  } else {
-    return "text-light";
-  }
-};
-
-// fix digits to (5) decimal places if value is less than (1)
-// otherwise, fix digits to (2) decimal places
-const setValueToFixed = function setValueToFixedPrecision(value) {
-  return value <= 1
-    ? Number.parseFloat(value).toFixed(5)
-    : Number.parseFloat(value).toFixed(2);
-};
-
-// Set percentage to (2) decimal places
-const setPercentageToFixed = function setPercentageValueFixedTwo(value) {
-  return Number.parseFloat(value).toFixed(2);
-};
-
-// Sort array from greatest to least (GH)
-const sortHighLow = function sortArrayGreatestToLeast(array) {
-  return array.sort((a, b) => {
-    return b.value - a.value;
-  });
-};
-
-// Sort array from least to greatest (GH)
-// const sortLowHigh = function sortArrayLeastToGreatest(array) {
-//   return array.sort((a, b) => {
-//     return a.value - b.value;
-//   });
-// };
+// CSS Styles
+import "./styles/card.css";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
-  setData
+  setData,
+  setAnimation
 ) {
+  setAnimation(true);
   const temp = [];
   userData.map((data) => {
     const { asset, remaining } = data;
@@ -94,23 +50,27 @@ const combineData = function combineDataWithCryptoData(
     });
   });
   setData(sortHighLow(temp));
+  setAnimation(false);
 };
 
-export default function ComponentOne() {
-  const [data, setData] = useState([]);
+export default function Cards() {
+  const [userData, setUserData] = useState([]);
   const [expressData, setExpressData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [animation, setAnimation] = useState(true);
-  const cardRef = useRef(null);
+  const cardRef = useRef(null); // reference to the card carousel left/right btns
+
+  const [cardCarousel, setCardCarousel] = useState([]);
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
+    console.log("Inside UseEffect()")
     async function fetchData() {
       const userData = await expressQueryAPI("remaining");
-      setExpressData(userData);
       const cryptoData = await lcwCryptoAPI();
       if (userData && cryptoData) {
-        combineData(userData, cryptoData, setData);
+        setExpressData(userData);
+        combineData(userData, cryptoData, setUserData, setAnimation);
         setIsData(true);
         setAnimation(false);
       }
@@ -122,25 +82,24 @@ export default function ComponentOne() {
   setTimeout(async () => {
     const cryptoData = await lcwCryptoAPI();
     if (expressData && cryptoData) {
-      combineData(expressData, cryptoData, setData);
+      combineData(expressData, cryptoData, setUserData, setAnimation);
     }
-  }, 60000);
+  }, 180000); // timer set to 3 minutes
 
   const scrollCardLeft = () => {
-    const sLeft = cardRef.current.scrollLeft -= 175; // adjust the scroll value as needed
+    const sLeft = (cardRef.current.scrollLeft -= 175); // adjust the scroll value as needed
     scrollTo({
       left: sLeft,
       behavior: "smooth",
-    })
-
+    });
   };
 
   const scrollCardRight = () => {
-    const sRight = cardRef.current.scrollLeft += 175; // adjust the scroll value as needed
+    const sRight = (cardRef.current.scrollLeft += 175); // adjust the scroll value as needed
     scrollTo({
       left: sRight,
       behavior: "smooth",
-    })
+    });
   };
 
   return (
@@ -151,7 +110,7 @@ export default function ComponentOne() {
             <>
               <h1 className="card-title d-none">Crypto Assets</h1>
               <Row className="media-row d-flex flex-nowrap" ref={cardRef}>
-                {data.map((data, index) => (
+                {userData.map((data, index) => (
                   <Card key={index} className="media-card ">
                     <Card.Img
                       className="card-img mx-auto"
