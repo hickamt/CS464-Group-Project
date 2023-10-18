@@ -7,17 +7,10 @@ import { useEffect, useState, useRef } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
-// import lcwRemainingCredits from "../../api/lcwRemainingCredits";
+import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 // Utilities
-import {
-  spinAnimation,
-  // getCryptoIcon,
-  // textColor,
-  // setValueToFixed,
-  // setPercentageToFixed,
-  sortHighLow,
-} from "./styles/utility";
+import { spinAnimation, sortHighLow } from "./styles/utility";
 
 // CSS Styles
 import "./styles/card.css";
@@ -64,6 +57,7 @@ export default function Cards() {
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
     console.log("Inside UseEffect()");
+    lcwRemainingCredits();
     async function fetchData() {
       const userData = await expressQueryAPI("remaining");
       const cryptoData = await lcwCryptoAPI();
