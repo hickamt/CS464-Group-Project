@@ -29,7 +29,7 @@
 
 .card-img {
   max-width: 75%;
-  background-color: var(--gold-light);
+  background-color: var(--grey-light);
   padding: 1.5em;
   margin-top: 1em;
   border-radius: 1em;
@@ -54,7 +54,7 @@
   max-width: 12%;
   background-color: var(--off-black);
   border-radius: 1rem;
-  border: 1px solid var(--gold-light);
+  border: 1px solid var(--grey-light);
   margin: 0.5rem;
 }
 

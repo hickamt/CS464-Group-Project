@@ -26,14 +26,12 @@
   --blue-light: #4a4537; */
 
   /* Grey Theme */
-  /* --grey-bg: #0d0d1a;
-  --grey-bg-dark: #101010;
-  --grey-light: #4a4537; */
+  --grey-bg: #2b2b2b;
+  --grey-bg-dark: #0c0c0c;
+  --grey-light: #484848;
 }
 
 #root {
-  /* background-image: url("https://www.linuxfoundation.jp/wp-content/uploads/2018/02/ai_bg.jpg"); */
-  /* background-image: url("https://www.3dwallpaperarts.com/wp-content/uploads/2021/06/wallpaper-website-001.jpg"); */
   background-color: var(--off-black);
   background-size: cover;
 }
@@ -59,23 +57,14 @@ body::-webkit-scrollbar {
 /*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
 @media screen and (min-width: 1024px){
 /*Style*/
-#root {
-  /* min-height: 60rem; */
-}
 }
 
 /*###Tablet(medium)###*/
 @media screen and (min-width : 768px) and (max-width : 1023px){
 /*Style*/
-#root {
-  /* min-height: 40rem; */
-}
 }
 
 /*### Smartphones (portrait and landscape)(small)### */
 @media screen and (min-width : 0px) and (max-width : 767px){
 /*Style*/
-#root {
-  /* min-height: 25rem; */
-}
 }
