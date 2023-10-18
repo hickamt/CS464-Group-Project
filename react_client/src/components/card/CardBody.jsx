@@ -1,4 +1,14 @@
 /* eslint-disable react/prop-types */
+
+/**
+ * Concept for CARDS:
+ *   - push each card element to an array[]
+ *   - use this array of elements to render those cards
+ *     specified by left_index & right_index
+ *   Sources: https://stackoverflow.com/questions/40476075/how-to-concatenate-jsx-elements-into-an-array
+ *   Array.with() MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with
+ */
+
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
