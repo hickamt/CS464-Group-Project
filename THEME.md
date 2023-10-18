@@ -15,19 +15,20 @@ Global Color Scheme
   --black: #090909;
 
   /* Gold Theme */
-  --gold-bg: #150d07;
-  --gold-bg-dark: #101010; /* dark grey */
   --gold-light: #4a4537;
+  --gold-bg: #150d07;
+  --gold-bg-dark: #101010;
+
+  /* Grey Theme */
+  --grey-light: #484848;
+  --grey-bg: #2b2b2b;
+  --grey-bg-dark: #0c0c0c;
 
   /* Blue Theme */
   /* --blue-bg: #0d0d1a;
   --blue-bg-dark: #101010;
   --blue-light: #4a4537; */
 
-  /* Grey Theme */
-  /* --grey-bg: #0d0d1a;
-  --grey-bg-dark: #101010;
-  --grey-light: #4a4537; */
 }
 ```
 
