@@ -21,7 +21,7 @@
 */
 
 import { Outlet, Link } from "react-router-dom";
-import logo from "../../assets/grey_logo.png"
+import logo from "../../assets/gold_logo.png"
 
 const Layout = () => {
   return (
