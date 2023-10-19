@@ -24,6 +24,8 @@ import {
 
 // Continue getting incorrect errors for 'props'
 export default function CardBody({userData, cardRef}) {
+  console.log("Card Ref Object: ", cardRef)
+  console.log("User Data Object: ", userData)
   return (
     <Row className="media-row d-flex flex-nowrap" ref={cardRef}>
       {userData.map((data, index) => (

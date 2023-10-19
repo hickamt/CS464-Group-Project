@@ -21,6 +21,7 @@
 */
 
 import { Outlet, Link } from "react-router-dom";
+import logo from "../../assets/grey_logo.png"
 
 const Layout = () => {
   return (
@@ -29,7 +30,7 @@ const Layout = () => {
         <div className="container-fluid">
           <Link className="nav-link" to="/">
             <img
-              src="crypto_abstract_logo.png"
+              src={logo}
               alt="cryptocurrency logo"
               className="d-inline-block align-top navLogo"
             />

@@ -3,7 +3,7 @@
 // Sidbar setup for testing
 export default function Sidebar({ switchComponentView }) {
   return (
-    <div className="sidebar text-center rounded">
+    <div className="sidebar text-center">
       <section className="sidebar-main-view">
         {/* <p className="fs-5 mt-1">Main View</p> */}
         <button

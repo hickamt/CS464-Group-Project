@@ -20,10 +20,8 @@ import CardBody from "./CardBody";
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
-  setData,
-  setAnimation
+  setData
 ) {
-  setAnimation(true);
   const temp = [];
   userData.map((data) => {
     const { asset, remaining } = data;
@@ -48,7 +46,7 @@ const combineData = function combineDataWithCryptoData(
 export default function Cards() {
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
-  const [animation, setAnimation] = useState(true);
+  // const [animation, setAnimation] = useState(true);
   const cardRef = useRef(null); // reference to the card carousel left/right btns
   const [runEffect, setRunEffect] = useState(true);
 
@@ -62,15 +60,16 @@ export default function Cards() {
       const userData = await expressQueryAPI("remaining");
       const cryptoData = await lcwCryptoAPI();
       if (userData && cryptoData) {
-        combineData(userData, cryptoData, setUserData, setAnimation);
+        combineData(userData, cryptoData, setUserData);
         setIsData(true);
-        setAnimation(false);
+        // setAnimation(!animation);
       }
     }
     fetchData();
   }, [runEffect]);
 
   setTimeout(() => {
+    // setAnimation(!animation);
     if (runEffect) setRunEffect(false);
     else setRunEffect(true);
   }, 180000); // timer set to 3 seconds
@@ -93,9 +92,9 @@ export default function Cards() {
 
   return (
     <>
-      {animation
-        ? spinAnimation()
-        : isData && (
+      {/* {animation
+        ? spinAnimation() */}
+        {isData && (
             <>
               <h1 className="card-title d-none">Crypto Assets</h1>
               <CardBody userData={userData} cardRef={cardRef} />

@@ -34,16 +34,16 @@ function Main() {
   return (
     <>
       <div className="dashboard-container mt-3">
-        <div className="main-header rounded">
+        <div className="main-header ">
           <Header />
         </div>
 
-        <div className="main-view rounded">
+        <div className="main-view">
           {mainView}
         </div>
 
         <Sidebar switchComponentView={switchComponentView} />
-        <div className="main-footer rounded">
+        <div className="main-footer ">
           <Footer />
         </div>
       </div>
