@@ -76,35 +76,40 @@ export default function Cards() {
 
   const scrollCardLeft = () => {
     const sLeft = (cardRef.current.scrollLeft -= 175); // adjust the scroll value as needed
-    scrollTo({
+    scrollBy({
       left: sLeft,
       behavior: "smooth",
     });
+    // scrollTo({
+    //   left: sLeft,
+    //   behavior: "smooth",
+    // });
   };
 
   const scrollCardRight = () => {
     const sRight = (cardRef.current.scrollLeft += 175); // adjust the scroll value as needed
-    scrollTo({
+    scrollBy({
       left: sRight,
       behavior: "smooth",
     });
+    // scrollTo({
+    //   left: sRight,
+    //   behavior: "smooth",
+    // });
   };
 
   return (
     <>
       {/* {animation
         ? spinAnimation() */}
-        {isData && (
-            <>
-              <h1 className="card-title d-none">Crypto Assets</h1>
-              <CardBody userData={userData} cardRef={cardRef} />
-              <BiLeftArrow className="arrow-left " onClick={scrollCardLeft} />
-              <BiRightArrow
-                className="arrow-right "
-                onClick={scrollCardRight}
-              />
-            </>
-          )}
+      {isData && (
+        <>
+          <h1 className="card-title d-none">Crypto Assets</h1>
+          <CardBody userData={userData} cardRef={cardRef} />
+          <BiLeftArrow className="arrow-left " onClick={scrollCardLeft} />
+          <BiRightArrow className="arrow-right " onClick={scrollCardRight} />
+        </>
+      )}
     </>
   );
 }
