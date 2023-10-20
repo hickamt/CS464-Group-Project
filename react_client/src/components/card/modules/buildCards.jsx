@@ -1,6 +1,11 @@
 import Card from "react-bootstrap/Card";
 
-import { getCryptoIcon, setValueToFixed, textColor, setPercentageToFixed } from "../styles/utility";
+import {
+  getCryptoIcon,
+  setValueToFixed,
+  textColor,
+  setPercentageToFixed,
+} from "../styles/utility";
 
 const cardImage = function buildCardImage(props) {
   return (
@@ -14,7 +19,6 @@ const cardImage = function buildCardImage(props) {
 };
 
 const cardBody = function buildCardBody(data) {
-
   return (
     <Card.Body className="card-body">
       <p className="card-text text-center fs-5">{data.asset.toUpperCase()}</p>
@@ -55,7 +59,7 @@ const cardBody = function buildCardBody(data) {
  * @param userData is an array of data objects
  * @returns an array of cryptocurrency data cards
  */
-const buildCards = function buildCryptoCards( userData ) {
+const buildCards = function buildCryptoCards(userData) {
   const temp = [];
 
   userData.map((data, index) => {

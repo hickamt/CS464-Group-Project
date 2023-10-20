@@ -50,7 +50,9 @@ export default function Cards() {
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
-  const [cryptoCardArray, setCryptoCardArray] = useState([]);
+
+  const [cardIndex, setCardIndex] = useState(0);
+  let cardsToView = 1;
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -61,16 +63,13 @@ export default function Cards() {
       const cryptoData = await lcwCryptoAPI();
       if (expressData && cryptoData) {
         combineData(expressData, cryptoData, setUserData);
-        setCryptoCardArray(buildCards(userData));
         setIsData(true);
-        // setAnimation(!animation);
       }
     }
     fetchData();
   }, [runEffect]);
 
   setTimeout(() => {
-    // setAnimation(!animation);
     if (runEffect) setRunEffect(false);
     else setRunEffect(true);
   }, 180000); // timer set to 3 seconds
@@ -82,8 +81,7 @@ export default function Cards() {
       {isData && (
         <>
           <h1 className="card-title d-none">Crypto Assets</h1>
-          {/* {<CryptoCard userData={userData} />} */}
-          <Row className="media-row">{cryptoCardArray}</Row>
+          <Row className="media-row">{buildCards(userData)}</Row>
 
           {/* <BiLeftArrow className="arrow-left " onClick="" />
           <BiRightArrow className="arrow-right " onClick="" /> */}

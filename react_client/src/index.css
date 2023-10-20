@@ -21,9 +21,9 @@
   --gold-light: #4a4537;
 
   /* Blue Theme */
-  /* --blue-bg: #0d0d1a;
-  --blue-bg-dark: #101010;
-  --blue-light: #4a4537; */
+  --blue-bg: rgba(4, 59, 92, 0.5);
+  --blue-bg-dark: rgba(44, 62, 80, 0.5);  /* madison  */
+  --blue-light: rgba(11, 127, 171, 0.5);
 
   /* Grey Theme */
   --grey-bg: #2b2b2b;

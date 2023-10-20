@@ -3,7 +3,8 @@
 .sidebar,
 .main-header,
 .main-footer {
-  background-color: var(--grey-bg-dark);
+  /* background-color: var(--grey-bg-dark); */
+  background-color: var(--blue-bg);
 }
 
 .main-header {
@@ -38,7 +39,7 @@
 }
 
 .sidebar:hover .card-btn:hover {
-  background-color: var(--grey-bg-dark);
+  background-color: var(--blue-light);
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
   border-radius: 20px;
