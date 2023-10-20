@@ -11,7 +11,7 @@ import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 // Utilities
-import { spinAnimation, sortHighLow } from "./styles/utility";
+import { spinAnimation, sortHighLow } from "./utility";
 
 // CSS Styles
 import "./styles/card.css";
@@ -51,6 +51,8 @@ export default function Cards() {
   const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
 
+  // Setting up cardIndex and cardsToView for 
+  // specified display of cards in the array
   const [cardIndex, setCardIndex] = useState(0);
   let cardsToView = 1;
 

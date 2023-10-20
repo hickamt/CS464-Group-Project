@@ -5,7 +5,7 @@ import {
   setValueToFixed,
   textColor,
   setPercentageToFixed,
-} from "../styles/utility";
+} from "../utility";
 
 const cardImage = function buildCardImage(props) {
   return (

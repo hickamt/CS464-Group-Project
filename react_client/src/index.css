@@ -50,14 +50,14 @@ body::-webkit-scrollbar {
 }
 
 .navLogo {
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
 }
 
 img.navLogo:hover {
   transform: scale(1.1);
   transition: transform 0.5s ease-in-out;
-  background: var(--gold-light);
+  background: var(--blue-light);
   border-radius: 3rem;
 }
 
