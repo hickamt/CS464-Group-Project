@@ -2,11 +2,12 @@
  * Bootstrap 5.0 Cards: https://react-bootstrap.netlify.app/docs/components/cards/
  * Bootstrap 5.0 Grid: https://react-bootstrap.netlify.app/docs/layout/grid/#setting-column-widths-in-row
  */
+
 // import Card from "react-bootstrap/Card";
-import { useEffect, useState, useRef } from "react";
+// import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { useEffect, useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
-import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 // Utilities
@@ -14,7 +15,8 @@ import { spinAnimation, sortHighLow } from "./styles/utility";
 
 // CSS Styles
 import "./styles/card.css";
-import CardBody from "./CardBody";
+import Row from "react-bootstrap/Row";
+import buildCards from "./modules/buildCards";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
@@ -44,23 +46,22 @@ const combineData = function combineDataWithCryptoData(
 };
 
 export default function Cards() {
+  // const [animation, setAnimation] = useState(true);
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
-  // const [animation, setAnimation] = useState(true);
-  const cardRef = useRef(null); // reference to the card carousel left/right btns
   const [runEffect, setRunEffect] = useState(true);
-
-  const [cardCarousel, setCardCarousel] = useState([]);
+  const [cryptoCardArray, setCryptoCardArray] = useState([]);
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
     console.log("Inside UseEffect()");
     lcwRemainingCredits();
     async function fetchData() {
-      const userData = await expressQueryAPI("remaining");
+      const expressData = await expressQueryAPI("remaining");
       const cryptoData = await lcwCryptoAPI();
-      if (userData && cryptoData) {
-        combineData(userData, cryptoData, setUserData);
+      if (expressData && cryptoData) {
+        combineData(expressData, cryptoData, setUserData);
+        setCryptoCardArray(buildCards(userData));
         setIsData(true);
         // setAnimation(!animation);
       }
@@ -74,30 +75,6 @@ export default function Cards() {
     else setRunEffect(true);
   }, 180000); // timer set to 3 seconds
 
-  const scrollCardLeft = () => {
-    const sLeft = (cardRef.current.scrollLeft -= 175); // adjust the scroll value as needed
-    scrollBy({
-      left: sLeft,
-      behavior: "smooth",
-    });
-    // scrollTo({
-    //   left: sLeft,
-    //   behavior: "smooth",
-    // });
-  };
-
-  const scrollCardRight = () => {
-    const sRight = (cardRef.current.scrollLeft += 175); // adjust the scroll value as needed
-    scrollBy({
-      left: sRight,
-      behavior: "smooth",
-    });
-    // scrollTo({
-    //   left: sRight,
-    //   behavior: "smooth",
-    // });
-  };
-
   return (
     <>
       {/* {animation
@@ -105,9 +82,11 @@ export default function Cards() {
       {isData && (
         <>
           <h1 className="card-title d-none">Crypto Assets</h1>
-          <CardBody userData={userData} cardRef={cardRef} />
-          <BiLeftArrow className="arrow-left " onClick={scrollCardLeft} />
-          <BiRightArrow className="arrow-right " onClick={scrollCardRight} />
+          {/* {<CryptoCard userData={userData} />} */}
+          <Row className="media-row">{cryptoCardArray}</Row>
+
+          {/* <BiLeftArrow className="arrow-left " onClick="" />
+          <BiRightArrow className="arrow-right " onClick="" /> */}
         </>
       )}
     </>
