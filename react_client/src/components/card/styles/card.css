@@ -2,29 +2,30 @@
 /* npm library: https://www.npmjs.com/package/netslider */
 
 .arrow-left {
-  font-size: xx-large;
+  min-width: 3em;
+  min-height: 3em;
   position: absolute;
-  top: 43%;
+  top: 45%;
   bottom: 0;
-  left: 5em;
+  left: 14%;
   right: 0;
   color: var(--light);
 }
 
 .arrow-right {
-  font-size: xx-large;
+  min-width: 3em;
+  min-height: 3em;
   position: absolute;
-  top: 43%;
+  top: 45%;
   bottom: 0;
-  left: 97%;
+  left: 90%;
   right: 0;
   color: var(--light);
 }
 
 .arrow-left:hover,
 .arrow-right:hover {
-  color: var(--light);
-  font-size: 32px;
+  color: var(--grey-light);
 }
 
 .card-img {
@@ -44,6 +45,7 @@
   overflow: scroll;
   position: relative;
   scrollbar-width: none;
+
 }
 
 .media-row::-webkit-scrollbar {

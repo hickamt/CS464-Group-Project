@@ -97,7 +97,7 @@ export default function Cards() {
           </Row>
 
           <BiLeftArrow
-            className="arrow-left "
+            className="arrow-left"
             onClick={() =>
               goLeft(
                 cardIndex,
@@ -106,7 +106,7 @@ export default function Cards() {
             }
           />
           <BiRightArrow
-            className="arrow-right "
+            className="arrow-right"
             onClick={() =>
               goRight(
                 userData.length,

@@ -38,7 +38,7 @@ function Main() {
           <Header />
         </div>
 
-        <div className="main-view">
+        <div className="main-view d-flex justify-content-center">
           {mainView}
         </div>
 
