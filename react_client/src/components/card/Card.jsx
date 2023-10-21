@@ -4,7 +4,7 @@
  */
 
 // import Card from "react-bootstrap/Card";
-// import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
@@ -45,16 +45,25 @@ const combineData = function combineDataWithCryptoData(
   setData(sortHighLow(temp));
 };
 
+const goLeft = function decrementCardIndex(cardIndex, setCardIndex) {
+  if (cardIndex > 0) {
+    setCardIndex(cardIndex - 1);
+  }
+};
+
+const goRight = function incrementCardIndex(arrayLength, cardIndex, setCardIndex) {
+  if (cardIndex < arrayLength - 1) {
+    setCardIndex(cardIndex + 1);
+  }
+};
+
+
 export default function Cards() {
-  // const [animation, setAnimation] = useState(true);
+  const [cardIndex, setCardIndex] = useState(0);
+  const [maxViews, setMaxViews] = useState(6);
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
-
-  // Setting up cardIndex and cardsToView for 
-  // specified display of cards in the array
-  const [cardIndex, setCardIndex] = useState(0);
-  let cardsToView = 1;
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -83,10 +92,29 @@ export default function Cards() {
       {isData && (
         <>
           <h1 className="card-title d-none">Crypto Assets</h1>
-          <Row className="media-row">{buildCards(userData)}</Row>
+          <Row className="media-row">
+            {buildCards(userData, cardIndex, maxViews)}
+          </Row>
 
-          {/* <BiLeftArrow className="arrow-left " onClick="" />
-          <BiRightArrow className="arrow-right " onClick="" /> */}
+          <BiLeftArrow
+            className="arrow-left "
+            onClick={() =>
+              goLeft(
+                cardIndex,
+                setCardIndex
+              )
+            }
+          />
+          <BiRightArrow
+            className="arrow-right "
+            onClick={() =>
+              goRight(
+                userData.length,
+                cardIndex,
+                setCardIndex
+              )
+            }
+          />
         </>
       )}
     </>

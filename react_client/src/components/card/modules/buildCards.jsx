@@ -55,12 +55,19 @@ const cardBody = function buildCardBody(data) {
 };
 
 /**
- * Creates the react-bootstrap cards
+ * Creates the react-bootstrap cards array and returns cards for render
+ * based on cardsToView and initial index start position
  * @param userData is an array of data objects
+ * @param cardsToView is the maximum number of cards to view
  * @returns an array of cryptocurrency data cards
  */
-const buildCards = function buildCryptoCards(userData) {
+const buildCards = function buildCryptoCards(
+  userData,
+  cardIndex,
+  maxViews
+) {
   const temp = [];
+  let count = 0;
 
   userData.map((data, index) => {
     temp.push(
@@ -70,7 +77,14 @@ const buildCards = function buildCryptoCards(userData) {
       </Card>
     );
   });
-  return [...temp];
+
+  return temp.map((card, index) => {
+    if (index >= cardIndex && count <= maxViews) {
+      ++count;
+      return card;
+    }
+    return null;
+  });
 };
 
 export default buildCards;

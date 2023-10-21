@@ -1,15 +1,12 @@
-
 .main-view,
 .sidebar,
 .main-header,
 .main-footer {
-  /* background-color: var(--grey-bg-dark); */
   background-color: var(--blue-bg);
 }
 
 .main-header {
   grid-area: header;
-  /* background-image: url("../assets/gold_top.png"); */
   background-size: cover;
   border-radius: 0.5em;
   padding-top: 1em;
@@ -17,14 +14,12 @@
 
 .main-view {
   grid-area: main;
-  padding: 2em;
   border-radius: 0.5em;
 }
 
 .sidebar {
   grid-area: sidebar;
   width: 7rem;
-  /* background-image: url("../assets/gold_full.png"); */
   background-size: cover;
   background-position: center;
   border-radius: 0.5em;
@@ -53,7 +48,6 @@
 .main-footer {
   grid-area: footer;
   padding: 2em;
-  /* background-image: url("../assets/gold_bottom.png"); */
   background-size: cover;
   background-position: bottom;
   border-radius: 0.5em;
@@ -63,7 +57,7 @@
   margin: 0 1rem;
   display: grid;
   overflow-x: hidden;
-  gap: 1.5rem;
+  gap: 1rem;
   grid-template-columns: 5fr 95fr;
   grid-template-areas:
     "sidebar header"
