@@ -96,7 +96,7 @@ export default function Cards() {
             {buildCards(userData, cardIndex, maxViews)}
           </Row>
 
-          <BiLeftArrow
+          {cardIndex > 0 && <BiLeftArrow
             className="arrow-left"
             onClick={() =>
               goLeft(
@@ -104,8 +104,8 @@ export default function Cards() {
                 setCardIndex
               )
             }
-          />
-          <BiRightArrow
+          />}
+          {cardIndex !== userData.length - 1 && <BiRightArrow
             className="arrow-right"
             onClick={() =>
               goRight(
@@ -114,7 +114,7 @@ export default function Cards() {
                 setCardIndex
               )
             }
-          />
+          />}
         </>
       )}
     </>
