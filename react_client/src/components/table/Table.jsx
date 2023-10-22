@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TableHeaders } from "../components/shared/TableHeaders";
 // import api here for livecoinwatch and call to express server
 import { QueriesTableIcons } from "../components/queries/QueriesTableIcons";
-import "./styles/table.css"
+import "./styles/table.css";
 
 export default function Table() {
   const [tableData, setTableData] = useState([]);
@@ -12,13 +12,12 @@ export default function Table() {
   const [viewSqlFile, setViewSqlFile] = useState(false);
   const [columnOrder, setColumnOrder] = useState([]);
 
-
   return (
     <>
       <div className="component-two text-center mt-3">
         <h1>Table</h1>
 
-         <div className="table-outer-div">
+        <div className="table-outer-div">
           {/* QueriesTableIcons includes dropdown list of query questions
                 and selector to view the query statement file */}
           <div>

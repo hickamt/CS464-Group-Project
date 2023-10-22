@@ -17,7 +17,9 @@ export const TableHeaders = ({ headers, columnOrder, setColumnOrder }) => {
         key={index}
         scope="col"
         className="table-header"
-        onClick={() => buildOrderBySelection(headerName, columnOrder, setColumnOrder)}>
+        onClick={() =>
+          buildOrderBySelection(headerName, columnOrder, setColumnOrder)
+        }>
         {headerName}
         <FaSort className="table-fasort" />
       </th>
