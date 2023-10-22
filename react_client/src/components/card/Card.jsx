@@ -60,7 +60,7 @@ const goRight = function incrementCardIndex(arrayLength, cardIndex, setCardIndex
 
 export default function Cards() {
   const [cardIndex, setCardIndex] = useState(0);
-  const [maxViews, setMaxViews] = useState(6);
+  const [maxViews, setMaxViews] = useState(6); // still need to implement a 'setMaxViews' function
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
@@ -81,8 +81,7 @@ export default function Cards() {
   }, [runEffect]);
 
   setTimeout(() => {
-    if (runEffect) setRunEffect(false);
-    else setRunEffect(true);
+    setRunEffect(!runEffect)
   }, 180000); // timer set to 3 seconds
 
   return (
