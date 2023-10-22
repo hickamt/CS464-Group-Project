@@ -71,7 +71,7 @@ const buildCards = function buildCryptoCards(
 
   userData.map((data, index) => {
     temp.push(
-      <Card key={index} className="media-card ">
+      <Card key={index} className="media-card shadow">
         {cardImage(data)}
         {cardBody(data)}
       </Card>

@@ -7,8 +7,8 @@ import Main from "./pages/Main";
 
 /* Additional Routes for Custom Pages */
 import Card from "./components/card/Card";
-import ComponentB from "./components/compt_b/ComponentB";
-import ComponentC from "./components/compt_c/ComponentC";
+import Chart from "./components/chart/Chart";
+import Table from "./components/table/Table";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="card" element={<Card />} />
-          <Route path="componentB" element={<ComponentB />} />
-          <Route path="componentC" element={<ComponentC />} />
+          <Route path="chart" element={<Chart />} />
+          <Route path="table" element={<Table />} />
         </Route>
       </Routes>
     </>

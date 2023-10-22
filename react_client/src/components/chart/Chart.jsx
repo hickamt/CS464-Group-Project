@@ -1,8 +1,8 @@
-export default function ComponentThree() {
+export default function Chart() {
   return (
     <>
       <div className="component-three text-center mt-3">
-        <h1>COMPONENT B</h1>
+        <h1>Chart</h1>
       </div>
     </>
   );
