@@ -74,7 +74,7 @@ export default function Table() {
 
   return (
     <>
-      <div className="table-container mx-auto">
+      <div className="table-container">
         <h1 className="d-none">Table</h1>
 
         <div className="table-outer-div">
