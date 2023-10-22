@@ -5,6 +5,11 @@ import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import combineData from "./modules/combineData";
 import "./styles/table.css";
+import {
+  setPercentageToFixed,
+  setValueToFixed,
+  textColor,
+} from "./modules/utility";
 // import { QueriesTableIcons } from "./modules/TableIconDropDowns";
 
 export default function Table() {
@@ -14,6 +19,39 @@ export default function Table() {
   const [headers, setHeaders] = useState([]);
   const [columnOrder, setColumnOrder] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
+
+  const formatTableValues = (key, value) => {
+    switch (key) {
+      case "icon":
+        return (
+          <td className="table-icon">
+            <img
+              className="table-icon mx-auto bg-muted rounded p-1"
+              alt="cryptocurrency"
+              src={value}
+            />
+          </td>
+        );
+
+      case "asset":
+        return <td className="asset">{value.toUpperCase()}</td>;
+      case "remaining":
+      case "spot":
+      case "value":
+      case "volume":
+        return <td className="table-data">{setValueToFixed(value).toLocaleString("en-US")}</td>;
+
+      case "day":
+      case "hour":
+      case "week":
+      case "month":
+        return (
+          <td className={`table-data ${textColor(value)}`}>
+            {setPercentageToFixed(value)}%
+          </td>
+        );
+    }
+  };
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -36,7 +74,7 @@ export default function Table() {
 
   return (
     <>
-      <div className="component-two text-center mt-3">
+      <div className="table-container mx-auto">
         <h1 className="d-none">Table</h1>
 
         <div className="table-outer-div">
@@ -63,17 +101,13 @@ export default function Table() {
             </thead>
             <tbody className="table-body">
               {tableData &&
-                tableData.map((item, index) => {
+                tableData.map((item) => {
                   return (
                     <>
-                      {/* @Todo: resolve unique row key={} error
-                                 should be able to use the listing_id*/}
-                      <tr key={index} className="table-row">
-                        {Object.values(item).map((data, i) => (
-                          <td key={i + index} className="table-body">
-                            {typeof data === "boolean" ? data.toString() : data}
-                          </td>
-                        ))}
+                      <tr key={item.icon} className="table-row" onClick={() => window.open(`https://www.livecoinwatch.com/`)}>
+                        {Object.entries(item).map(([key, value]) =>
+                          formatTableValues(key, value)
+                        )}
                       </tr>
                     </>
                   );

@@ -1,7 +1,34 @@
-table.table {
+.table-container {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  width: 90%
+}
+
+.table {
+  background-color: var(--black);
   color: var(--light);
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  border-radius: 0.5em;
 }
 
+.table-head {
+  height: 3em;
+  vertical-align: middle;
+}
+
+.table-row {
+  vertical-align: middle;
+}
+
+.table-row:hover {
+  background-color: var(--blue-light);
+}
+
+.table-icon {
+  background-color: var(--blue-light);
+  max-width: 4em;
+  max-height: auto;
+}

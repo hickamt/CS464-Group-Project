@@ -1,4 +1,4 @@
-import { sortHighLow } from "../../card/utility";
+import { getCryptoIcon, sortHighLow } from "./utility";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
@@ -14,6 +14,7 @@ const combineData = function combineDataWithCryptoData(
       (data) => data.code.toUpperCase() === asset.toUpperCase()
     );
     temp.push({
+      icon: getCryptoIcon(asset),
       asset: asset,
       remaining: remaining,
       spot: rate,
