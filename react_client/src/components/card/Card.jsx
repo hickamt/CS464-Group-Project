@@ -13,7 +13,7 @@ import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 // Utilities
 // import { spinAnimation, sortHighLow } from "./utility";
 
-import { sortValueHL } from "../../modules/sortFunctions";
+import { sortValueHL } from "../../modules/arraySort";
 
 // CSS Styles
 import "./styles/card.css";

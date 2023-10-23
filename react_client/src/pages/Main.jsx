@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import FetchAnimation from "../components/animation/FetchAnimation";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";

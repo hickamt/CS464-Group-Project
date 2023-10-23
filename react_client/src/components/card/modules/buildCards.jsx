@@ -1,9 +1,11 @@
 import Card from "react-bootstrap/Card";
 
+import { getCryptoIcon, textColor } from "../../table/modules/utility";
+
 import {
-  getCryptoIcon,
+  // getCryptoIcon,
   setValueToFixed,
-  textColor,
+  // textColor,
   setPercentageToFixed,
 } from "../utility";
 

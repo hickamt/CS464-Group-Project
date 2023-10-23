@@ -8,7 +8,7 @@ export function getLocalState(
   endpoint,
   setdbIsBuilt,
   setdbIsRemoved,
-  setFetchAnimation
+ setAnimation 
 ) {
   axios
     .get(`http://localhost:5500/${endpoint}`)
@@ -16,7 +16,7 @@ export function getLocalState(
       const data = JSON.parse(response.data);
       setdbIsBuilt(data[0].dbIsBuilt);
       setdbIsRemoved(data[0].dbIsRemoved);
-      setFetchAnimation(true);
+      setAnimation(true);
       return;
     })
     .catch((error) => {
