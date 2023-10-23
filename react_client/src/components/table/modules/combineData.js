@@ -1,4 +1,6 @@
-import { getCryptoIcon, sortHighLow } from "./utility";
+// import { getCryptoIcon, sortHighLow } from "./utility";
+import { getCryptoIcon } from "../../../modules/themes";
+import { sortHighLow } from "../../../modules/utility";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(

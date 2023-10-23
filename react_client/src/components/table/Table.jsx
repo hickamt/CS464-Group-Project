@@ -5,11 +5,13 @@ import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import combineData from "./modules/combineData";
 import "./styles/table.css";
-import {
-  setPercentageToFixed,
-  setValueToFixed,
-  textColor,
-} from "./modules/utility";
+import { setValueToFixed, setPercentageToFixed } from "../../modules/utility";
+import { textColor } from "../../modules/themes";
+// import {
+  // setPercentageToFixed,
+  // setValueToFixed,
+  // textColor,
+// } from "./modules/utility";
 // import { QueriesTableIcons } from "./modules/TableIconDropDowns";
 
 export default function Table() {
