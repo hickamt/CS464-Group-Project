@@ -1,13 +1,7 @@
 import Card from "react-bootstrap/Card";
 
 import { getCryptoIcon, textColor } from "../../table/modules/utility";
-
-import {
-  // getCryptoIcon,
-  setValueToFixed,
-  // textColor,
-  setPercentageToFixed,
-} from "../utility";
+import { setValueToFixed, setPercentageToFixed } from "../../table/modules/utility";
 
 const cardImage = function buildCardImage(props) {
   return (
