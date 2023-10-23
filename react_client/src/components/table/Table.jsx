@@ -7,12 +7,6 @@ import combineData from "./modules/combineData";
 import "./styles/table.css";
 import { setValueToFixed, setPercentageToFixed } from "../../modules/utility";
 import { textColor } from "../../modules/themes";
-// import {
-  // setPercentageToFixed,
-  // setValueToFixed,
-  // textColor,
-// } from "./modules/utility";
-// import { QueriesTableIcons } from "./modules/TableIconDropDowns";
 
 export default function Table() {
   // const [showDropdown, setShowDropdown] = useState(false);

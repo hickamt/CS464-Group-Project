@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
+import combineData from "./modules/combineData";
 
 // Utilities
 // import { spinAnimation, sortHighLow } from "./utility";
@@ -21,31 +22,31 @@ import Row from "react-bootstrap/Row";
 import buildCards from "./modules/buildCards";
 
 // Combine userData and cryptoData into one array (GH)
-const combineData = function combineDataWithCryptoData(
-  userData,
-  cryptoData,
-  setData
-) {
-  const temp = [];
-  userData.map((data) => {
-    const { asset, remaining } = data;
-    const { rate, volume, delta } = cryptoData.find(
-      (data) => data.code.toUpperCase() === asset.toUpperCase()
-    );
-    temp.push({
-      asset: asset,
-      remaining: remaining,
-      spot: rate,
-      value: rate * remaining,
-      volume: volume,
-      day: (delta.day - 1) * 100,
-      hour: (delta.hour - 1) * 100,
-      week: (delta.week - 1) * 100,
-      month: (delta.month - 1) * 100,
-    });
-  });
-  setData(sortValueHL(temp));
-};
+// const combineData = function combineDataWithCryptoData(
+//   userData,
+//   cryptoData,
+//   setData
+// ) {
+//   const temp = [];
+//   userData.map((data) => {
+//     const { asset, remaining } = data;
+//     const { rate, volume, delta } = cryptoData.find(
+//       (data) => data.code.toUpperCase() === asset.toUpperCase()
+//     );
+//     temp.push({
+//       asset: asset,
+//       remaining: remaining,
+//       spot: rate,
+//       value: rate * remaining,
+//       volume: volume,
+//       day: (delta.day - 1) * 100,
+//       hour: (delta.hour - 1) * 100,
+//       week: (delta.week - 1) * 100,
+//       month: (delta.month - 1) * 100,
+//     });
+//   });
+//   setData(sortValueHL(temp));
+// };
 
 const goLeft = function decrementCardIndex(cardIndex, setCardIndex) {
   if (cardIndex > 0) {

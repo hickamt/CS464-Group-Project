@@ -5,8 +5,7 @@ import { sortValueHL } from "../../../modules/arraySort";
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
-  setData,
-  setHeaders
+  setData
 ) {
   const temp = [];
   userData.map((data) => {
@@ -27,7 +26,6 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setHeaders(Object.keys(temp[0]));
   setData(sortValueHL(temp));
 };
 
