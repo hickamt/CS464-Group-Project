@@ -20,8 +20,8 @@ const combineData = function combineDataWithCryptoData(
       spot: rate,
       value: rate * remaining,
       volume: volume,
-      day: (delta.day - 1) * 100,
       hour: (delta.hour - 1) * 100,
+      day: (delta.day - 1) * 100,
       week: (delta.week - 1) * 100,
       month: (delta.month - 1) * 100,
     });
