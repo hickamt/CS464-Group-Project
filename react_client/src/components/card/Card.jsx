@@ -3,50 +3,21 @@
  * Bootstrap 5.0 Grid: https://react-bootstrap.netlify.app/docs/layout/grid/#setting-column-widths-in-row
  */
 
-// import Card from "react-bootstrap/Card";
-import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+// React and build modules
 import { useEffect, useState } from "react";
+import Row from "react-bootstrap/Row";
+import buildCards from "./modules/buildCards";
+import combineData from "./modules/combineData";
+
+// API
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
-import combineData from "./modules/combineData";
 
-// Utilities
-// import { spinAnimation, sortHighLow } from "./utility";
-
-import { sortValueHL } from "../../modules/arraySort";
-
-// CSS Styles
+// Styles and Animation
 import "./styles/card.css";
-import Row from "react-bootstrap/Row";
-import buildCards from "./modules/buildCards";
-
-// Combine userData and cryptoData into one array (GH)
-// const combineData = function combineDataWithCryptoData(
-//   userData,
-//   cryptoData,
-//   setData
-// ) {
-//   const temp = [];
-//   userData.map((data) => {
-//     const { asset, remaining } = data;
-//     const { rate, volume, delta } = cryptoData.find(
-//       (data) => data.code.toUpperCase() === asset.toUpperCase()
-//     );
-//     temp.push({
-//       asset: asset,
-//       remaining: remaining,
-//       spot: rate,
-//       value: rate * remaining,
-//       volume: volume,
-//       day: (delta.day - 1) * 100,
-//       hour: (delta.hour - 1) * 100,
-//       week: (delta.week - 1) * 100,
-//       month: (delta.month - 1) * 100,
-//     });
-//   });
-//   setData(sortValueHL(temp));
-// };
+import SpinAnimation from "../animation/Animation";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const goLeft = function decrementCardIndex(cardIndex, setCardIndex) {
   if (cardIndex > 0) {
@@ -87,10 +58,12 @@ export default function Cards() {
     setRunEffect(!runEffect)
   }, 180000); // timer set to 3 seconds
 
+  if (!isData) {
+    return <SpinAnimation />;
+  }
+
   return (
     <>
-      {/* {animation
-        ? spinAnimation() */}
       {isData && (
         <>
           <h1 className="card-title d-none">Crypto Assets</h1>

@@ -1,14 +1,14 @@
 import ReactLoading from "react-loading";
 
-// Loading animation (GH)
-export const spinAnimation = function reactSpinLoadingAnimation() {
+// Spinning Load Animation (GH)
+export default function SpinAnimation() {
   return (
     <ReactLoading
-      className="mx-auto my-3"
+      className="mx-auto"
       type="spin"
-      color="#4a4537"
+      color="rgba(11, 127, 171, 0.5)"
       height={100}
       width={100}
     />
   );
-};
+}
