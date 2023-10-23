@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 export default function SpinAnimation() {
   return (
     <ReactLoading
-      className="mx-auto"
+      className="mx-auto mt-4"
       type="spin"
       color="rgba(11, 127, 171, 0.5)"
       height={100}
