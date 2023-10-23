@@ -11,7 +11,9 @@ import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 // Utilities
-import { spinAnimation, sortHighLow } from "./utility";
+// import { spinAnimation, sortHighLow } from "./utility";
+
+import { sortValueHL } from "../../modules/sortFunctions";
 
 // CSS Styles
 import "./styles/card.css";
@@ -42,7 +44,7 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setData(sortHighLow(temp));
+  setData(sortValueHL(temp));
 };
 
 const goLeft = function decrementCardIndex(cardIndex, setCardIndex) {

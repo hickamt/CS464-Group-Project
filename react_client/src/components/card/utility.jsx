@@ -41,17 +41,3 @@ export const setValueToFixed = function setValueToFixedPrecision(value) {
 export const setPercentageToFixed = function setPercentageValueFixedTwo(value) {
   return Number.parseFloat(value).toFixed(2);
 };
-
-// Sort array from greatest to least (GH)
-export const sortHighLow = function sortArrayGreatestToLeast(array) {
-  return array.sort((a, b) => {
-    return b.value - a.value;
-  });
-};
-
-// Sort array from least to greatest (GH)
-export const sortLowHigh = function sortArrayLeastToGreatest(array) {
-  return array.sort((a, b) => {
-    return a.value - b.value;
-  });
-};
