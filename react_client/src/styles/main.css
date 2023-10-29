@@ -13,6 +13,7 @@
 }
 
 .main-view {
+  min-height: 20em;
   grid-area: main;
   border-radius: 0.5em;
 }

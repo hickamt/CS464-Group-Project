@@ -55,13 +55,13 @@ const Layout = () => {
                 </Link>
               </li>
               <li className="nav-item active fs-4">
-                <Link className="nav-link" to="/componentB">
-                  Component B
+                <Link className="nav-link" to="/chart">
+                 Chart 
                 </Link>
               </li>
               <li className="nav-item active fs-4">
-                <Link className="nav-link" to="/componentC">
-                  Component C
+                <Link className="nav-link" to="/table">
+                 Table 
                 </Link>
               </li>
             </ul>

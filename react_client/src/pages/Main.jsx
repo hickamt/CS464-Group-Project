@@ -1,11 +1,10 @@
 import { useState } from "react";
-// import FetchAnimation from "../components/animation/FetchAnimation";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Cards from "../components/card/Card";
-import ComponentB from "../components/compt_b/ComponentB";
-import ComponentC from "../components/compt_c/ComponentC";
+import Chart from "../components/chart/Chart";
+import Table from "../components/table/Table";
 
 function Main() {
   const [mainView, setMainView] = useState("Main View");
@@ -20,10 +19,10 @@ function Main() {
         setMainView(<Cards />);
         break;
       case "chart":
-        setMainView(<ComponentB />);
+        setMainView(<Chart />);
         break;
       case "table":
-        setMainView(<ComponentC />);
+        setMainView(<Table />);
         break;
       default:
         setMainView("Main View");

@@ -1,11 +1,6 @@
 import Card from "react-bootstrap/Card";
-
-import {
-  getCryptoIcon,
-  setValueToFixed,
-  textColor,
-  setPercentageToFixed,
-} from "../utility";
+import { getCryptoIcon, textColor } from "../../../modules/themes";
+import { setValueToFixed, setPercentageToFixed } from "../../../modules/utility";
 
 const cardImage = function buildCardImage(props) {
   return (
@@ -71,7 +66,7 @@ const buildCards = function buildCryptoCards(
 
   userData.map((data, index) => {
     temp.push(
-      <Card key={index} className="media-card ">
+      <Card key={index} className="media-card shadow">
         {cardImage(data)}
         {cardBody(data)}
       </Card>
