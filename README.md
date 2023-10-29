@@ -46,7 +46,7 @@ $ npm run setup
 Run the following command to initiate the development mode. This should spin up:
 
 - React server (localhost:5173)
-- Express server (localhost:5500)
+- Express server (localhost:5523)
 
 ```bash
 $ npm run dev
@@ -166,7 +166,7 @@ function yourClientQueryFunction(query) {
   return (
     axios
       // The server endpoint is: 'queries' statically coded here
-      .post("http://localhost:5500/queries", {
+      .post("http://localhost:5523/queries", {
         headers: {
           "Content-Type": "application/json",
         },

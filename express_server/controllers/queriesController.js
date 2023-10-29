@@ -40,7 +40,7 @@ const postQuery = (req, res) => {
   return res.status(400).json({
     error: error,
     message: `Post Query Error: the request for ${query} may not have a qualified request object.
-      OR, your server is not running on port: 5500.`,
+      OR, your server is not running on port: 5523.`,
   });
 };
 

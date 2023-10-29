@@ -22,7 +22,7 @@ import axios from "axios";
 export default async function expressQueryAPI(query) {
   try {
     return await axios
-      .post("http://localhost:5500/queries", {
+      .post("http://localhost:5523/queries", {
         headers: {
           "Content-Type": "application/json",
         },

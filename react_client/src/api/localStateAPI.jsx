@@ -11,7 +11,7 @@ export function getLocalState(
  setAnimation 
 ) {
   axios
-    .get(`http://localhost:5500/${endpoint}`)
+    .get(`http://localhost:5523/${endpoint}`)
     .then((response) => {
       const data = JSON.parse(response.data);
       setdbIsBuilt(data[0].dbIsBuilt);
@@ -28,7 +28,7 @@ export function getLocalState(
 // POST state changes
 export function postLocalState(endpoint, stateData1, stateData2) {
   axios
-    .post(`http://localhost:5500/${endpoint}`, {
+    .post(`http://localhost:5523/${endpoint}`, {
       headers: {
         "Content-Type": "application/json",
       },
