@@ -1,5 +1,8 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { useState, useEffect } from 'react';
+import lcwCryptoAPI from '../../api/livecoinwatchAPI';
+import lcwRemainingCredits from '../../api/lcwRemainingCredits';
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
