@@ -42,7 +42,7 @@ const combineData = function combineDataWithCryptoData(
   setData(temp);
 };
 
-export default function ComponentThree() {
+export default function DoughnutChart() {
   const [userData, setUserData] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
 
