@@ -3,8 +3,19 @@ import { Doughnut } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import lcwCryptoAPI from '../../api/livecoinwatchAPI';
 import lcwRemainingCredits from '../../api/lcwRemainingCredits';
+import expressQueryAPI from '../../api/expressQueryAPI';
 
-// Combine userData and cryptoData into one array (GH)
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  let a = Math.random();
+  if (a > 0.8) {
+    a -= 0.5;
+  }
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
 const combineData = function combineDataWithCryptoData(
   userData,
   cryptoData,
@@ -28,44 +39,49 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setData(sortHighLow(temp));
+  setData(temp);
 };
+
 export default function ComponentThree() {
-  const [cardIndex, setCardIndex] = useState(0);
-  const [maxViews, setMaxViews] = useState(6);
   const [userData, setUserData] = useState([]);
-  const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
 
-  // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
-    console.log('Inside UseEffect()');
     lcwRemainingCredits();
     async function fetchData() {
       const expressData = await expressQueryAPI('remaining');
       const cryptoData = await lcwCryptoAPI();
       if (expressData && cryptoData) {
         combineData(expressData, cryptoData, setUserData);
-        setIsData(true);
       }
     }
     fetchData();
   }, [runEffect]);
 
   setTimeout(() => {
-    if (runEffect) setRunEffect(false);
-    else setRunEffect(true);
-  }, 180000); // timer set to 3 seconds
+    setRunEffect(!runEffect);
+  }, 180000);
 
   ChartJS.register(ArcElement, Tooltip, Legend);
-  const data = {
-    labels: ['Red', 'Blue', 'Yellow'],
+
+  const labels = [];
+  const dataPoints = [];
+  const backgroundColors = [];
+
+  userData.forEach((assetData) => {
+    labels.push(assetData.asset);
+    dataPoints.push(assetData.value);
+    backgroundColors.push(getRandomColor());
+  });
+
+  const doughnutData = {
+    labels: labels,
     datasets: [
       {
-        label: '# of Votes',
-        data: [12, 19, 3],
-        backgroundColor: ['red', 'blue', 'yellow'],
-        borderColor: ['red', 'blue', 'yellow'],
+        label: 'Asset Value',
+        data: dataPoints,
+        backgroundColor: backgroundColors,
+        borderColor: backgroundColors,
         borderWidth: 1,
       },
     ],
@@ -73,10 +89,9 @@ export default function ComponentThree() {
 
   return (
     <>
-      <div className="component-three text-center mt-3">
-        <h1>CHARTS CHARTS CHARTS!!!!!</h1>
+      <div className="">
+        <Doughnut data={doughnutData} />
       </div>
-      <Doughnut data={data} />
     </>
   );
 }
