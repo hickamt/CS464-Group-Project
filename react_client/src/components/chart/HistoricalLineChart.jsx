@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import 'chartjs-adapter-date-fns';
-import { Line } from 'react-chartjs-2';
-import lcwSingleHistory from '../../api/lcwHistoricalAPI';
-import expressQueryAPI from '../../api/expressQueryAPI';
+import React, { useState, useEffect } from "react";
+import "chartjs-adapter-date-fns";
+import { Line } from "react-chartjs-2";
+import lcwSingleHistory from "../../api/lcwHistoricalAPI";
+import expressQueryAPI from "../../api/expressQueryAPI";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,7 +14,7 @@ import {
   TimeScale,
   PointElement,
   LineElement,
-} from 'chart.js';
+} from "chart.js";
 
 ChartJS.register(
   CategoryScale,
@@ -28,28 +28,133 @@ ChartJS.register(
   LineElement
 );
 
-function HistoricalLineChart({ coin = 'BTC' }) {
+const dateHistory = [
+    "11/1/2023, 5:40:00 PM",
+    "11/1/2023, 5:55:00 PM",
+    "11/1/2023, 6:10:00 PM",
+    "11/1/2023, 6:25:00 PM",
+    "11/1/2023, 6:40:00 PM",
+    "11/1/2023, 6:55:00 PM",
+    "11/1/2023, 7:10:00 PM",
+    "11/1/2023, 7:25:00 PM",
+    "11/1/2023, 7:40:00 PM",
+    "11/1/2023, 7:55:00 PM",
+    "11/1/2023, 8:10:00 PM",
+    "11/1/2023, 8:25:00 PM",
+    "11/1/2023, 8:40:00 PM",
+    "11/1/2023, 8:55:00 PM",
+    "11/1/2023, 9:10:00 PM",
+    "11/1/2023, 9:25:00 PM",
+    "11/1/2023, 9:40:00 PM",
+    "11/1/2023, 9:55:00 PM",
+    "11/1/2023, 10:10:00 PM",
+    "11/1/2023, 10:25:00 PM",
+    "11/1/2023, 10:40:00 PM",
+    "11/1/2023, 10:55:00 PM",
+    "11/1/2023, 11:10:00 PM",
+    "11/1/2023, 11:25:00 PM",
+    "11/1/2023, 11:40:00 PM",
+    "11/1/2023, 11:55:00 PM",
+    "11/2/2023, 12:10:00 AM",
+    "11/2/2023, 12:25:00 AM",
+    "11/2/2023, 12:40:00 AM",
+    "11/2/2023, 12:55:00 AM",
+    "11/2/2023, 1:10:00 AM",
+    "11/2/2023, 1:25:00 AM",
+    "11/2/2023, 1:40:00 AM",
+    "11/2/2023, 1:55:00 AM",
+    "11/2/2023, 2:10:00 AM",
+    "11/2/2023, 2:25:00 AM",
+    "11/2/2023, 2:40:00 AM",
+    "11/2/2023, 2:55:00 AM",
+    "11/2/2023, 3:10:00 AM",
+    "11/2/2023, 3:25:00 AM",
+    "11/2/2023, 3:40:00 AM",
+    "11/2/2023, 3:55:00 AM",
+    "11/2/2023, 4:10:00 AM",
+    "11/2/2023, 4:25:00 AM",
+    "11/2/2023, 4:40:00 AM",
+    "11/2/2023, 4:55:00 AM",
+    "11/2/2023, 5:10:00 AM",
+    "11/2/2023, 5:25:00 AM",
+    "11/2/2023, 5:40:00 AM",
+    "11/2/2023, 5:55:00 AM",
+    "11/2/2023, 6:10:00 AM",
+    "11/2/2023, 6:25:00 AM",
+    "11/2/2023, 6:40:00 AM",
+    "11/2/2023, 6:55:00 AM",
+    "11/2/2023, 7:10:00 AM",
+    "11/2/2023, 7:25:00 AM",
+    "11/2/2023, 7:40:00 AM",
+    "11/2/2023, 7:55:00 AM",
+    "11/2/2023, 8:10:00 AM",
+    "11/2/2023, 8:25:00 AM",
+    "11/2/2023, 8:40:00 AM",
+    "11/2/2023, 8:55:00 AM",
+    "11/2/2023, 9:10:00 AM",
+    "11/2/2023, 9:25:00 AM",
+    "11/2/2023, 9:40:00 AM",
+    "11/2/2023, 9:55:00 AM",
+    "11/2/2023, 10:10:00 AM",
+    "11/2/2023, 10:25:00 AM",
+    "11/2/2023, 10:40:00 AM",
+    "11/2/2023, 10:55:00 AM",
+    "11/2/2023, 11:10:00 AM",
+    "11/2/2023, 11:25:00 AM",
+    "11/2/2023, 11:40:00 AM",
+    "11/2/2023, 11:55:00 AM",
+    "11/2/2023, 12:10:00 PM",
+    "11/2/2023, 12:25:00 PM",
+    "11/2/2023, 12:40:00 PM",
+    "11/2/2023, 12:55:00 PM",
+    "11/2/2023, 1:10:00 PM",
+    "11/2/2023, 1:25:00 PM",
+    "11/2/2023, 1:40:00 PM",
+    "11/2/2023, 1:55:00 PM",
+    "11/2/2023, 2:10:00 PM",
+    "11/2/2023, 2:25:00 PM",
+    "11/2/2023, 2:40:00 PM",
+    "11/2/2023, 2:55:00 PM",
+    "11/2/2023, 3:10:00 PM",
+    "11/2/2023, 3:25:00 PM",
+    "11/2/2023, 3:40:00 PM",
+    "11/2/2023, 3:55:00 PM",
+    "11/2/2023, 4:10:00 PM",
+    "11/2/2023, 4:25:00 PM",
+    "11/2/2023, 4:40:00 PM",
+    "11/2/2023, 4:55:00 PM",
+    "11/2/2023, 5:10:00 PM",
+    "11/2/2023, 5:25:00 PM"
+]
+
+function HistoricalLineChart({ coin = "BTC" }) {
   const [userData, setUserData] = useState([]);
+  const [rates, setRates] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      const expressData = await expressQueryAPI('remaining');
       const cryptoData = await lcwSingleHistory();
-      if (expressData && cryptoData) {
-        // combineData(expressData, cryptoData, setUserData);
+      if (cryptoData) {
         setUserData(cryptoData);
+        setRates(() => cryptoData.history.map((data) => data.rate))
+        console.log(
+          "User Data RATE: ",
+          cryptoData.history?.map((entry) => entry.rate)
+        );
+        console.log(
+          "User Data DATE: ",
+          cryptoData.history?.map((entry) =>
+            new Date(entry.date).toLocaleString()
+          )
+        );
+        // console.log("LCW History From Fetch: ", cryptoData);
+        // console.log(cryptoData.history);
+        // console.log(chartData);
       }
-      console.log(cryptoData);
-      console.log(cryptoData.history);
-      console.log(chartData);
     }
 
     fetchData();
-    console.log(
-      userData.history?.map((entry) => new Date(entry.date).toLocaleString())
-    );
-    console.log(userData.history?.map((entry) => entry.rate));
   }, [runEffect]);
 
   setTimeout(() => {
@@ -60,49 +165,33 @@ function HistoricalLineChart({ coin = 'BTC' }) {
     new Date(entry.date).toLocaleString()
   );
 
-  const data = userData.history?.map((entry) => entry.rate);
+  // const data = userData.history?.map((entry) => entry.rate);
 
   const chartData = {
-    labels: labels,
+    // labels: labels,
+    labels: dateHistory,
     datasets: [
       {
         label: `${coin} Price in USD`,
-        data: data,
+        data: rates,
         fill: false,
-        borderColor: 'rgba(75,192,192,1)',
+        borderColor: "rgba(75,192,192,1)",
         tension: 0.1,
       },
     ],
   };
 
   const options = {
-    scales: {
-      x: {
-        type: 'time',
-        time: {
-          parser: 'x',
-          unit: 'millisecond',
-          tooltipFormat: 'MMM dd, yyyy hh:mm a',
-        },
-        autoSkip: false,
-        title: {
-          display: true,
-          text: 'Date',
-        },
-        ticks: {
-          maxRotation: 90,
-          minRotation: 90,
-          autoSkipPadding: 10,
-        },
-      },
-      y: {
-        beginAtZero: false,
-        title: {
-          display: true,
-          text: 'Value',
-        },
-      },
+      responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
     },
+    title: {
+      display: true,
+      text: 'Chart.js Line Chart',
+    },
+  },
   };
 
   return (
