@@ -14,6 +14,7 @@ import {
   PointElement,
   LineElement,
 } from 'chart.js';
+import lcwRemainingCredits from '../../api/lcwRemainingCredits';
 
 ChartJS.register(
   CategoryScale,
@@ -46,6 +47,7 @@ function HistoricalLineChart({
         setDates(() =>
           cryptoData.history.map((data) => new Date(data.date).toLocaleString())
         );
+        console.log(lcwRemainingCredits());
         console.log(
           'User Data RATE: ',
           cryptoData.history?.map((entry) => entry.rate)
@@ -60,7 +62,7 @@ function HistoricalLineChart({
     }
 
     fetchData();
-  }, [runEffect, coin]);
+  }, [runEffect, coin, start]);
 
   setTimeout(() => {
     setRunEffect(!runEffect);
