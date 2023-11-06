@@ -33,7 +33,6 @@ function HistoricalLineChart({
   start = 1698884890423,
   end = 1698971290423,
 }) {
-  const [userData, setUserData] = useState([]);
   const [rates, setRates] = useState([]);
   const [dates, setDates] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
@@ -42,7 +41,6 @@ function HistoricalLineChart({
     async function fetchData() {
       const cryptoData = await lcwSingleHistory(coin, start, end);
       if (cryptoData) {
-        setUserData(cryptoData);
         setRates(() => cryptoData.history.map((data) => data.rate));
         setDates(() =>
           cryptoData.history.map((data) => new Date(data.date).toLocaleString())
