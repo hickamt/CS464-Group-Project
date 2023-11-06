@@ -4,10 +4,15 @@ import HistoricalLineChartCompTwo from '../components/chart/HistoricalLineChartC
 
 const ChartsPage = () => {
   const [selectedCoin, setSelectedCoin] = useState('BTC');
+  const [selectedCoinTwo, setSelectCoinTwo] = useState('ETH');
   const [dateRange, setDateRange] = useState('30d');
 
   const handleChangeCoin = (event) => {
     setSelectedCoin(event.target.value);
+  };
+
+  const handleChangeCoinTwo = (event) => {
+    setSelectCoinTwo(event.target.value);
   };
 
   const handleChangeDateRange = (event) => {
@@ -70,6 +75,30 @@ const ChartsPage = () => {
         </select>
       </div>
       <div>
+        <label htmlFor="coin-select">Choose a second Coin:</label>
+        <select
+          id="coin-select"
+          value={selectedCoinTwo}
+          onChange={handleChangeCoinTwo}
+        >
+          <option value="AMP">AMP</option>
+          <option value="BAL">BAL</option>
+          <option value="BNB">BNB</option>
+          <option value="BOND">BOND</option>
+          <option value="BTC">BTC</option>
+          <option value="CLV">CLV</option>
+          <option value="COMP">COMP</option>
+          <option value="DOGE">DOGE</option>
+          <option value="DOT">DOT</option>
+          <option value="ETH">ETH</option>
+          <option value="FET">FET</option>
+          <option value="FORTH">FORTH</option>
+          <option value="LUNC">LUNC</option>
+          <option value="USDC">USDC</option>
+          <option value="USDT">USDT</option>
+        </select>
+      </div>
+      <div>
         <label htmlFor="date-range-select">Choose a date range:</label>
         <select
           id="date-range-select"
@@ -83,7 +112,7 @@ const ChartsPage = () => {
         </select>
       </div>
       <HistoricalLineChart coin={selectedCoin} start={start} end={end} />
-      <HistoricalLineChartCompTwo />
+      <HistoricalLineChartCompTwo coins={[selectedCoin, selectedCoinTwo]} />
     </div>
   );
 };
