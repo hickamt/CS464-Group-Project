@@ -10,6 +10,7 @@ import Card from './components/card/Card';
 import Chart from './components/chart/Chart';
 import Table from './components/table/Table';
 import HistoricalLineChart from './components/chart/HistoricalLineChart';
+import ChartsPage from './pages/ChartsPage';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="card" element={<Card />} />
-          <Route path="chart" element={<HistoricalLineChart />} />
+          <Route path="chart" element={<ChartsPage />} />
           <Route path="table" element={<Table />} />
         </Route>
       </Routes>

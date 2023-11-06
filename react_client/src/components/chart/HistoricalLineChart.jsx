@@ -61,7 +61,7 @@ function HistoricalLineChart({
     }
 
     fetchData();
-  }, [runEffect]);
+  }, [runEffect, coin]);
 
   setTimeout(() => {
     setRunEffect(!runEffect);
