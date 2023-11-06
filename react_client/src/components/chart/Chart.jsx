@@ -47,7 +47,7 @@ export default function DoughnutChart() {
   const [runEffect, setRunEffect] = useState(true);
 
   useEffect(() => {
-    lcwRemainingCredits();
+    console.log('remaining credits ', lcwRemainingCredits());
     async function fetchData() {
       const expressData = await expressQueryAPI('remaining');
       const cryptoData = await lcwCryptoAPI();
