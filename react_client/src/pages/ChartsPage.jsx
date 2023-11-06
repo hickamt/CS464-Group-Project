@@ -2,26 +2,40 @@ import React, { useState } from 'react';
 import HistoricalLineChart from '../components/chart/HistoricalLineChart';
 
 const ChartsPage = () => {
-  const [coin, setCoin] = useState('BTC');
+  const [selectedCoin, setSelectedCoin] = useState('BTC');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newCoin = event.target.elements.coinInput.value;
-    setCoin(newCoin);
+  const handleChange = (event) => {
+    setSelectedCoin(event.target.value);
+    onCoinSelect(event.target.value);
   };
 
   return (
     <div>
       <HistoricalLineChart
-        coin={coin}
+        coin={selectedCoin}
         start={'1698884890423'}
         end={'1698971290423'}
       />
       <h1>Charts Page</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="coinInput"></input>
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <select value={selectedCoin} onChange={handleChange}>
+          <option value="AMP">AMP</option>
+          <option value="BAL">BAL</option>
+          <option value="BNB">BNB</option>
+          <option value="BOND">BOND</option>
+          <option value="BTC">BTC</option>
+          <option value="CLV">CLV</option>
+          <option value="COMP">COMP</option>
+          <option value="DOGE">DOGE</option>
+          <option value="DOT">DOT</option>
+          <option value="ETH">ETH</option>
+          <option value="FET">FET</option>
+          <option value="FORTH">FORTH</option>
+          <option value="LUNC">LUNC</option>
+          <option value="USDC">USDC</option>
+          <option value="USDT">USDT</option>
+        </select>
+      </div>
     </div>
   );
 };

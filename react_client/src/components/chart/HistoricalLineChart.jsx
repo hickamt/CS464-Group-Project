@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
 import lcwSingleHistory from '../../api/lcwHistoricalAPI';
-import expressQueryAPI from '../../api/expressQueryAPI';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -67,14 +66,7 @@ function HistoricalLineChart({
     setRunEffect(!runEffect);
   }, 180000);
 
-  const labels = userData.history?.map((entry) =>
-    new Date(entry.date).toLocaleString()
-  );
-
-  // const data = userData.history?.map((entry) => entry.rate);
-
   const chartData = {
-    // labels: labels,
     labels: dates,
     datasets: [
       {
