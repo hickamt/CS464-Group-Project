@@ -81,11 +81,7 @@ const ChartsPage = () => {
           <option value="1y">Last 1 year</option>
         </select>
       </div>
-      <HistoricalLineChart
-        coin={selectedCoin}
-        start={start.toString()}
-        end={end.toString()}
-      />
+      <HistoricalLineChart coin={selectedCoin} start={start} end={end} />
     </div>
   );
 };
