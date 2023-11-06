@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HistoricalLineChart from '../components/chart/HistoricalLineChart';
+import HistoricalLineChartCompTwo from '../components/chart/HistoricalLineChartCompTwo';
 
 const ChartsPage = () => {
   const [selectedCoin, setSelectedCoin] = useState('BTC');
@@ -82,6 +83,7 @@ const ChartsPage = () => {
         </select>
       </div>
       <HistoricalLineChart coin={selectedCoin} start={start} end={end} />
+      <HistoricalLineChartCompTwo />
     </div>
   );
 };
