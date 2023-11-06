@@ -52,7 +52,10 @@ export default function DoughnutChart() {
       const expressData = await expressQueryAPI('remaining');
       const cryptoData = await lcwCryptoAPI();
       if (expressData && cryptoData) {
-        combineData(expressData, cryptoData, setUserData);
+        const filteredExpressData = expressData.filter(
+          (data) => data.remaining >= 0.01
+        );
+        combineData(filteredExpressData, cryptoData, setUserData);
       }
     }
     fetchData();
