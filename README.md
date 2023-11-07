@@ -4,6 +4,11 @@ github https: https://github.com/hickamt/React-Express-Template.git
 
 Quickly set up a React application with a basic ExpressJS server.
 
+## ChartJS | ReactJS
+
+- [React ChartJS Docs](https://react-chartjs-2.js.org/examples/line-chart)
+- [ChartJS Docs](https://www.chartjs.org/docs/latest/charts/line.html)
+
 ## Clone Repository
 
 1. Click on the Green 'Code' button and copy HTTPS url
