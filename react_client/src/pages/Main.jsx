@@ -31,22 +31,24 @@ function Main() {
   };
 
   return (
-    <>
+    <div className="main-view-container">
+      <Sidebar switchComponentView={switchComponentView} />
       <div className="dashboard-container mt-3">
         <div className="main-header ">
           <Header />
         </div>
 
         <div className="main-view d-flex justify-content-center">
-          {mainView}
+          <Chart />
+          {/* {mainView} */}
         </div>
 
-        <Sidebar switchComponentView={switchComponentView} />
-        <div className="main-footer ">
-          <Footer />
+        <div className="main-footer d-flex justify-content-center">
+          {/* <Footer /> */}
+          {mainView}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
