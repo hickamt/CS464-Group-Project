@@ -1,29 +1,26 @@
-.main-view,
-.sidebar,
-.main-header,
-.main-footer {
-  background-color: var(--blue-bg);
-}
 
-.main-header {
-  grid-area: header;
-  background-size: cover;
-  border-radius: 0.5em;
-  padding-top: 1em;
-}
+/* Main View Grid | sidebar / inner-view */
 
-.main-view {
-  min-height: 20em;
-  grid-area: main;
-  border-radius: 0.5em;
+.dashboard-container {
+  grid-area: view;
 }
 
 .sidebar {
   grid-area: sidebar;
-  width: 7rem;
+  margin-top: 1em;
   background-size: cover;
   background-position: center;
   border-radius: 0.5em;
+  border: 1px solid var(--blue-light)
+}
+
+
+.main-view-container {
+  display: grid;
+  grid-template-columns: 5fr 95fr;
+  grid-template-areas:
+    "sidebar view"
+    "sidebar view"
 }
 
 .sidebar .card-btn {
@@ -46,12 +43,32 @@
   font-size: large;
 }
 
+
+/* Inner Grid Area */
+
+.main-view,
+.main-header,
+.main-footer {
+  background-color: var(--blue-bg);
+  border-radius: 0.5em;
+}
+
+.main-header {
+  grid-area: header;
+  background-size: cover;
+  padding-top: 1em;
+}
+
+.main-view {
+  grid-area: main;
+  min-height: 20em;
+}
+
 .main-footer {
   grid-area: footer;
   padding: 2em;
   background-size: cover;
   background-position: bottom;
-  border-radius: 0.5em;
 }
 
 .dashboard-container {
@@ -59,11 +76,11 @@
   display: grid;
   overflow-x: hidden;
   gap: 1rem;
-  grid-template-columns: 5fr 95fr;
+  grid-template-rows: auto auto 45fr;
   grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "sidebar footer";
+    "header"
+    "main"
+    "footer";
 }
 
 @media only screen and (max-width: 1900px) {
