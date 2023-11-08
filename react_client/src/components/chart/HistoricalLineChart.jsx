@@ -14,6 +14,7 @@ import {
   LineElement,
 } from "chart.js";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
+import SpinAnimation from "../animation/Animation";
 
 ChartJS.register(
   CategoryScale,
@@ -46,12 +47,15 @@ const dateSevenDaysAgo = (days = 30) => {
 
 function HistoricalLineChart({
   coin = "BTC",
-  start = new Date(),
-  end = dateSevenDaysAgo(),
+  // start = new Date(),
+  // end = dateSevenDaysAgo(),
 }) {
+  const start = new Date();
+  const end = dateSevenDaysAgo();
+
   const [rates, setRates] = useState([]);
   const [dates, setDates] = useState([]);
-  // const [runEffect, setRunEffect] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getHistoryData = async function fetchData() {
     const cryptoData = await lcwSingleHistory(coin, start, end);
@@ -60,17 +64,18 @@ function HistoricalLineChart({
       setDates(() =>
         cryptoData.history.map((data) => new Date(data.date).toLocaleString())
       );
-      console.log(lcwRemainingCredits());
-      console.log(
-        "User Data RATE: ",
-        cryptoData.history?.map((entry) => entry.rate)
-      );
-      console.log(
-        "User Data DATE: ",
-        cryptoData.history?.map((entry) =>
-          new Date(entry.date).toLocaleString()
-        )
-      );
+      setIsLoading(false);
+      // console.log(lcwRemainingCredits());
+      // console.log(
+      //   "User Data RATE: ",
+      //   cryptoData.history?.map((entry) => entry.rate)
+      // );
+      // console.log(
+      //   "User Data DATE: ",
+      //   cryptoData.history?.map((entry) =>
+      //     new Date(entry.date).toLocaleString()
+      //   )
+      // );
     }
   };
 
@@ -109,9 +114,15 @@ function HistoricalLineChart({
   };
 
   return (
-    <div className="line-chart w-50">
-      <Line data={chartData} options={options} />
-    </div>
+    <>
+      {isLoading ? (
+        <SpinAnimation />
+      ) : (
+        <div className="line-chart w-50">
+          <Line data={chartData} options={options} />
+        </div>
+      )}
+    </>
   );
 }
 

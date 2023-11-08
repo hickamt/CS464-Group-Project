@@ -96,9 +96,11 @@ export default function DoughnutChart() {
   return (
     <>
       {isLoading && <SpinAnimation />}
-      <div className="doughnut-chart">
-        <Doughnut data={doughnutData} />
-      </div>
+      {!isLoading && (
+        <div className="doughnut-chart">
+          <Doughnut data={doughnutData} />
+        </div>
+      )}
     </>
   );
 }

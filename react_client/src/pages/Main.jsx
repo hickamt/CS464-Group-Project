@@ -11,7 +11,7 @@ import HistoricalLineChartCompTwo from "../components/chart/HistoricalLineChartC
 
 function Main() {
   const [analyze, setAnalyze] = useState(<Cards />);
-  const [visualize, setVisualize] = useState(<HistoricalLineChart />)
+  const [visualize, setVisualize] = useState(<Chart />)
 
   const switchChartView = (e, value) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ function Main() {
         setVisualize(<HistoricalLineChartCompTwo />);
         break;
       default:
-        setMainView(<HistoricalLineChart />);
+        setMainView(<Chart />);
         break;
     }
   };
