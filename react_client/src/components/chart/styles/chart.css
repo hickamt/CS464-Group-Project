@@ -1,3 +1,12 @@
 .chart-div {
   padding-bottom: 1rem;
 }
+
+.doughnut-chart {
+  width: 100%;
+  height: auto;
+}
+
+.line-chart {
+
+}

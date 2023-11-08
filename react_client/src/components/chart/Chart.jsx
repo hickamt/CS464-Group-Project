@@ -1,9 +1,10 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import { useState, useEffect } from 'react';
-import lcwCryptoAPI from '../../api/livecoinwatchAPI';
-import lcwRemainingCredits from '../../api/lcwRemainingCredits';
-import expressQueryAPI from '../../api/expressQueryAPI';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import { useState, useEffect } from "react";
+import lcwCryptoAPI from "../../api/livecoinwatchAPI";
+import lcwRemainingCredits from "../../api/lcwRemainingCredits";
+import expressQueryAPI from "../../api/expressQueryAPI";
+import SpinAnimation from "../animation/Animation";
 
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -43,19 +44,21 @@ const combineData = function combineDataWithCryptoData(
 };
 
 export default function DoughnutChart() {
+  const [isLoading, setIsLoading] = useState(true);
   const [userData, setUserData] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
 
   useEffect(() => {
-    console.log('remaining credits ', lcwRemainingCredits());
+    console.log("remaining credits ", lcwRemainingCredits());
     async function fetchData() {
-      const expressData = await expressQueryAPI('remaining');
+      const expressData = await expressQueryAPI("remaining");
       const cryptoData = await lcwCryptoAPI();
       if (expressData && cryptoData) {
         const filteredExpressData = expressData.filter(
           (data) => data.remaining >= 0.01
         );
         combineData(filteredExpressData, cryptoData, setUserData);
+        setIsLoading(false);
       }
     }
     fetchData();
@@ -81,7 +84,7 @@ export default function DoughnutChart() {
     labels: labels,
     datasets: [
       {
-        label: 'Asset Value',
+        label: "Asset Value",
         data: dataPoints,
         backgroundColor: backgroundColors,
         borderColor: backgroundColors,
@@ -92,7 +95,8 @@ export default function DoughnutChart() {
 
   return (
     <>
-      <div className="">
+      {isLoading && <SpinAnimation />}
+      <div className="doughnut-chart">
         <Doughnut data={doughnutData} />
       </div>
     </>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 'chartjs-adapter-date-fns';
+// import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
 import lcwSingleHistory from '../../api/lcwHistoricalAPI';
 import {
@@ -90,7 +90,7 @@ function HistoricalLineChartCompTwo({
   };
 
   return (
-    <div>
+    <div className='line-compare w-50'>
       <Line data={chartData} options={options} />
     </div>
   );

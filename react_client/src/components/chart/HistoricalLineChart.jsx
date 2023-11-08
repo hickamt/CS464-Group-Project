@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import 'chartjs-adapter-date-fns';
-import { Line } from 'react-chartjs-2';
-import lcwSingleHistory from '../../api/lcwHistoricalAPI';
+import React, { useState, useEffect } from "react";
+import { Line } from "react-chartjs-2";
+import lcwSingleHistory from "../../api/lcwHistoricalAPI";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,8 +12,8 @@ import {
   TimeScale,
   PointElement,
   LineElement,
-} from 'chart.js';
-import lcwRemainingCredits from '../../api/lcwRemainingCredits';
+} from "chart.js";
+import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 
 ChartJS.register(
   CategoryScale,
@@ -28,43 +27,56 @@ ChartJS.register(
   LineElement
 );
 
+// Number of milliseconds in each day
+const _MILLISECONDS_PER_DAY = 86400000;
+
+const dateSevenDaysAgo = (days = 30) => {
+  const daysBeforeInMS = days * _MILLISECONDS_PER_DAY;
+  const today = Date.now();
+  console.log(
+    "today: ",
+    today,
+    " less daysBefore: ",
+    daysBeforeInMS,
+    " equal = ",
+    today - daysBeforeInMS
+  );
+  return today - daysBeforeInMS;
+};
+
 function HistoricalLineChart({
-  coin = 'BTC',
-  start = 1698884890423,
-  end = 1698971290423,
+  coin = "BTC",
+  start = new Date(),
+  end = dateSevenDaysAgo(),
 }) {
   const [rates, setRates] = useState([]);
   const [dates, setDates] = useState([]);
-  const [runEffect, setRunEffect] = useState(true);
+  // const [runEffect, setRunEffect] = useState(true);
 
-  useEffect(() => {
-    async function fetchData() {
-      const cryptoData = await lcwSingleHistory(coin, start, end);
-      if (cryptoData) {
-        setRates(() => cryptoData.history.map((data) => data.rate));
-        setDates(() =>
-          cryptoData.history.map((data) => new Date(data.date).toLocaleString())
-        );
-        console.log(lcwRemainingCredits());
-        console.log(
-          'User Data RATE: ',
-          cryptoData.history?.map((entry) => entry.rate)
-        );
-        console.log(
-          'User Data DATE: ',
-          cryptoData.history?.map((entry) =>
-            new Date(entry.date).toLocaleString()
-          )
-        );
-      }
+  const getHistoryData = async function fetchData() {
+    const cryptoData = await lcwSingleHistory(coin, start, end);
+    if (cryptoData) {
+      setRates(() => cryptoData.history.map((data) => data.rate));
+      setDates(() =>
+        cryptoData.history.map((data) => new Date(data.date).toLocaleString())
+      );
+      console.log(lcwRemainingCredits());
+      console.log(
+        "User Data RATE: ",
+        cryptoData.history?.map((entry) => entry.rate)
+      );
+      console.log(
+        "User Data DATE: ",
+        cryptoData.history?.map((entry) =>
+          new Date(entry.date).toLocaleString()
+        )
+      );
     }
-
-    fetchData();
-  }, [runEffect, coin, start]);
+  };
 
   setTimeout(() => {
-    setRunEffect(!runEffect);
-  }, 180000);
+    getHistoryData();
+  }, 60000);
 
   const chartData = {
     labels: dates,
@@ -73,7 +85,7 @@ function HistoricalLineChart({
         label: `${coin} Price in USD`,
         data: rates,
         fill: false,
-        borderColor: 'rgba(75,192,192,1)',
+        borderColor: "rgba(75,192,192,1)",
         tension: 0.1,
       },
     ],
@@ -83,21 +95,21 @@ function HistoricalLineChart({
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: `${coin.toUpperCase()} Historical Data | ${start}`,
       },
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: "Cryptocurrency Line Chart",
     },
   };
 
   return (
-    <div>
+    <div className="line-chart w-50">
       <Line data={chartData} options={options} />
     </div>
   );

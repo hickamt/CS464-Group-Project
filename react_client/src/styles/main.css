@@ -1,15 +1,17 @@
 
-/* Main View Grid | sidebar / inner-view */
+
+/* Main View Grid | sidebar & main-view-container */
 
 .dashboard-container {
   grid-area: view;
 }
 
 .sidebar {
+  margin-left: 1em;
   grid-area: sidebar;
   margin-top: 1em;
-  background-size: cover;
-  background-position: center;
+  /* background-size: cover; */
+  /* background-position: center; */
   border-radius: 0.5em;
   border: 1px solid var(--blue-light)
 }
@@ -24,7 +26,7 @@
 }
 
 .sidebar .card-btn {
-  width: 5.5rem;
+  width: 6.5rem;
   background-color: transparent;
   color: var(--light);
   border: none;
@@ -38,9 +40,32 @@
   border-radius: 20px;
 }
 
-.sidebar-main-view {
+/* .sidebar-asset-view {
   margin-top: 1rem;
   font-size: large;
+} */
+
+/* Sidebar Grid Rows */
+
+.sidebar-header-space {
+  grid-area: header;
+}
+
+.sidebar-chart-view {
+  grid-area: charts;
+}
+
+.sidebar-asset-view {
+  grid-area: assets;
+}
+
+.sidebar {
+  display: grid;
+  grid-template-rows: 7em 22em;
+  grid-template-areas:
+    "header"
+    "charts"
+    "assets"
 }
 
 
