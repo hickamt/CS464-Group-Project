@@ -57,6 +57,8 @@ function HistoricalLineChart({
   const [dates, setDates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  let timeout = 10000;
+
   const getHistoryData = async function fetchData() {
     const cryptoData = await lcwSingleHistory(coin, start, end);
     if (cryptoData) {
@@ -65,7 +67,7 @@ function HistoricalLineChart({
         cryptoData.history.map((data) => new Date(data.date).toLocaleString())
       );
       setIsLoading(false);
-      // console.log(lcwRemainingCredits());
+      console.log( await lcwRemainingCredits());
       // console.log(
       //   "User Data RATE: ",
       //   cryptoData.history?.map((entry) => entry.rate)
@@ -80,8 +82,9 @@ function HistoricalLineChart({
   };
 
   setTimeout(() => {
+    timeout = 60000;
     getHistoryData();
-  }, 60000);
+  }, timeout);
 
   const chartData = {
     labels: dates,
