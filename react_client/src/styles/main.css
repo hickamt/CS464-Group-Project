@@ -1,5 +1,3 @@
-
-
 /* Main View Grid | sidebar & main-view-container */
 
 .dashboard-container {
@@ -10,19 +8,16 @@
   margin-left: 1em;
   grid-area: sidebar;
   margin-top: 1em;
-  /* background-size: cover; */
-  /* background-position: center; */
   border-radius: 0.5em;
-  border: 1px solid var(--blue-light)
+  border: 1px solid var(--blue-light);
 }
-
 
 .main-view-container {
   display: grid;
   grid-template-columns: 5fr 95fr;
   grid-template-areas:
     "sidebar view"
-    "sidebar view"
+    "sidebar view";
 }
 
 .sidebar .card-btn {
@@ -39,11 +34,6 @@
   transition: transform 0.5s ease-in-out;
   border-radius: 20px;
 }
-
-/* .sidebar-asset-view {
-  margin-top: 1rem;
-  font-size: large;
-} */
 
 /* Sidebar Grid Rows */
 
@@ -65,13 +55,12 @@
   grid-template-areas:
     "header"
     "charts"
-    "assets"
+    "assets";
 }
-
 
 /* Inner Grid Area */
 
-.main-view,
+/* .main-view, */
 .main-header,
 .main-footer {
   background-color: var(--blue-bg);
