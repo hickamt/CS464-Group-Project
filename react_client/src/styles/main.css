@@ -21,7 +21,7 @@
 }
 
 .sidebar .card-btn {
-  width: 6.5rem;
+  width: 7rem;
   background-color: transparent;
   color: var(--light);
   border: none;
@@ -74,6 +74,7 @@
 }
 
 .main-view {
+  margin: 0 auto;
   grid-area: main;
   min-height: 20em;
 }

@@ -5,6 +5,7 @@ import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import SpinAnimation from "../animation/Animation";
+import "./styles/chart.css";
 
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -97,7 +98,7 @@ export default function DoughnutChart() {
     <>
       {isLoading && <SpinAnimation />}
       {!isLoading && (
-        <div className="doughnut-chart">
+        <div className="doughnut-chart text-center">
           <Doughnut data={doughnutData} />
         </div>
       )}
