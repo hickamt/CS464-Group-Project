@@ -7,6 +7,7 @@ import combineData from "./modules/combineData";
 import "./styles/table.css";
 import { setValueToFixed, setPercentageToFixed } from "../../modules/utility";
 import { textColor } from "../../modules/themes";
+import spinAnimation from "../animation/Animation";
 
 const formatNumber = function formatCommaSeparatedNumber(number) {
   let [whole, decimal] = number.toString().split(".");
@@ -81,13 +82,16 @@ export default function Table() {
 
   return (
     <>
-      <div className="table-container">
-        <h1 className="d-none">Table</h1>
+      {!isData ? (
+        <spinAnimation />
+      ) : (
+        <div className="table-container">
+          <h1 className="d-none">Table</h1>
 
-        <div className="table-outer-div">
-          {/* QueriesTableIcons includes dropdown list of query questions
+          <div className="table-outer-div">
+            {/* QueriesTableIcons includes dropdown list of query questions
                 and selector to view the query statement file */}
-          {/* <div>
+            {/* <div>
             <QueriesTableIcons
               showDropdown={showDropdown}
               setViewSqlFile={setViewSqlFile}
@@ -96,38 +100,39 @@ export default function Table() {
             />
           </div> */}
 
-          <table className="table">
-            <thead className="table-head">
-              <tr className="table-header-row">
-                <TableHeaders
-                  headers={headers}
-                  columnOrder={columnOrder}
-                  setColumnOrder={setColumnOrder}
-                />
-              </tr>
-            </thead>
-            <tbody className="table-body">
-              {tableData &&
-                tableData.map((item) => {
-                  return (
-                    <>
-                      <tr
-                        key={item.icon}
-                        className="table-row"
-                        onClick={() =>
-                          window.open(`https://www.livecoinwatch.com/`)
-                        }>
-                        {Object.entries(item).map(([key, value]) =>
-                          formatTableValues(key, value)
-                        )}
-                      </tr>
-                    </>
-                  );
-                })}
-            </tbody>
-          </table>
+            <table className="table">
+              <thead className="table-head fixed-head">
+                <tr className="table-header-row">
+                  <TableHeaders
+                    headers={headers}
+                    columnOrder={columnOrder}
+                    setColumnOrder={setColumnOrder}
+                  />
+                </tr>
+              </thead>
+              <tbody className="table-body scrollable-body">
+                {tableData &&
+                  tableData.map((item) => {
+                    return (
+                      <>
+                        <tr
+                          key={item.icon}
+                          className="table-row"
+                          onClick={() =>
+                            window.open(`https://www.livecoinwatch.com/`)
+                          }>
+                          {Object.entries(item).map(([key, value]) =>
+                            formatTableValues(key, value)
+                          )}
+                        </tr>
+                      </>
+                    );
+                  })}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

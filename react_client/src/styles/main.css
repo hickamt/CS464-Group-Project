@@ -51,7 +51,7 @@
 
 .sidebar {
   display: grid;
-  grid-template-rows: 7em 22em;
+  grid-template-rows: 8em 32em;
   grid-template-areas:
     "header"
     "charts"
@@ -76,7 +76,7 @@
 .main-view {
   margin: 0 auto;
   grid-area: main;
-  min-height: 20em;
+  min-height: 15em;
 }
 
 .main-footer {

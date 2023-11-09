@@ -2,13 +2,12 @@
   margin: 1em 0;
   display: flex;
   flex-direction: column;
-  width: 75%
+  width: 75%;
 }
 
 .table {
   background-color: var(--black);
   color: var(--light);
-  border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   border-radius: 0.5em;
@@ -31,4 +30,16 @@
   background-color: var(--blue-light);
   max-width: 4em;
   max-height: auto;
+}
+
+.fixed-head {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.scrollable-body {
+  overflow-x: hidden;
+  height: calc(100vh - 500px); 
+  overflow: auto;
 }

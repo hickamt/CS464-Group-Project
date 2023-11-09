@@ -9,6 +9,9 @@ import Chart from "../components/chart/Chart";
 import HistoricalLineChart from "../components/chart/HistoricalLineChart";
 import HistoricalLineChartCompTwo from "../components/chart/HistoricalLineChartCompTwo";
 
+// Chart Styles
+import "../components/chart/styles/chart.css";
+
 function Main() {
   const [analyze, setAnalyze] = useState(<Cards />);
   const [visualize, setVisualize] = useState(<Chart />)

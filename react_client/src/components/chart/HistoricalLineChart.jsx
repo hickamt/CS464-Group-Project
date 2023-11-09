@@ -121,8 +121,8 @@ function HistoricalLineChart({
       {isLoading ? (
         <SpinAnimation />
       ) : (
-        <div className="line-chart w-50">
-          <Line data={chartData} options={options} />
+        <div className="line-chart">
+          <Line className="historical" data={chartData} options={options} />
         </div>
       )}
     </>

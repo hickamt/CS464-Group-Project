@@ -95,7 +95,8 @@ function HistoricalLineChartCompTwo({
       {isLoading ? (
         <SpinAnimation />
       ) : (
-        <div className="line-compare w-50">
+        // <div className="line-compare w-50">
+        <div className="line-compare">
           <Line data={chartData} options={options} />
         </div>
       )}
