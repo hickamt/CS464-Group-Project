@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import buildCards from "./modules/buildCards";
 import combineData from "./modules/combineData";
+import Card from "react-bootstrap/Card";
 
 // API
 import expressQueryAPI from "../../api/expressQueryAPI";
@@ -25,12 +26,15 @@ const goLeft = function decrementCardIndex(cardIndex, setCardIndex) {
   }
 };
 
-const goRight = function incrementCardIndex(arrayLength, cardIndex, setCardIndex) {
+const goRight = function incrementCardIndex(
+  arrayLength,
+  cardIndex,
+  setCardIndex
+) {
   if (cardIndex < arrayLength - 1) {
     setCardIndex(cardIndex + 1);
   }
 };
-
 
 export default function Cards() {
   const [cardIndex, setCardIndex] = useState(0);
@@ -55,7 +59,7 @@ export default function Cards() {
   }, [runEffect]);
 
   setTimeout(() => {
-    setRunEffect(!runEffect)
+    setRunEffect(!runEffect);
   }, 180000); // timer set to 3 seconds
 
   if (!isData) {
@@ -67,29 +71,30 @@ export default function Cards() {
       {isData && (
         <>
           <h1 className="card-title d-none">Crypto Assets</h1>
+
+          {cardIndex > 0 && (
+            <Card className="arrow-card">
+              <BiLeftArrow
+                className="arrow-left"
+                onClick={() => goLeft(cardIndex, setCardIndex)}
+              />
+            </Card>
+          )}
+
           <Row className="media-row">
             {buildCards(userData, cardIndex, maxViews)}
           </Row>
 
-          {cardIndex > 0 && <BiLeftArrow
-            className="arrow-left"
-            onClick={() =>
-              goLeft(
-                cardIndex,
-                setCardIndex
-              )
-            }
-          />}
-          {cardIndex !== userData.length - 1 && <BiRightArrow
-            className="arrow-right"
-            onClick={() =>
-              goRight(
-                userData.length,
-                cardIndex,
-                setCardIndex
-              )
-            }
-          />}
+          {cardIndex !== userData.length - 1 && (
+            <Card className="arrow-card">
+              <BiRightArrow
+                className="arrow-right"
+                onClick={() =>
+                  goRight(userData.length, cardIndex, setCardIndex)
+                }
+              />
+            </Card>
+          )}
         </>
       )}
     </>

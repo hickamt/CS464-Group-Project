@@ -1,26 +1,21 @@
 /* NetFlix Style Slider */
 /* npm library: https://www.npmjs.com/package/netslider */
 
-.arrow-left {
-  min-width: 3em;
-  min-height: 3em;
-  position: absolute;
-  top: 45%;
-  bottom: 0;
-  left: 14%;
-  right: 0;
-  color: var(--light);
+.arrow-card {
+  width: 3vw;
+  height: 30vh;
+  position: relative;
+  background-color: transparent;
 }
 
+.arrow-left,
 .arrow-right {
-  min-width: 3em;
-  min-height: 3em;
   position: absolute;
-  top: 45%;
-  bottom: 0;
-  left: 90%;
-  right: 0;
-  color: var(--light);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
 }
 
 .arrow-left:hover,

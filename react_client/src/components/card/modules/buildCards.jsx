@@ -1,6 +1,9 @@
 import Card from "react-bootstrap/Card";
 import { getCryptoIcon, textColor } from "../../../modules/themes";
-import { setValueToFixed, setPercentageToFixed } from "../../../modules/utility";
+import {
+  setValueToFixed,
+  setPercentageToFixed,
+} from "../../../modules/utility";
 
 const cardImage = function buildCardImage(props) {
   return (
@@ -56,11 +59,7 @@ const cardBody = function buildCardBody(data) {
  * @param cardsToView is the maximum number of cards to view
  * @returns an array of cryptocurrency data cards
  */
-const buildCards = function buildCryptoCards(
-  userData,
-  cardIndex,
-  maxViews
-) {
+const buildCards = function buildCryptoCards(userData, cardIndex, maxViews) {
   const temp = [];
   let count = 0;
 
