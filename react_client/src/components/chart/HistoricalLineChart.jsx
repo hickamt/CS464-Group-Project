@@ -47,19 +47,15 @@ const dateSevenDaysAgo = (days = 30) => {
 
 function HistoricalLineChart({
   coin = "BTC",
-  // start = new Date(),
-  // end = dateSevenDaysAgo(),
+  start = 1699473046053,
+  end = 1699559446053,
 }) {
-  const start = new Date();
-  const end = dateSevenDaysAgo();
-
   const [rates, setRates] = useState([]);
   const [dates, setDates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  let timeout = 10000;
-
   const getHistoryData = async function fetchData() {
+    console.log(await lcwRemainingCredits());
     const cryptoData = await lcwSingleHistory(coin, start, end);
     if (cryptoData) {
       setRates(() => cryptoData.history.map((data) => data.rate));
@@ -67,24 +63,13 @@ function HistoricalLineChart({
         cryptoData.history.map((data) => new Date(data.date).toLocaleString())
       );
       setIsLoading(false);
-      console.log( await lcwRemainingCredits());
-      // console.log(
-      //   "User Data RATE: ",
-      //   cryptoData.history?.map((entry) => entry.rate)
-      // );
-      // console.log(
-      //   "User Data DATE: ",
-      //   cryptoData.history?.map((entry) =>
-      //     new Date(entry.date).toLocaleString()
-      //   )
-      // );
     }
   };
 
   setTimeout(() => {
-    timeout = 60000;
     getHistoryData();
-  }, timeout);
+  }, 5000);
+
 
   const chartData = {
     labels: dates,
@@ -98,7 +83,7 @@ function HistoricalLineChart({
       },
     ],
   };
-
+  // nathan, place this global
   const options = {
     responsive: true,
     plugins: {
@@ -107,7 +92,7 @@ function HistoricalLineChart({
       },
       title: {
         display: true,
-        text: `${coin.toUpperCase()} Historical Data | ${start}`,
+        text: `${coin.toUpperCase()} Historical Data`,
       },
     },
     title: {

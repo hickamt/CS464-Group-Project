@@ -53,7 +53,7 @@ function HistoricalLineChartCompTwo({
     labels: [],
     datasets: [],
   });
-  let timeout = 1000;
+  // let timeout = 1000;
 
   const getCompData = async function fetchChartData() {
     try {
@@ -86,9 +86,8 @@ function HistoricalLineChartCompTwo({
   };
 
   setTimeout(() => {
-    timeout = 60000;
     getCompData();
-  }, timeout);
+  }, 1000);
 
   return (
     <>
