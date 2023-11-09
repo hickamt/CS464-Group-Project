@@ -57,7 +57,8 @@
 }
 
 .media-card {
-  min-width: 185px;
+  /* min-width: 185px; */
+  min-width: 15em;
   max-width: 12%;
   background-color: var(--off-black);
   border-radius: 1rem;

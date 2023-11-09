@@ -8,6 +8,12 @@ import "./styles/table.css";
 import { setValueToFixed, setPercentageToFixed } from "../../modules/utility";
 import { textColor } from "../../modules/themes";
 
+const formatNumber = function formatCommaSeparatedNumber(number) {
+  let [whole, decimal] = number.toString().split(".");
+  whole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return decimal ? `${whole}.${decimal}` : whole;
+};
+
 export default function Table() {
   // const [showDropdown, setShowDropdown] = useState(false);
   const [isData, setIsData] = useState(false);
@@ -17,6 +23,7 @@ export default function Table() {
   const [runEffect, setRunEffect] = useState(true);
 
   const formatTableValues = (key, value) => {
+    console.log("Inside formatTableValues() and Key: ", key, " Value: ", value);
     switch (key) {
       case "icon":
         return (
@@ -35,7 +42,11 @@ export default function Table() {
       case "spot":
       case "value":
       case "volume":
-        return <td className="table-data">{setValueToFixed(value).toLocaleString("en-US")}</td>;
+        // return <td className="table-data">{setValueToFixed(value).toLocaleString()}</td>;
+
+        return (
+          <td className="table-data">{formatNumber(setValueToFixed(value))}</td>
+        );
 
       case "day":
       case "hour":
@@ -100,7 +111,12 @@ export default function Table() {
                 tableData.map((item) => {
                   return (
                     <>
-                      <tr key={item.icon} className="table-row" onClick={() => window.open(`https://www.livecoinwatch.com/`)}>
+                      <tr
+                        key={item.icon}
+                        className="table-row"
+                        onClick={() =>
+                          window.open(`https://www.livecoinwatch.com/`)
+                        }>
                         {Object.entries(item).map(([key, value]) =>
                           formatTableValues(key, value)
                         )}

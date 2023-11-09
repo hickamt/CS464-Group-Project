@@ -1,6 +1,10 @@
 .chart-div {
   padding-bottom: 1rem;
+}
 
+canvas {
+  width: 755px;
+  height: 755px;
 }
 
 .doughnut-chart {
