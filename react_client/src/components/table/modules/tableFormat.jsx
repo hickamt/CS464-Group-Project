@@ -29,11 +29,15 @@ export const formatTableValues = (key, value) => {
     case "asset":
       return <td className="asset">{value.toUpperCase()}</td>;
     case "remaining":
+      return (
+        <td className="table-data">{formatNumber(setValueToFixed(value))}</td>
+      );
+
     case "spot":
     case "value":
     case "volume":
       return (
-        <td className="table-data">{formatNumber(setValueToFixed(value))}</td>
+        <td className="table-data">${formatNumber(setValueToFixed(value))}</td>
       );
 
     case "day":
