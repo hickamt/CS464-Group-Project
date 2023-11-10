@@ -14,12 +14,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        {/* <Route path="/" element={<Layout />}> */}
           <Route index element={<Main />} />
           <Route path="card" element={<Card />} />
           <Route path="chart" element={<Chart />} />
           <Route path="table" element={<Table />} />
-        </Route>
+        {/* </Route> */}
       </Routes>
     </>
   );

@@ -1,65 +1,19 @@
-import { useState, useEffect } from "react";
-import { TableHeaders } from "./modules/TableHeaders";
 import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
+import SpinAnimation from "../animation/Animation";
 import combineData from "./modules/combineData";
-import "./styles/table.css";
-import { setValueToFixed, setPercentageToFixed } from "../../modules/utility";
-import { textColor } from "../../modules/themes";
-import spinAnimation from "../animation/Animation";
+import { formatTableValues } from "./modules/tableFormat";
+import { useState, useEffect } from "react";
+import { TableHeaders } from "./modules/TableHeaders";
 
-const formatNumber = function formatCommaSeparatedNumber(number) {
-  let [whole, decimal] = number.toString().split(".");
-  whole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return decimal ? `${whole}.${decimal}` : whole;
-};
+import "./styles/table.css";
 
 export default function Table() {
-  // const [showDropdown, setShowDropdown] = useState(false);
   const [isData, setIsData] = useState(false);
   const [tableData, setTableData] = useState([]);
   const [headers, setHeaders] = useState([]);
-  const [columnOrder, setColumnOrder] = useState([]);
   const [runEffect, setRunEffect] = useState(true);
-
-  const formatTableValues = (key, value) => {
-    console.log("Inside formatTableValues() and Key: ", key, " Value: ", value);
-    switch (key) {
-      case "icon":
-        return (
-          <td className="table-icon">
-            <img
-              className="table-icon mx-auto bg-muted rounded p-1"
-              alt="cryptocurrency"
-              src={value}
-            />
-          </td>
-        );
-
-      case "asset":
-        return <td className="asset">{value.toUpperCase()}</td>;
-      case "remaining":
-      case "spot":
-      case "value":
-      case "volume":
-        // return <td className="table-data">{setValueToFixed(value).toLocaleString()}</td>;
-
-        return (
-          <td className="table-data">{formatNumber(setValueToFixed(value))}</td>
-        );
-
-      case "day":
-      case "hour":
-      case "week":
-      case "month":
-        return (
-          <td className={`table-data ${textColor(value)}`}>
-            {setPercentageToFixed(value)}%
-          </td>
-        );
-    }
-  };
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
@@ -83,31 +37,16 @@ export default function Table() {
   return (
     <>
       {!isData ? (
-        <spinAnimation />
+        <SpinAnimation />
       ) : (
         <div className="table-container">
           <h1 className="d-none">Table</h1>
 
           <div className="table-outer-div">
-            {/* QueriesTableIcons includes dropdown list of query questions
-                and selector to view the query statement file */}
-            {/* <div>
-            <QueriesTableIcons
-              showDropdown={showDropdown}
-              setViewSqlFile={setViewSqlFile}
-              viewSqlFile={viewSqlFile}
-              columnOrder={columnOrder}
-            />
-          </div> */}
-
             <table className="table">
               <thead className="table-head fixed-head">
                 <tr className="table-header-row">
-                  <TableHeaders
-                    headers={headers}
-                    columnOrder={columnOrder}
-                    setColumnOrder={setColumnOrder}
-                  />
+                  <TableHeaders headers={headers} />
                 </tr>
               </thead>
               <tbody className="table-body scrollable-body">
