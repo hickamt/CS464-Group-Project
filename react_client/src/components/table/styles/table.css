@@ -18,6 +18,10 @@
   vertical-align: middle;
 }
 
+.table-header:hover {
+  color: var(--blue-light);
+}
+
 .table-row {
   vertical-align: middle;
 }

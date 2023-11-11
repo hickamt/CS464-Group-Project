@@ -1,19 +1,28 @@
+/**
+ * Using the array table data, the following functions will sort the array
+ * based on the 'key' value string. This string is the name of an array.propertyKey
+ * Only array.asset is a string, all other array properties are numbers 
+ * @param {dataArray} array 
+ * @param {useState()} setTableData 
+ * @param {string} key 
+ */
+
 // Sort array from greatest to least based on object number value
 const sortNumHL = function sortArrayByNumberValueHighToLow(array, setTableData, key) {
-  console.log("Inside sortValueHL (key)", key);
   let temp = array.sort((a, b) => {
     return b[key] - a[key];
   });
-  setTableData(temp);
+  console.log("Inside sortNumberHL (key)", key, " (temp)", temp);
+  setTableData([...temp]);
 };
 
 // Sort array from least to greatest based on object number value
 const sortNumLH = function sortArrayByNumberValueLowToHigh(array, setTableData, key) {
-  console.log("Inside sortValueLH (key)", key);
   let temp = array.sort((a, b) => {
     return a[key] - b[key];
   });
-  setTableData(temp)
+  console.log("Inside sortNumberLH (key)", key, " (temp)", temp);
+  setTableData([...temp])
 };
 
 // Sort array from greatest to least based on object asset name
@@ -22,7 +31,7 @@ const sortCharHL = function sortArrayByCharacterValueHighToLow(array, setTableDa
   let temp = array.sort((a, b) => {
     return b[key].localeCompare(a[key]);
   });
-  setTableData(temp);
+  setTableData([...temp]);
 };
 
 // Sort array from least to greatest based on object asset name
@@ -31,7 +40,7 @@ const sortCharLH = function sortArrayByCharacterValueLowToHigh(array, setTableDa
   let temp = array.sort((a, b) => {
     return a[key].localeCompare(b[key]);
   });
-  setTableData(temp);
+  setTableData([...temp]);
 };
 
 export const filterArray = function filterArrayByValue(

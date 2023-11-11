@@ -22,7 +22,7 @@ export const TableHeaders = ({ tableData, setTableData, headers }) => {
           scope="col"
           className="table-header"
           onClick={() => filterArray(sortHighLow, setSortHighLow, tableData, setTableData, headerName)}>
-          {headerName}
+          {headerName.toUpperCase()}
           <FaSort className="table-fasort" />
         </th>
       );
