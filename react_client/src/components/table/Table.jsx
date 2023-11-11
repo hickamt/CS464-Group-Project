@@ -46,7 +46,11 @@ export default function Table() {
             <table className="table">
               <thead className="table-head fixed-head">
                 <tr className="table-header-row">
-                  <TableHeaders headers={headers} />
+                  <TableHeaders
+                    tableData={tableData}
+                    setTableData={setTableData}
+                    headers={headers}
+                  />
                 </tr>
               </thead>
               <tbody className="table-body scrollable-body">
