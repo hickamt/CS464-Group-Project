@@ -1,5 +1,5 @@
 import { getCryptoIcon } from "../../../modules/themes";
-import { sortNumHL } from "../../../modules/sort";
+import  sortNumHL  from "../../../modules/arraySort";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(

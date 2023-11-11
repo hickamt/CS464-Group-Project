@@ -1,5 +1,5 @@
 import { getCryptoIcon } from "../../../modules/themes";
-import { sortValueHL } from "../../../modules/arraySort";
+import  sortNumHL  from "../../../modules/arraySort";
 
 // Combine userData and cryptoData into one array (GH)
 const combineData = function combineDataWithCryptoData(
@@ -26,7 +26,7 @@ const combineData = function combineDataWithCryptoData(
       month: (delta.month - 1) * 100,
     });
   });
-  setData(sortValueHL(temp));
+  setData(sortNumHL(temp));
 };
 
 export default combineData;
