@@ -2,7 +2,7 @@ import lcwRemainingCredits from "../../api/lcwRemainingCredits";
 import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import SpinAnimation from "../animation/Animation";
-import combineData from "./modules/combineData";
+import combineData from "./modules/combineTableData";
 import { formatTableValues } from "./modules/tableFormat";
 import { useState, useEffect } from "react";
 import { TableHeaders } from "./modules/TableHeaders";
