@@ -13,7 +13,6 @@ const formatNumber = function formatCommaSeparatedNumber(number) {
 
 // format table values based on key
 export const formatTableValues = (key, value) => {
-  console.log("Inside formatTableValues() and Key: ", key, " Value: ", value);
   switch (key) {
     case "icon":
       return (

@@ -1,14 +1,18 @@
-
 // Sort array from greatest to least based on object.value
-export const sortValueHL = function sortArrayFromHighToLowByValue(array) {
+export const sortNumHL = function sortArrayByNumberValueHighToLow(
+  array,
+  key,
+) {
+  console.log("Inside sortValueHL (key)", key);
   return array.sort((a, b) => {
-    return b.value - a.value;
+    return b[key] - a[key];
   });
 };
 
 // Sort array from least to greatest based on object.value
-export const sortValueLH = function sortArrayFromLowtoHighByValue(array) {
+export const sortNumLH = function sortArrayByNumberValueLowToHigh(array, key) {
+  console.log("Inside sortValueLH (key)", key);
   return array.sort((a, b) => {
-    return a.value - b.value;
+    return a[key] - b[key];
   });
 };
