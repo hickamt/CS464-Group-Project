@@ -28,8 +28,6 @@ ChartJS.register(
   LineElement
 );
 
-// Number of milliseconds in each day
-const _MILLISECONDS_PER_DAY = 86400000;
 
 function HistoricalLineChart({
   coin = "BTC",
