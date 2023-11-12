@@ -54,22 +54,20 @@ function HistoricalLineChart({
   const [dates, setDates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getHistoryData = async function fetchData() {
-    console.log(await lcwRemainingCredits());
-    const cryptoData = await lcwSingleHistory(coin, start, end);
-    if (cryptoData) {
-      setRates(() => cryptoData.history.map((data) => data.rate));
-      setDates(() =>
-        cryptoData.history.map((data) => new Date(data.date).toLocaleString())
-      );
-      setIsLoading(false);
-    }
-  };
-
-  setTimeout(() => {
+  useEffect(() => {
+    const getHistoryData = async function fetchData() {
+      console.log(await lcwRemainingCredits());
+      const cryptoData = await lcwSingleHistory(coin, start, end);
+      if (cryptoData) {
+        setRates(() => cryptoData.history.map((data) => data.rate));
+        setDates(() =>
+          cryptoData.history.map((data) => new Date(data.date).toLocaleString())
+        );
+        setIsLoading(false);
+      }
+    };
     getHistoryData();
-  }, 5000);
-
+  }, []);
 
   const chartData = {
     labels: dates,
