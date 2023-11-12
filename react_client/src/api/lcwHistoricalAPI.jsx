@@ -10,21 +10,21 @@
  * POST request to retrieve the LiveCoinWatch 'resource: /coin/single'
  */
 const lcwSingleHistory = async (
-  code = "BTC",
+  code = 'BTC',
   start = 1698884890423,
   end = 1698971290423
 ) => {
   try {
     const response = await fetch(
-      new Request("https://api.livecoinwatch.com/coins/single/history"),
+      new Request('https://api.livecoinwatch.com/coins/single/history'),
       {
-        method: "POST",
+        method: 'POST',
         headers: new Headers({
-          "content-type": "application/json",
-          "x-api-key": import.meta.env.VITE_COINWATCH_API_KEY,
+          'content-type': 'application/json',
+          'x-api-key': import.meta.env.VITE_COINWATCH_API_KEY,
         }),
         body: JSON.stringify({
-          currency: "USD",
+          currency: 'USD',
           code: code,
           start: start,
           end: end,
@@ -34,8 +34,8 @@ const lcwSingleHistory = async (
     );
 
     const isJson = response.headers
-      .get("content-type")
-      ?.includes("application/json");
+      .get('content-type')
+      ?.includes('application/json');
     const data = isJson && (await response.json());
 
     if (!response.ok) {
@@ -45,7 +45,7 @@ const lcwSingleHistory = async (
 
     return data;
   } catch (err) {
-    console.error("LiveCoinWatch Post Error:", err);
+    console.error('LiveCoinWatch Post Error:', err);
     throw err;
   }
 };
