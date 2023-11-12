@@ -36,10 +36,6 @@ const options = {
       text: `Crypto Comparative History | ${new Date()}`,
     },
   },
-  title: {
-    display: true,
-    text: "Chart.js Line Chart",
-  },
 };
 
 function HistoricalLineChartCompTwo({
