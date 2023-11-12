@@ -16,18 +16,22 @@
 .table-head {
   height: 3em;
   vertical-align: middle;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .table-header:hover {
-  color: var(--blue-light);
+  background-color: var(--blue-light);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .table-row {
   vertical-align: middle;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .table-row:hover {
   background-color: var(--blue-light);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .table-icon {
@@ -44,6 +48,6 @@
 
 .scrollable-body {
   overflow-x: hidden;
-  height: calc(100vh - 500px); 
+  height: calc(100vh - 500px);
   overflow: auto;
 }

@@ -3,6 +3,7 @@ import expressQueryAPI from "../../api/expressQueryAPI";
 import lcwCryptoAPI from "../../api/livecoinwatchAPI";
 import SpinAnimation from "../animation/Animation";
 import combineData from "./modules/combineTableData";
+import { sumTotal } from "./modules/utility";
 import { formatTableValues } from "./modules/tableFormat";
 import { useState, useEffect } from "react";
 import { TableHeaders } from "./modules/TableHeaders";
@@ -71,6 +72,20 @@ export default function Table() {
                       </>
                     );
                   })}
+                <tr className="table-row table-totals" key={"totals"}>
+                  <td className="table-data fs-5">TOTAL</td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                  <td className="table-data fs-5">
+                    {formatTableValues("value", sumTotal(tableData, "value"))}
+                  </td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                  <td className="table-data"></td>
+                </tr>
               </tbody>
             </table>
           </div>
