@@ -39,8 +39,7 @@ const options = {
 };
 
 function HistoricalLineChartCompTwo({
-  coins = ["BTC", "ETH"],
-  // start = 16994207090000,
+  coins = ["ETH", "BTC"],
   start = new Date(),
   end = 1698971290423,
 }) {
