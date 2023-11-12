@@ -1,5 +1,6 @@
 import { FaSort } from "react-icons/fa";
-// import { switchAscDescValue } from "../../modules/buildTableColumns";
+import { useState } from "react";
+import { filterArray } from "./tableSort";
 
 /**
  * Creates a table header column for as many names given in
@@ -7,19 +8,25 @@ import { FaSort } from "react-icons/fa";
  * @param headers is an array of string column names
  * @returns table headers
  */
-export const TableHeaders = ({ headers}) => {
+export const TableHeaders = ({ tableData, setTableData, headers }) => {
+  const [sortHighLow, setSortHighLow] = useState(true);
+
   let header = [];
   headers.map((headerName, index) => {
-    header.push(
-      <th
-        key={index}
-        scope="col"
-        className="table-header"
-        onClick={() => ""}>
-        {headerName}
-        <FaSort className="table-fasort" />
-      </th>
-    );
+    if (headerName === "icon") {
+      header.push(<th key={index} scope="col" className="table-header"></th>);
+    } else {
+      header.push(
+        <th
+          key={index}
+          scope="col"
+          className="table-header"
+          onClick={() => filterArray(sortHighLow, setSortHighLow, tableData, setTableData, headerName)}>
+          {headerName.toUpperCase()}
+          <FaSort className="table-fasort" />
+        </th>
+      );
+    }
   });
   return header;
 };
