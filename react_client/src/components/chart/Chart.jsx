@@ -10,10 +10,10 @@ import "./styles/chart.css";
 const randomColor = function getRandomColorAbove100() {
   let value = Math.floor(Math.random() * 256);
   while (value < 100) {
-      value = Math.floor(Math.random() * 256);
+    value = Math.floor(Math.random() * 256);
   }
   return value;
-}
+};
 
 function getRandomColor() {
   const r = randomColor();
