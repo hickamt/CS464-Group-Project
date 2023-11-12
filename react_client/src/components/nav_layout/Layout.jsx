@@ -21,7 +21,7 @@
 */
 
 import { Outlet, Link } from "react-router-dom";
-import logo from "../../assets/blue_logo_abstract.png"
+import logo from "../../assets/blue_logo_abstract.png";
 
 const Layout = () => {
   return (
@@ -43,7 +43,8 @@ const Layout = () => {
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="navbar-collapse collapse" id="navbarNav">
@@ -56,12 +57,12 @@ const Layout = () => {
               </li>
               <li className="nav-item active fs-4">
                 <Link className="nav-link" to="/chart">
-                 Chart 
+                  Chart
                 </Link>
               </li>
               <li className="nav-item active fs-4">
                 <Link className="nav-link" to="/table">
-                 Table 
+                  Table
                 </Link>
               </li>
             </ul>
