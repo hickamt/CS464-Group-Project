@@ -11,9 +11,7 @@ import "./styles/main.css";
 // import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode> // React.StrictMode is deprecated
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  // </React.StrictMode>
 );
