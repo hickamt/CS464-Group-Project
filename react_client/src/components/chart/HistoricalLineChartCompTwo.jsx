@@ -36,15 +36,10 @@ const options = {
       text: `Crypto Comparative History | ${new Date()}`,
     },
   },
-  title: {
-    display: true,
-    text: "Chart.js Line Chart",
-  },
 };
 
 function HistoricalLineChartCompTwo({
-  coins = ["BTC", "ETH"],
-  // start = 16994207090000,
+  coins = ["ETH", "BTC"],
   start = new Date(),
   end = 1698971290423,
 }) {
@@ -53,48 +48,46 @@ function HistoricalLineChartCompTwo({
     labels: [],
     datasets: [],
   });
-  // let timeout = 1000;
 
-  const getCompData = async function fetchChartData() {
+  // const getCompData = async function fetchChartData() {
+  useEffect(() => {
     try {
       const dataFetchPromises = coins.map((coin) =>
         lcwSingleHistory(coin, start, end)
       );
 
-      const results = await Promise.all(dataFetchPromises);
+      const getCompData = async function fetchChartData() {
+        const results = await Promise.all(dataFetchPromises);
 
-      const dateLabels = results[0]?.history.map((data) =>
-        new Date(data.date).toLocaleString()
-      );
+        const dateLabels = results[0]?.history.map((data) =>
+          new Date(data.date).toLocaleString()
+        );
 
-      const coinDatasets = results.map((result, index) => ({
-        label: `${coins[index]} Price in USD`,
-        data: result.history.map((data) => data.rate),
-        fill: false,
-        borderColor: `hsl(${index * 120}, 100%, 50%)`,
-        tension: 0.1,
-      }));
+        const coinDatasets = results.map((result, index) => ({
+          label: `${coins[index]} Price in USD`,
+          data: result.history.map((data) => data.rate),
+          fill: false,
+          borderColor: `hsl(${index * 120}, 100%, 50%)`,
+          tension: 0.1,
+        }));
 
-      setChartData({
-        labels: dateLabels,
-        datasets: coinDatasets,
-      });
-      setIsLoading(false);
+        setChartData({
+          labels: dateLabels,
+          datasets: coinDatasets,
+        });
+        setIsLoading(false);
+      };
+      getCompData();
     } catch (error) {
       console.error("Error fetching chart data: ", error);
     }
-  };
-
-  setTimeout(() => {
-    getCompData();
-  }, 1000);
+  }, []);
 
   return (
     <>
       {isLoading ? (
         <SpinAnimation />
       ) : (
-        // <div className="line-compare w-50">
         <div className="line-compare">
           <Line data={chartData} options={options} />
         </div>
