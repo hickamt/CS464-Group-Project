@@ -51,7 +51,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
       <section className="d-flex flex-column">
         {currentUser ? (
           <p className="text-center">
-            {currentUser.username !== "John Doe" ? "Please login" : "John Doe"}
+            {currentUser.username !== "Crypto Crazy" ? "Please login" : "Crypto Crazy"}
           </p>
         ) : null}
         {currentUser ? (

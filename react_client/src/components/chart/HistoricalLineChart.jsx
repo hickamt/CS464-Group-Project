@@ -28,7 +28,6 @@ ChartJS.register(
   LineElement
 );
 
-
 function HistoricalLineChart({
   coin = "BTC",
   start = 1699473046053,
