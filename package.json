@@ -4,6 +4,8 @@
   "description": "Course project at PSU building a cryptocurrency dashboard",
   "main": "index.js",
   "scripts": {
+    "build": "vite build",
+    "start": "concurrently \"npm run express\" \"npm run react\" ",
     "teardown": "npm run uninstall_package_lock && npm run uninstall_node_modules",
     "uninstall_package_lock": "rm package-lock.json && cd express_server && rm package-lock.json && cd ../react_client && rm package-lock.json",
     "uninstall_node_modules": "rm -rf node_modules && cd express_server && rm -rf node_modules && cd ../react_client && rm -rf node_modules",
