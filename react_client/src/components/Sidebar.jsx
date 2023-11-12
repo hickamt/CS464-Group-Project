@@ -5,17 +5,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
   const { currentUser, login, logout } = useAuth();
   return (
     <div className="sidebar text-center">
-      <section>
-        {currentUser ? (
-          <button className="btn btn-primary mb-3" onClick={logout}>
-            Logout
-          </button>
-        ) : (
-          <button className="btn btn-primary mb-3" onClick={login}>
-            Login
-          </button>
-        )}
-      </section>
       <section className="sidebar-header-space"></section>
       <section className="sidebar-chart-view">
         <p className="sidebar-charts fs-5 mt-1">VISUALIZE</p>
@@ -58,6 +47,22 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
         >
           Table
         </button>
+      </section>
+      <section className="d-flex flex-column">
+        {currentUser ? (
+          <p className="text-center">
+            {currentUser.username !== "John Doe" ? "Please login" : "John Doe"}
+          </p>
+        ) : null}
+        {currentUser ? (
+          <button className="btn btn-primary mb-3 mx-auto" onClick={logout}>
+            Logout
+          </button>
+        ) : (
+          <button className="btn btn-primary mb-3 mx-auto" onClick={login}>
+            Login
+          </button>
+        )}
       </section>
     </div>
   );
