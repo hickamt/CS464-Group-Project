@@ -31,20 +31,6 @@ ChartJS.register(
 // Number of milliseconds in each day
 const _MILLISECONDS_PER_DAY = 86400000;
 
-const dateSevenDaysAgo = (days = 30) => {
-  const daysBeforeInMS = days * _MILLISECONDS_PER_DAY;
-  const today = Date.now();
-  console.log(
-    "today: ",
-    today,
-    " less daysBefore: ",
-    daysBeforeInMS,
-    " equal = ",
-    today - daysBeforeInMS
-  );
-  return today - daysBeforeInMS;
-};
-
 function HistoricalLineChart({
   coin = "BTC",
   start = 1699473046053,
