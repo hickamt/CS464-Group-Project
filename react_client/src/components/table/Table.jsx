@@ -73,8 +73,8 @@ export default function Table() {
                     );
                   })}
                 <tr className="table-row table-totals" key={"totals"}>
-                  <td className="table-data fs-5">TOTAL</td>
                   <td className="table-data"></td>
+                  <td className="table-data fs-5">TOTAL</td>
                   <td className="table-data"></td>
                   <td className="table-data"></td>
                   <td className="table-data fs-5">
