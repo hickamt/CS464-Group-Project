@@ -7,10 +7,18 @@ import expressQueryAPI from "../../api/expressQueryAPI";
 import SpinAnimation from "../animation/Animation";
 import "./styles/chart.css";
 
+const randomColor = function getRandomColorAbove100() {
+  let value = Math.floor(Math.random() * 256);
+  while (value < 100) {
+      value = Math.floor(Math.random() * 256);
+  }
+  return value;
+}
+
 function getRandomColor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
+  const r = randomColor();
+  const g = randomColor();
+  const b = randomColor();
   let a = Math.random();
   if (a > 0.8) {
     a -= 0.5;
