@@ -6,5 +6,8 @@
       "memory": 3008,
       "maxDuration": 30
     }
+  },
+  "headers": {
+    "Access-Control-Allow-Origin": "*"
   }
 }
