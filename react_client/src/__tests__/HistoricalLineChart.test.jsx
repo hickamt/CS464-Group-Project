@@ -1,8 +1,8 @@
 import { render, waitFor, screen } from "@testing-library/react";
-import HistoricalLineChart from "./HistoricalLineChart";
-import lcwSingleHistory from "../../api/lcwHistoricalAPI";
+import HistoricalLineChart from "../components/chart/HistoricalLineChart";
+import lcwSingleHistory from "../api/lcwHistoricalAPI";
 
-jest.mock("../../api/lcwHistoricalAPI");
+jest.mock("../api/lcwHistoricalAPI");
 
 describe("HistoricalLineChart", () => {
   it("renders without crashing", () => {
