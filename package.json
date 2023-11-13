@@ -11,8 +11,8 @@
     "setup": "npm i -y && cd express_server && npm i -y && cd ../react_client && npm i -y",
     "save": "git add . && git commit -m 'quick save'",
     "devcode": "code . && npm run dev",
-    "dev": "yarn workspaces foreach -piv run dev",
-    "build": "yarn workspaces foreach -piv run build",
+    "dev": "yarn workspaces foreach -A -piv run dev",
+    "build": "yarn workspaces foreach -A -piv run build",
     "build-static": "cd react_client && npm "
   },
   "dependencies": {
