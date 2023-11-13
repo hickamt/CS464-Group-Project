@@ -1,5 +1,3 @@
-// Basic express server
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -10,12 +8,10 @@ const corsOptions = require("./config/corsOptions");
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use("/", express.static(path.join(__dirname, "/public")));
-app.use("/", require("./routes/root")); // serving the static html index.js file
 
 /* CURRENT ENDPOINTS 'local_state' or 'queries' */
-app.use("/local_state", require("./routes/api/local_state"));
-app.use("/queries", require("./routes/api/queries"));
+app.use("/api/local_state", require("./routes/api/local_state"));
+app.use("/api/queries", require("./routes/api/queries"));
 
 // Catch all for page request errors
 app.all("*", (req, res) => {
@@ -32,3 +28,5 @@ app.all("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at: http://localhost:${PORT}`);
 });
+
+module.exports = app
