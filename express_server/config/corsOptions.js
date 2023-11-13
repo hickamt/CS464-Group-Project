@@ -7,7 +7,7 @@ const corsOptions = {
     // : (origin, ...) this is the browser origin of the request
     // the first arg searches our whitelist
     // the || !origin, allows cors localhost access to requests NOTE: remove (!origin) before deployment
-    if (allowedOrigins.indexOf(origin) !== -1) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
