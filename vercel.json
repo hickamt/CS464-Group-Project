@@ -7,12 +7,25 @@
       "maxDuration": 30
     }
   },
-  "routes": [
+  "rewrites": [
+    {"src": "/(.*)", "destination": "api/index.js"}
+  ],
+  "headers": [
     {
-      "src": "/(.*)",
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "source": "/(.*)",
+      "headers": [
+        {"key": "Access-Control-Allow-Origin", "value": "*"},
+        {"key": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept"},
+        {"key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS"}
+      ]
+    },
+    {
+      "source": "/vercel_app_domain_name/(.*)",
+      "headers": [
+        {"key": "Access-Control-Allow-Origin", "value": "*"},
+        {"key": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept"},
+        {"key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS"}
+      ]
     }
   ]
 }
