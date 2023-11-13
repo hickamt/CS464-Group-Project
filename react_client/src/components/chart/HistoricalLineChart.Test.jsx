@@ -25,6 +25,4 @@ describe("HistoricalLineChart", () => {
 
     expect(screen.getByText(/BTC Price in USD/i)).toBeInTheDocument();
   });
-
-  // Additional tests...
 });
