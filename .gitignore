@@ -32,6 +32,7 @@ dist-ssr
 
 # production
 /build
+/public
 
 # misc
 .DS_Store
@@ -43,3 +44,14 @@ dist-ssr
 .env.production.local
 
 npm-debug.log*
+
+# yarn 3 stuff
+
+.yarn/*
+.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.vercel
