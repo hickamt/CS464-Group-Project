@@ -60,7 +60,7 @@ export default function Cards() {
 
   setTimeout(() => {
     setRunEffect(!runEffect);
-  }, 180000); // timer set to 3 seconds
+  }, 180000); // timer set to 3 minutes
 
   if (!isData) {
     return <SpinAnimation />;
