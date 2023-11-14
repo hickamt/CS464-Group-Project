@@ -1,6 +1,16 @@
 /* NetFlix Style Slider */
 /* npm library: https://www.npmjs.com/package/netslider */
 
+.media-card {
+  min-width: 13em;
+  max-width: 12%;
+  background-color: var(--off-black);
+  border-radius: 1rem;
+  border: 2px solid var(--blue-light);
+  margin: 0.5rem;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 .arrow-card {
   width: 3vw;
   height: 30vh;
@@ -11,11 +21,11 @@
 .arrow-left,
 .arrow-right {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   cursor: pointer;
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .arrow-left:hover,
@@ -62,18 +72,6 @@
   100% {
     transform: translateX(0);
   }
-}
-
-.media-card {
-  /* min-width: 185px; */
-  min-width: 13em;
-  max-width: 12%;
-  background-color: var(--off-black);
-  border-radius: 1rem;
-  border: 2px solid var(--blue-light);
-  margin: 0.5rem;
-  /* Calling slideInFromLeft animation */
-  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 /* INNER Card.Text Grid Styles */
