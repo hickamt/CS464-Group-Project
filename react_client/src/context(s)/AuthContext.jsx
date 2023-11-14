@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (userCredentials) => {
     console.log("UserCredentials: ", userCredentials);
-    setCurrentUser({ username: "Crypto Crazy" });
+    setCurrentUser({ username: "Joe User" });
   };
 
   const logout = () => {
