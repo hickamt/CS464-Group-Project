@@ -25,6 +25,7 @@ export default async function expressQueryAPI(query) {
       .post("/api/queries", {
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
         data: {
           query: query,
