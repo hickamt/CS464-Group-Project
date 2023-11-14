@@ -2,7 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 
 // MAIN Routes
-import Layout from "./components/nav_layout/Layout"; // All page routes are wrapped within the Nav Layout
+// import Layout from "./components/nav_layout/Layout"; // Not using the navbar for this project
 import Main from "./pages/Main";
 
 /* Additional Routes for Custom Pages */

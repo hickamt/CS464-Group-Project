@@ -1,5 +1,13 @@
 /* Main View Grid | sidebar & main-view-container */
 
+.sidebar-image {
+  position: absolute;
+  height: 5.5em;
+  width: 4em;
+  margin-left: 1.5em;
+  margin-top: 1.5em;
+}
+
 .dashboard-container {
   grid-area: view;
 }

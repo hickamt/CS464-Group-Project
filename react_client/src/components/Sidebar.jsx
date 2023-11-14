@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useAuth } from "../context(s)/AuthContext";
+import pageLogo from "../assets/abstract_c.png";
 // Sidbar setup for testing
 export default function Sidebar({ switchAssetView, switchChartView }) {
   const { currentUser, login, logout } = useAuth();
   return (
     <div className="sidebar text-center">
+      <img src={pageLogo} alt="abstract c" className="sidebar-image d-flex flex-column align-items-center"></img>
       <section className="sidebar-header-space"></section>
       <section className="sidebar-chart-view">
         <p className="sidebar-charts fs-5 mt-1">VISUALIZE</p>
