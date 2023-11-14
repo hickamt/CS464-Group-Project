@@ -55,11 +55,11 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           </p>
         ) : null}
         {currentUser ? (
-          <button className="btn btn-primary mb-3 mx-auto" onClick={logout}>
+          <button className="logout-btn btn mb-3 mx-auto" onClick={logout}>
             Logout
           </button>
         ) : (
-          <button className="btn btn-primary mb-3 mx-auto" onClick={login}>
+          <button className="login-btn btn mb-3 mx-auto" onClick={login}>
             Login
           </button>
         )}
