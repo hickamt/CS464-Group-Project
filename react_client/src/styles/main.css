@@ -16,7 +16,7 @@
   grid-area: sidebar;
   margin-top: 1em;
   border-radius: 0.5em;
-  border: 1px solid var(--blue-light);
+  /* border: 1px solid var(--blue-light); */
   padding: 0.35em;
 }
 
