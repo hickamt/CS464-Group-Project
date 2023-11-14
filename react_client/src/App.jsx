@@ -2,7 +2,6 @@
 import { Route, Routes } from "react-router-dom";
 
 // MAIN Routes
-// import Layout from "./components/nav_layout/Layout"; // Not using the navbar for this project
 import Main from "./pages/Main";
 
 /* Additional Routes for Custom Pages */
@@ -17,12 +16,10 @@ function App() {
     <>
       <AuthProvider>
         <Routes>
-          {/* <Route path="/" element={<Layout />}> */}
           <Route index element={<Main />} />
           <Route path="card" element={<Card />} />
           <Route path="chart" element={<Chart />} />
           <Route path="table" element={<Table />} />
-          {/* </Route> */}
         </Routes>
       </AuthProvider>
     </>
