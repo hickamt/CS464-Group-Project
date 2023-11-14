@@ -5,24 +5,24 @@
 
 /* GLOBAL COLOR SCHEME */
 :root {
-  --primary: blue;      /* blue */
+  --primary: blue; /* blue */
   --secondary: #272b33; /* grey */
-  --success: green;     /* green */
-  --danger: red;        /* red */
-  --warning: yellow;    /* yellow */
-  --info: #4d4dff;      /* neon-blue */
-  --light: white;       /* white */
-  --off-black: #010409;      /* off black */
-  --black:  #090909 ;   /* root background black */
+  --success: green; /* green */
+  --danger: red; /* red */
+  --warning: yellow; /* yellow */
+  --info: #4d4dff; /* neon-blue */
+  --light: white; /* white */
+  --off-black: #010409; /* off black */
+  --black: #090909; /* root background black */
 
   /* Gold Theme */
-  --gold-bg: #150d07 ;
+  --gold-bg: #150d07;
   --gold-bg-dark: #101010; /* dark grey */
   --gold-light: #4a4537;
 
   /* Blue Theme */
   --blue-bg: rgba(4, 59, 92, 0.5);
-  --blue-bg-dark: rgba(44, 62, 80, 0.5);  /* madison  */
+  --blue-bg-dark: rgba(44, 62, 80, 0.5); /* madison  */
   --blue-light: rgba(11, 127, 171, 0.5);
 
   /* Grey Theme */
@@ -37,8 +37,8 @@
 }
 
 body {
+  /* transform: scale(0.95); */
   margin: 0 auto;
-  padding: 1em 0;
   background-color: var(--off-black);
   background-repeat: no-repeat;
   color: var(--light);
@@ -59,19 +59,4 @@ img.navLogo:hover {
   transition: transform 0.5s ease-in-out;
   background: var(--blue-light);
   border-radius: 3rem;
-}
-
-/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
-@media screen and (min-width: 1024px){
-/*Style*/
-}
-
-/*###Tablet(medium)###*/
-@media screen and (min-width : 768px) and (max-width : 1023px){
-/*Style*/
-}
-
-/*### Smartphones (portrait and landscape)(small)### */
-@media screen and (min-width : 0px) and (max-width : 767px){
-/*Style*/
 }
