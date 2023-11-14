@@ -2,12 +2,12 @@
 /* npm library: https://www.npmjs.com/package/netslider */
 
 .media-card {
+  margin: 0.5rem;
   min-width: 13em;
   max-width: 12%;
   background-color: var(--off-black);
-  border-radius: 1rem;
   border: 2px solid var(--blue-light);
-  margin: 0.5rem;
+  border-radius: 1rem;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
@@ -47,7 +47,7 @@
   padding: 1.5em;
   margin-top: 1em;
   border-radius: 1em;
-  box-shadow: 10px 10px 5px 0px var(--blue-bg);
+  box-shadow: 4px 4px 5px 0px var(--blue-light);
 }
 
 .card-body {
