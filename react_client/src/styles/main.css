@@ -94,7 +94,7 @@
   grid-template-areas:
     "header"
     "charts"
-    "assets";
+    "assets"
 }
 
 /* Inner Grid Area */

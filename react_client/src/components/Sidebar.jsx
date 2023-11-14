@@ -50,7 +50,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           Table
         </button>
       </section>
-      <section className="d-flex flex-column">
+      <section className="login-logout mt-auto">
         {currentUser ? (
           <p className="text-center">
             {currentUser.username !== "Joe User" ? "Please login" : "Joe User"}
