@@ -38,7 +38,7 @@ const goRight = function incrementCardIndex(
 
 export default function Cards() {
   const [cardIndex, setCardIndex] = useState(0);
-  const [maxViews, setMaxViews] = useState(6); // still need to implement a 'setMaxViews' function
+  const [maxViews, setMaxViews] = useState(5); // still need to implement a 'setMaxViews' function
   const [userData, setUserData] = useState([]);
   const [isData, setIsData] = useState(false);
   const [runEffect, setRunEffect] = useState(true);
