@@ -103,7 +103,7 @@
 .main-header {
   grid-area: header;
   background-size: cover;
-  padding-top: 1em;
+  /* padding-top: 1em; */
 }
 
 .main-view {

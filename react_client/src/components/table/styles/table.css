@@ -1,3 +1,9 @@
+.table-outer-div {
+  /* added to scroll view of table */
+  overflow-y: auto;
+  max-height: 27em;
+}
+
 .table-container {
   margin: 1em 0;
   display: flex;
@@ -14,9 +20,13 @@
 }
 
 .table-head {
+  background-color: var(--black);
   height: 3em;
   vertical-align: middle;
   transition: background-color 0.5s ease-in-out;
+  /* added for body scroll */
+  position: sticky;
+  top: 0;
 }
 
 .table-header:hover {
@@ -50,4 +60,20 @@
   overflow-x: hidden;
   height: calc(100vh - 500px);
   overflow: auto;
+}
+
+/* Works on Chrome, Edge, and Safari */
+.table-outer-div::-webkit-scrollbar {
+  background-color: var(--off-black);
+  width: 0.75em; /* Adjust scrollbar width */
+  border-radius: 16px;
+}
+
+.table-outer-div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Adjust track shadow */
+}
+
+.table-outer-div::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--blue-bg) 30%, var(--blue-light));
+  border-radius: 16px;
 }
