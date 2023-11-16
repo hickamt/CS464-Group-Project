@@ -109,10 +109,11 @@
 .main-view {
   margin: 0 auto;
   grid-area: main;
-  min-height: 15em;
+  min-height: 25em;
 }
 
 .main-footer {
+  min-height: 30em;
   margin: 1em 0 1em 0;
   grid-area: footer;
   background-size: cover;

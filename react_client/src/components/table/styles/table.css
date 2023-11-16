@@ -1,7 +1,7 @@
 .table-outer-div {
   /* added to scroll view of table */
   overflow-y: auto;
-  max-height: 27em;
+  max-height: 28em;
 }
 
 .table-container {
