@@ -17,6 +17,7 @@
   height: 30vh;
   position: relative;
   background-color: transparent;
+  border: none;
 }
 
 .arrow-left,
