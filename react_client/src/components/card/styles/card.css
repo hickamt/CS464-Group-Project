@@ -5,6 +5,7 @@
   margin: 0.5rem;
   min-width: 13em;
   max-width: 12%;
+  max-height: 24em;
   background-color: var(--off-black);
   border: 2px solid var(--blue-light);
   border-radius: 1rem;
@@ -51,7 +52,9 @@
 }
 
 .card-body {
+  padding-top: 2em;
   margin: 0 auto;
+
 }
 
 .media-row {
