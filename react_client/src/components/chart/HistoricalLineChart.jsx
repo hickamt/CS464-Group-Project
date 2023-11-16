@@ -64,7 +64,7 @@ function HistoricalLineChart({
       },
     ],
   };
-  // nathan, place this global
+
   const options = {
     responsive: true,
     plugins: {
