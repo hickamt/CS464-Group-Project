@@ -1,3 +1,14 @@
+#pip-window {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
 .table-outer-div {
   /* added to scroll view of table */
   overflow-y: auto;

@@ -7,6 +7,7 @@ import { sumTotal } from "./modules/utility";
 import { formatTableValues } from "./modules/tableFormat";
 import { useState, useEffect } from "react";
 import { TableHeaders } from "./modules/TableHeaders";
+import Draggable from 'react-draggable'
 
 import "./styles/table.css";
 
@@ -40,6 +41,7 @@ export default function Table() {
       {!isData ? (
         <SpinAnimation />
       ) : (
+        <Draggable>
         <div className="table-container">
           <h1 className="d-none">Table</h1>
 
@@ -90,6 +92,7 @@ export default function Table() {
             </table>
           </div>
         </div>
+        </Draggable>
       )}
     </>
   );
