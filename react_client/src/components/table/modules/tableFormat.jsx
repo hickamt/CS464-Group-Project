@@ -32,9 +32,17 @@ export const formatTableValues = (key, value) => {
         <td className="table-data">{formatNumber(setValueToFixed(value))}</td>
       );
 
+    case "volume":
+      return !value ? (
+        <td>$0</td>
+      ) : (
+        <td className="table-data">
+          ${formatNumber(Number.parseFloat(value).toFixed(0))}
+        </td>
+      );
+
     case "spot":
     case "value":
-    case "volume":
       return (
         <td className="table-data">${formatNumber(setValueToFixed(value))}</td>
       );
