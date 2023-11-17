@@ -85,6 +85,6 @@
 }
 
 .table-outer-div::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--blue-bg) 30%, var(--blue-light));
+  background: linear-gradient(var(--blue-light) 30%, var(--blue-bg));
   border-radius: 16px;
 }
