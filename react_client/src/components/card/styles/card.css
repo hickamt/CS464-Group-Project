@@ -107,9 +107,9 @@
 }
 
 .card-text.positive {
-  color: rgb(5, 152, 5);
+  color: var(--success);
 }
 
 .card-text.negative {
-  color: red;
+  color: var(--danger);
 }

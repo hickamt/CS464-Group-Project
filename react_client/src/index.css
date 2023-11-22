@@ -7,7 +7,7 @@
 :root {
   --primary: blue; /* blue */
   --secondary: #272b33; /* grey */
-  --success: green; /* green */
+  --success: rgb(5, 152, 5); /* green */
   --danger: red; /* red */
   --warning: yellow; /* yellow */
   --info: #4d4dff; /* neon-blue */

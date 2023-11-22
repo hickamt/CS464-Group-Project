@@ -90,9 +90,9 @@
 }
 
 .table-data.positive {
-  color: rgb(5, 152, 5);
+  color: var(--success);
 }
 
 .table-data.negative {
-  color: red;
+  color: var(--danger);
 }
