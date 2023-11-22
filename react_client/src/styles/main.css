@@ -11,12 +11,6 @@
   grid-area: view;
 }
 
-.sidebar-charts,
-.sidebar-analyze {
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid var(--blue-light);
-}
-
 .sidebar {
   background-color: var(--blue-bg);
   grid-area: sidebar;

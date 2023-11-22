@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { FaSort } from 'react-icons/fa'
 import { useAuth } from "../context(s)/AuthContext";
 import pageLogo from "../assets/abstract_c.png";
 // Sidbar setup for testing
