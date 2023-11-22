@@ -66,7 +66,7 @@ export default function Table() {
                             window.open(`https://www.livecoinwatch.com/`)
                           }>
                           {Object.entries(item).map(([key, value]) =>
-                            formatTableValues(key, value)
+                            formatTableValues(key, value, item.asset)
                           )}
                         </tr>
                       </>

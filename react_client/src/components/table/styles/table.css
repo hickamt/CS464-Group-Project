@@ -88,3 +88,11 @@
   background: linear-gradient(var(--blue-light) 30%, var(--blue-bg));
   border-radius: 16px;
 }
+
+.table-data.positive {
+  color: rgb(5, 152, 5);
+}
+
+.table-data.negative {
+  color: red;
+}

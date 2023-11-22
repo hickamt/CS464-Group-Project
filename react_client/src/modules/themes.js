@@ -7,9 +7,9 @@ export const getCryptoIcon = function fetchCryptoImagePngIcon(asset) {
 // returning the class name for the text color
 export const textColor = function bootstrapTextColor(value) {
   if (value > 0) {
-    return "text-success";
+    return "positive";
   } else if (value < 0) {
-    return "text-danger";
+    return "negative";
   } else {
     return "text-light";
   }

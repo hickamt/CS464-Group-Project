@@ -12,14 +12,14 @@ const formatNumber = function formatCommaSeparatedNumber(number) {
 };
 
 // format table values based on key
-export const formatTableValues = (key, value) => {
+export const formatTableValues = (key, value, asset) => {
   switch (key) {
     case "icon":
       return (
         <td className="table-icon">
           <img
             className="table-icon mx-auto bg-muted rounded p-1"
-            alt="cryptocurrency"
+            alt={`${asset} icon`}
             src={value}
           />
         </td>
