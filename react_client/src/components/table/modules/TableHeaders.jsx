@@ -14,7 +14,7 @@ export const TableHeaders = ({ tableData, setTableData, headers }) => {
   let header = [];
   headers.map((headerName, index) => {
     if (headerName === "icon") {
-      header.push(<th key={index} scope="col" className="table-header"></th>);
+      header.push(<th key={index} scope="col" className="table-header" style={{color: 'transparent'}}>icons</th>);
     } else {
       header.push(
         <th
