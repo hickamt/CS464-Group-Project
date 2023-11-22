@@ -17,6 +17,7 @@ const {sales} = require("../db/sales")
  */
 const postQuery = (req, res) => {
   const query = req.body.data.query;
+  console.log("Inside Post Query: ", query)
 
   switch (query) {
     case "assets":
