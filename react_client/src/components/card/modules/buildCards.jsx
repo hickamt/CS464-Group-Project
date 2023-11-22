@@ -9,7 +9,7 @@ const cardImage = function buildCardImage(props) {
   return (
     <Card.Img
       className="card-img mx-auto"
-      alt="cryptocurrency"
+      alt={`${props.asset} logo`}
       variant="top"
       src={getCryptoIcon(props.asset)}
     />
