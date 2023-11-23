@@ -1,9 +1,9 @@
 /* Main View Grid | sidebar & main-view-container */
 .sidebar-image {
   position: absolute;
-  height: 5.5em;
-  width: 4em;
-  margin-left: 1.5em;
+  height: 3.5em;
+  width: 3em;
+  margin-left: 1em;
   margin-top: 1.5em;
 }
 
@@ -29,26 +29,35 @@
 }
 
 .sidebar .card-btn {
-  width: 7rem;
+  width: 3em;
+  height: 3em;
+  margin: 0.25em;
   background-color: var(--off-black);
   color: var(--light);
   border: none;
+  border-radius: 25em;
   font-size: 20px;
   transition: transform 0.5s ease-in-out;
   border: 1px solid var(--blue-light);
-  border-radius: 12px;
 }
 
 .sidebar:hover .card-btn:hover {
-  background-color: var(--blue-light);
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
   border-radius: 20px;
+  border: 0.5px solid var(--light);
 }
+
+.fc-icon {
+  font-size: xx-large;
+  color: #00bcd4;
+   pointer-events: auto;
+}
+
 
 .login-btn,
 .logout-btn {
-  width: 7em;
+  width: 4.5em;
   background-color: var(--off-black);
   color: var(--light);
   border-radius: 12px;
