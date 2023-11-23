@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
-import { FaChartPie } from "react-icons/fa";
-import { FaChartLine } from "react-icons/fa";
-import { FaTable  } from 'react-icons/fa'
-// import { FaCodeCompare } from 'react-icons/fa6'
+import { FaChartPie, FaChartLine, FaTable } from "react-icons/fa";
+// import { FcAreaChart } from "react-icons/fc";
 import { useAuth } from "../context(s)/AuthContext";
 import pageLogo from "../assets/abstract_c.png";
 // Sidbar setup for testing
@@ -55,6 +53,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="table"
           onClick={(e) => switchAssetView(e, e.target.value)}
         >
+          <FaTable />
           Table
         </button>
       </section>
