@@ -18,7 +18,6 @@ export default function Table() {
 
   // fetch expressQueryAPI and lcwCryptoAPI data, then combine data and set state
   useEffect(() => {
-    console.log("Inside UseEffect()");
     lcwRemainingCredits();
     async function fetchData() {
       const expressData = await expressQueryAPI("remaining");

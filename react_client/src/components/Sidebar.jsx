@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
-import { FaSort } from 'react-icons/fa'
+import { FaChartPie } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
+import { FaTable  } from 'react-icons/fa'
+// import { FaCodeCompare } from 'react-icons/fa6'
 import { useAuth } from "../context(s)/AuthContext";
 import pageLogo from "../assets/abstract_c.png";
 // Sidbar setup for testing
@@ -16,6 +19,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="chart"
           onClick={(e) => switchChartView(e, e.target.value)}
         >
+          <FaChartPie />
           Pie Chart
         </button>
         <button
@@ -23,6 +27,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="line-chart"
           onClick={(e) => switchChartView(e, e.target.value)}
         >
+          <FaChartLine />
           Line Chart
         </button>
         <button
@@ -30,6 +35,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="line-compare"
           onClick={(e) => switchChartView(e, e.target.value)}
         >
+          <FaChartLine />
           Compare
         </button>
       </section>
@@ -41,6 +47,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="card"
           onClick={(e) => switchAssetView(e, e.target.value)}
         >
+          <FaTable />
           Card
         </button>
         <button

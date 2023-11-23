@@ -16,7 +16,8 @@
     "build-static": "cd react_client && npm "
   },
   "dependencies": {
-    "concurrently": "8.2.0"
+    "concurrently": "8.2.0",
+    "flat-color-icons": "^1.1.0"
   },
   "author": "Todd Hickam, Nathan Moes"
 }
