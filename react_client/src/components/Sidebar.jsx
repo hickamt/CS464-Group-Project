@@ -20,7 +20,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="chart"
           aria-label="Pie Chart"
           onClick={(e) => switchChartView(e, e.target.value)}>
-          <FcDoughnutChart className="fc-icon" />
+          <FcDoughnutChart
+            className="fc-icon"
+            onClick={(e) => switchChartView(e, "chart")}
+          />
           {/* Pie Chart */}
         </button>
         <button
@@ -28,7 +31,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="line-chart"
           aria-label="Line Chart"
           onClick={(e) => switchChartView(e, e.target.value)}>
-          <FcComboChart className="fc-icon" />
+          <FcComboChart
+            className="fc-icon"
+            onClick={(e) => switchChartView(e, "line-chart")}
+          />
           {/* Line Chart */}
         </button>
         <button
@@ -36,7 +42,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="line-compare"
           aria-label="Line Compare"
           onClick={(e) => switchChartView(e, e.target.value)}>
-          <FcComboChart className="fc-icon" />
+          <FcComboChart
+            className="fc-icon"
+            onClick={(e) => switchChartView(e, "line-compare")}
+          />
           {/* Compare */}
         </button>
       </section>
@@ -48,7 +57,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="card"
           aria-label="Price Card"
           onClick={(e) => switchAssetView(e, e.target.value)}>
-          <FaRegListAlt className="fc-icon" />
+          <FaRegListAlt
+            className="fc-icon"
+            onClick={(e) => switchAssetView(e, "card")}
+          />
           {/* Card */}
         </button>
         <button
@@ -56,7 +68,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="table"
           aria-label="Data Table"
           onClick={(e) => switchAssetView(e, e.target.value)}>
-          <FcDataSheet className="fc-icon" />
+          <FcDataSheet
+            className="fc-icon"
+            onClick={(e) => switchAssetView(e, "table")}
+          />
           {/* Table */}
         </button>
       </section>
