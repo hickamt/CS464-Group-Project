@@ -20,10 +20,6 @@ function getRandomColor() {
   const g = randomColor();
   const b = randomColor();
   const a = 0.8;
-  // let a = Math.random();
-  // if (a > 0.8) {
-  //   a -= 0.5;
-  // }
   return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 

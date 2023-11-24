@@ -1,11 +1,6 @@
 // LiveCoinWatch Documenation for API Calls and Options:
 // https://livecoinwatch.github.io/lcw-api-docs/?javascript#coinslist
 
-/*
-  NOTE: this should be changed to an Async/Await function
-  See pages 25 and 26 of Learning REACT textbook (O'Reilly 2nd Edition)
-*/
-
 /**
  * POST request to retrieve the LiveCoinWatch 'resource: /coin/list'
  */
@@ -58,7 +53,6 @@ const lcwCryptoAPI = async () => {
         const error = (data && data.message) || response.status;
         return Promise.reject(error);
       }
-      // console.table(data[0].delta)
       return [...data];
     });
   } catch (err) {

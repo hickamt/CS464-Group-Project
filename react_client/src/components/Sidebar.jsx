@@ -3,7 +3,7 @@ import { FaRegListAlt } from "react-icons/fa";
 import { FcDataSheet, FcDoughnutChart, FcComboChart } from "react-icons/fc";
 import { useAuth } from "../context(s)/AuthContext";
 import pageLogo from "../assets/abstract_c.png";
-// Sidbar setup for testing
+
 export default function Sidebar({ switchAssetView, switchChartView }) {
   const { currentUser, login, logout } = useAuth();
   return (
@@ -14,7 +14,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
         className="sidebar-image d-flex flex-column align-items-center"></img>
       <section className="sidebar-header-space"></section>
       <section className="sidebar-chart-view">
-        {/* <p className="sidebar-charts fs-5 mt-1">VISUALIZE</p> */}
         <button
           className="card-btn sidebar-btn"
           value="chart"
@@ -24,7 +23,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
             className="fc-icon"
             onClick={(e) => switchChartView(e, "chart")}
           />
-          {/* Pie Chart */}
         </button>
         <button
           className="card-btn sidebar-btn"
@@ -35,7 +33,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
             className="fc-icon"
             onClick={(e) => switchChartView(e, "line-chart")}
           />
-          {/* Line Chart */}
         </button>
         <button
           className="card-btn sidebar-btn"
@@ -46,12 +43,10 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
             className="fc-icon"
             onClick={(e) => switchChartView(e, "line-compare")}
           />
-          {/* Compare */}
         </button>
       </section>
 
       <section className="sidebar-asset-view">
-        {/* <p className="sidebar-analyze fs-5 mt-1">ANALYZE</p> */}
         <button
           className="card-btn sidebar-btn"
           value="card"
@@ -61,7 +56,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
             className="fc-icon"
             onClick={(e) => switchAssetView(e, "card")}
           />
-          {/* Card */}
         </button>
         <button
           className="card-btn sidebar-btn"
@@ -72,7 +66,6 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
             className="fc-icon"
             onClick={(e) => switchAssetView(e, "table")}
           />
-          {/* Table */}
         </button>
       </section>
       <section className="login-logout mt-auto">

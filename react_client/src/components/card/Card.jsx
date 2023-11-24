@@ -79,11 +79,9 @@ export default function Cards() {
               />
             </Card>
           )}
-
           <Row className="media-row">
             {buildCards(userData, cardIndex, maxViews)}
           </Row>
-
           {cardIndex !== userData.length - 1 && (
             <Card className="arrow-card">
               <BiRightArrow

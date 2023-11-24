@@ -49,7 +49,6 @@ function HistoricalLineChartCompTwo({
     datasets: [],
   });
 
-  // const getCompData = async function fetchChartData() {
   useEffect(() => {
     try {
       const dataFetchPromises = coins.map((coin) =>

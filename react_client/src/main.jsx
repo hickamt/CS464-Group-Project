@@ -6,12 +6,8 @@ import App from "./App.jsx";
 import "./index.css";
 import "./styles/main.css";
 
-// use of semantic-ui script will hijack all other css in this file
-// DO NOT USE THE FOLLOWING IMPORT:
-// import 'semantic-ui-css/semantic.min.css'
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );

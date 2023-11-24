@@ -14,7 +14,7 @@ import "../components/chart/styles/chart.css";
 
 function Main() {
   const [analyze, setAnalyze] = useState(<Cards />);
-  const [visualize, setVisualize] = useState(<Chart />)
+  const [visualize, setVisualize] = useState(<Chart />);
 
   const switchChartView = (e, value) => {
     e.preventDefault();
@@ -51,16 +51,17 @@ function Main() {
 
   return (
     <div className="main-view-container">
-      <Sidebar switchChartView={switchChartView} switchAssetView={switchAssetView} />
+      <Sidebar
+        switchChartView={switchChartView}
+        switchAssetView={switchAssetView}
+      />
       <div className="dashboard-container mt-3">
         <div className="main-header ">
           <Header />
         </div>
-
         <div className="main-view d-flex justify-content-center">
           {visualize}
         </div>
-
         <div className="main-footer d-flex justify-content-center">
           {analyze}
         </div>

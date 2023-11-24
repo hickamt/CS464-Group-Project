@@ -1,8 +1,5 @@
 import axios from "axios";
 
-// Functions could be updated to Async/Await with try/catch
-// or using new Promise((resolve,reject))
-
 // GET state
 export function getLocalState(
   endpoint,
