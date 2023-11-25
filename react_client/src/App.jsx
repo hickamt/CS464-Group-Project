@@ -17,9 +17,9 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route index element={<Main />} />
-          <Route path="card" element={<Card />} />
-          <Route path="chart" element={<Chart />} />
-          <Route path="table" element={<Table />} />
+          {/* <Route path="card" element={<Card />} /> */}
+          {/* <Route path="chart" element={<Chart />} /> */}
+          {/* <Route path="table" element={<Table />} /> */}
         </Routes>
       </AuthProvider>
     </>
@@ -27,3 +27,4 @@ function App() {
 }
 
 export default App;
+
