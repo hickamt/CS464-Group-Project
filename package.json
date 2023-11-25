@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm i -y && cd express_server && npm i -y && cd ../react_client && npm i -y",
-    "start": "concurrently \"npm run express_dev\" \"npm run react_dev\" ",
+    "start": "concurrently \"npm run express\" \"npm run react\" ",
+    "express": "cd express_server && npm run start",
+    "react": "cd react_client && npm run start",
+    "dev": "concurrently \"npm run express_dev\" \"npm run react_dev\" ",
     "express_dev": "cd express_server && npm run dev",
     "react_dev": "cd react_client && npm run dev",
     "teardown": "npm run uninstall_package_lock && npm run uninstall_node_modules",
