@@ -1,9 +1,11 @@
 import axios from "axios";
 
+const RENDER_URL = "https://crypto-dashboard-2gct.onrender.com";
+
 export default async function expressQueryAPI(query) {
   try {
     return await axios
-      .post("http://localhost:5173/api/queries", {
+      .post(`${RENDER_URL}/api/queries`, {
         headers: {
           "Content-Type": "application/json",
         },
