@@ -6,6 +6,6 @@
  *
  * "http//localhost:5173" where 5173 is the port 'Vite' runs the client server
  */
-const allowedOrigins = ["*/*", "*", "http://localhost:5173", "http://127.0.0.1:5173"];
+const allowedOrigins = ["http://localhost:5173", "http://127.0.0.1:5173", ""];
 
 module.exports = allowedOrigins;

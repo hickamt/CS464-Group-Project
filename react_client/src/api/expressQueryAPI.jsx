@@ -3,10 +3,9 @@ import axios from "axios";
 export default async function expressQueryAPI(query) {
   try {
     return await axios
-      .post("http://localhost:10000/api/queries", {
+      .post("http://localhost:5173/api/queries", {
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
         data: {
           query: query,
