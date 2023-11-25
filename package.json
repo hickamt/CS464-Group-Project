@@ -1,6 +1,10 @@
 {
   "name": "cs464_crypto_dashboard",
   "version": "1.0.0",
+  "engines": {
+    "npm": "10.1.0",
+    "node": "20.9.0"
+  },
   "description": "Course project at PSU building a cryptocurrency dashboard",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,10 @@
 {
   "name": "express_server",
   "version": "1.0.0",
+  "engines": {
+    "npm": "10.1.0",
+    "node": "20.9.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
