@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const RENDER_URL = "https://crypto-dashboard-2gct.onrender.com";
+const RENDER_URL = "https://crypto-dashboard-hsw9.onrender.com";
 
 export default async function expressQueryAPI(query) {
   try {
