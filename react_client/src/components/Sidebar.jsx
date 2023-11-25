@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
 import { FaRegListAlt } from "react-icons/fa";
-import { FcDataSheet, FcDoughnutChart, FcComboChart } from "react-icons/fc";
+import {
+  FcDataSheet,
+  FcDoughnutChart,
+  FcComboChart,
+  FcLineChart,
+} from "react-icons/fc";
 import { useAuth } from "../context(s)/AuthContext";
 import pageLogo from "../assets/abstract_c.png";
 
@@ -39,7 +44,7 @@ export default function Sidebar({ switchAssetView, switchChartView }) {
           value="line-compare"
           aria-label="Line Compare"
           onClick={(e) => switchChartView(e, e.target.value)}>
-          <FcComboChart
+          <FcLineChart
             className="fc-icon"
             onClick={(e) => switchChartView(e, "line-compare")}
           />
