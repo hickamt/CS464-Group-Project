@@ -10,7 +10,6 @@
 }
 
 .table-outer-div {
-  /* added to scroll view of table */
   overflow-y: auto;
   max-height: 28em;
 }
@@ -35,7 +34,6 @@
   height: 3em;
   vertical-align: middle;
   transition: background-color 0.5s ease-in-out;
-  /* added for body scroll */
   position: sticky;
   top: 0;
 }

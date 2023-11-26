@@ -71,6 +71,7 @@ export default function Table() {
                       </>
                     );
                   })}
+                  {/* Value Total Row */}
                 <tr className="table-row table-totals" key={"totals"}>
                   <td className="table-data"></td>
                   <td className="table-data fs-5">TOTAL</td>
