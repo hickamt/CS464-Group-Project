@@ -3,7 +3,7 @@
   position: absolute;
   height: 3.5em;
   width: 3.5em;
-  margin-left: 1.5em;
+  margin-left: 1.20em;
   margin-top: 1.5em;
 }
 
@@ -16,7 +16,6 @@
   grid-area: sidebar;
   margin: 1em 0 1em 0;
   border-radius: 0.5em;
-  padding: 0.35em;
 }
 
 .main-view-container {
