@@ -1,0 +1,1 @@
+Note: Tests can be run and will test somethings, but fail. As the libaries used make jest etc very mad.
